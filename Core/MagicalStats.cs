@@ -4,19 +4,19 @@ using System.Text;
 
 namespace Core
 {
-    public abstract class Magical : PhysicalMagical
+    public class MagicalStats : PhysicalMagicalStats
     {
-        public Magical(int Strength, int Dexterity, int Intelligence, int Constitution)
+        public MagicalStats(int Strength, int Dexterity, int Intelligence, int Constitution)
         {
             GetCharacteristics(Strength, Dexterity, Intelligence, Constitution);
         }
 
         public override void GetCharacteristics(int Strength, int Dexterity, int Intelligence, int Constitution)
         {
-            Attack = 4 * Intelligence;
-            Defense = 2 * Intelligence;
-            CriticalChanse = 20 + 0.1 * Intelligence;
-            CriticalDamage = Attack * (2 + 0.15 * Intelligence);
+            Attack = Intelligence * 4;
+            Defense = Intelligence * 2;
+            CriticalChanse = 20 + Intelligence * 0.1;
+            CriticalDamage = Attack * (2 + Intelligence * 0.15);
         }
     }
 }
