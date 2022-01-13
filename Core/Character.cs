@@ -2,7 +2,7 @@
 
 namespace Core
 {
-    abstract public class Character
+    public abstract class Character
     {
         private int strength;
         public int Strength { get => strength; set => strength = value;  }

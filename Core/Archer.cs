@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Core
 {
-    class Archer : Character
+    public class Archer : Character
     {
         public Archer()
         {

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Core
 {
-    class Warrior : Character
+    public class Warrior : Character
     {
         public Warrior()
         {

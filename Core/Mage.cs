@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Core
 {
-    class Mage : Character
+    public class Mage : Character
     {
         public Mage()
         {
