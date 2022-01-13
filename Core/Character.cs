@@ -33,53 +33,101 @@ namespace Core
             set { mana = value; }
         }
 
-        private double pAttack;
-        public double PAttack
+        public Character(int strength, int dexterity, int intelligence, int constitution)
         {
-            get => pAttack;
-            set { pAttack = value; }
+            this.strength = strength;
+            this.dexterity = dexterity;
+            this.intelligence = intelligence;
+            this.constitution = constitution;
         }
 
-        private double mDefence;
-        public double MDefence
+        public double PhysicalAttack()
         {
-            get => mDefence;
-            set { mDefence = value; }
+            return (Strength * 3) + (0.5 * Dexterity);
         }
 
-        private double mAttack;
-        public double MAttack
+        public double PhysicalDefense()
         {
-            get => mAttack;
-            set { mAttack = value; }
+            return (Constitution * 0.5) + (3 * Dexterity);
         }
 
-        private double pCriticalChance;
-        public double PCriticalChance
+        public double MagicAttack()
         {
-            get => pCriticalChance;
-            set { pCriticalChance = value; }
+            return Intelligence * 4;
         }
 
-        private double mCriticalChance;
-        public double MCriticalChance
+        public double MagicDefense()
         {
-            get => mCriticalChance;
-            set { mCriticalChance = value; }
+            return Intelligence * 2;
         }
 
-        private double pCriticalDamage;
-        public double PCriticalDamage
+        public double PhysicalCriticalChanse()
         {
-            get => pCriticalDamage;
-            set { pCriticalDamage = value; }
+            return 20 + Dexterity * 0.3;
         }
 
-        private double mCriticalDamage;
-        public double MCriticalDamage
+        public double MagicCriticalChance()
         {
-            get => mCriticalDamage;
-            set {  mCriticalDamage = value; }
+            return 20 + Intelligence * 0.1;
         }
+
+        public double PhysicalCriticalDamage()
+        {
+            return PhysicalAttack() * (2 + Dexterity * 0.05);
+        }
+
+        public double MagicCriticalDamage()
+        {
+            return MagicAttack() * (2 + Intelligence * 0.15);
+        }
+        
+        //private double pAttack;
+        //public double PAttack
+        //{
+        //    get => pAttack;
+        //    set { pAttack = value; }
+        //}
+
+        //private double mDefence;
+        //public double MDefence
+        //{
+        //    get => mDefence;
+        //    set { mDefence = value; }
+        //}
+
+        //private double mAttack;
+        //public double MAttack
+        //{
+        //    get => mAttack;
+        //    set { mAttack = value; }
+        //}
+
+        //private double pCriticalChance;
+        //public double PCriticalChance
+        //{
+        //    get => pCriticalChance;
+        //    set { pCriticalChance = value; }
+        //}
+
+        //private double mCriticalChance;
+        //public double MCriticalChance
+        //{
+        //    get => mCriticalChance;
+        //    set { mCriticalChance = value; }
+        //}
+
+        //private double pCriticalDamage;
+        //public double PCriticalDamage
+        //{
+        //    get => pCriticalDamage;
+        //    set { pCriticalDamage = value; }
+        //}
+
+        //private double mCriticalDamage;
+        //public double MCriticalDamage
+        //{
+        //    get => mCriticalDamage;
+        //    set {  mCriticalDamage = value; }
+        //}
     }
 }
