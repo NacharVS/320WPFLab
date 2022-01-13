@@ -9,7 +9,7 @@ namespace Core
     public abstract class Character
     {
         private int _strength;
-        protected int Strength
+        public int Strength
         {
             get { return _strength; }
 
@@ -17,7 +17,7 @@ namespace Core
         }
 
         private int _dexterity;
-        protected int Dexterity
+        public int Dexterity
         {
             get { return _dexterity; }
             
@@ -25,7 +25,7 @@ namespace Core
         }
 
         private int _intelligence;
-        protected int Intelligence
+        public int Intelligence
         {
             get { return _intelligence; }
             
@@ -33,7 +33,7 @@ namespace Core
         }
 
         private int _constitution;
-        protected int Constitution
+        public int Constitution
         {
             get { return _constitution; }
 
@@ -41,18 +41,24 @@ namespace Core
         }
 
         private double _health => 2 * _constitution + 0.5 * _strength;
-        protected double Health { get { return _health; } }
+        public double Health
+        {
+            get { return _health; }
+        }
 
         private double _mana => Intelligence * 3;
-        protected double Mana { get { return _mana; } }
+        public double Mana
+        { 
+            get { return _mana; }
+        }
 
         private MagicСharacteristic _magic => new MagicСharacteristic(Strength, Dexterity, Intelligence, Constitution);
-        protected MagicСharacteristic Magic
+        public MagicСharacteristic Magic
         {
             get { return _magic; }
         }
         private PhysicСharacteristic _physic => new PhysicСharacteristic(Strength, Dexterity, Intelligence, Constitution);
-        protected PhysicСharacteristic Physic
+        public PhysicСharacteristic Physic
         {
             get { return _physic; }
         }

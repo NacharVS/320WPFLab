@@ -10,11 +10,6 @@ namespace Core
     {
         public MagicСharacteristic(int Strength, int Dexterity, int Intelligence, int Constitution)
         {
-            Update(Strength, Dexterity, Intelligence, Constitution);
-        }
-
-        public override void Update(int Strength, int Dexterity, int Intelligence, int Constitution)
-        {
             Attack = 4 * Intelligence;
             Defense = 2 * Intelligence;
             CriticalChance = 20 + 0.1 * Intelligence;
