@@ -1,0 +1,20 @@
+Character Editor
+classes: 		warrior		mage		archer
+characteristics:
+Strength           	30 - 250		15 - 45		20 - 55
+Dexterity		15 - 80 		20 - 70 		30 - 250
+Intelligence	10 - 50		30 - 250 		15 - 70
+Constitution	25 - 100		15 - 65		20 - 70
+
+Health( 2*Constitution + 0.5*strength): if Health < 0.5*Health ==> 
+allCharacteristics - *0.1
+Mana(int * 3) if mana < 0.2*mana ==> MaxHealth - MaxHealth*0.2
+
+P. Attack = str*3 + 0.5*dex
+P.Defense = con * 0.5 + dex * 3
+M.Attack = int*4;
+M.Defense = int*2;
+P. Critical Chanse = 20+dex*0.3
+M. Critical Chanse = 20+int*0.1
+P.CriticalDamage = P. Attack*(2 + dex*0.05) 
+M.CriticalDamage = M. Attack * (2 + int * 0.15 )
