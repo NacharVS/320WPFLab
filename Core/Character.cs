@@ -6,13 +6,19 @@ using System.Threading.Tasks;
 
 namespace Core
 {
-    public class Character
+    public abstract class Character
     {
-        int Strength { get; set; }
-        int Dexterity { get; set; }
-        int Intelligence { get; set; }
-        int Constitution { get; set; }
-        double Health => 2 * Constitution + 0.5 * Strength;
-        double Mana => Intelligence * 3;
+        protected int Strength { get; set; }
+        protected int Dexterity { get; set; }
+        protected int Intelligence { get; set; }
+        protected int Constitution { get; set; }
+
+        protected double Health => 2 * Constitution + 0.5 * Strength;
+        protected double Mana => Intelligence * 3;
+
+        protected MagicСharacteristic magic => new MagicСharacteristic(Strength, Dexterity, Intelligence, Constitution);
+        protected PhysicСharacteristic physic => new PhysicСharacteristic(Strength, Dexterity, Intelligence, Constitution);
+
+        protected int ExtraPoint = 500;
     }
 }
