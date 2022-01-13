@@ -41,10 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Archer.cs" />
     <Compile Include="Character.cs" />
+    <Compile Include="Mage.cs" />
     <Compile Include="MagicСharacteristic.cs" />
     <Compile Include="PhysicСharacteristic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Warrior.cs" />
     <Compile Include="Сharacteristic.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

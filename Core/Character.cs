@@ -8,16 +8,54 @@ namespace Core
 {
     public abstract class Character
     {
-        protected int Strength { get; set; }
-        protected int Dexterity { get; set; }
-        protected int Intelligence { get; set; }
-        protected int Constitution { get; set; }
+        private int _strength;
+        protected int Strength
+        {
+            get { return _strength; }
 
-        protected double Health => 2 * Constitution + 0.5 * Strength;
-        protected double Mana => Intelligence * 3;
+            set { _strength = value; }
+        }
 
-        protected MagicСharacteristic magic => new MagicСharacteristic(Strength, Dexterity, Intelligence, Constitution);
-        protected PhysicСharacteristic physic => new PhysicСharacteristic(Strength, Dexterity, Intelligence, Constitution);
+        private int _dexterity;
+        protected int Dexterity
+        {
+            get { return _dexterity; }
+            
+            set { _dexterity = value; }
+        }
+
+        private int _intelligence;
+        protected int Intelligence
+        {
+            get { return _intelligence; }
+            
+            set { _intelligence = value; }
+        }
+
+        private int _constitution;
+        protected int Constitution
+        {
+            get { return _constitution; }
+
+            set { _constitution = value; }
+        }
+
+        private double _health => 2 * _constitution + 0.5 * _strength;
+        protected double Health { get { return _health; } }
+
+        private double _mana => Intelligence * 3;
+        protected double Mana { get { return _mana; } }
+
+        private MagicСharacteristic _magic => new MagicСharacteristic(Strength, Dexterity, Intelligence, Constitution);
+        protected MagicСharacteristic Magic
+        {
+            get { return _magic; }
+        }
+        private PhysicСharacteristic _physic => new PhysicСharacteristic(Strength, Dexterity, Intelligence, Constitution);
+        protected PhysicСharacteristic Physic
+        {
+            get { return _physic; }
+        }
 
         protected int ExtraPoint = 500;
     }
