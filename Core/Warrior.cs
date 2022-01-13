@@ -6,9 +6,12 @@ namespace Core
 {
     class Warrior : Character
     {
-        public Warrior(int strength, int dexterity, int intelligence, int constitution) : base(strength, dexterity, intelligence, constitution)
+        public Warrior()
         {
-
+            Strength = 30;
+            Dexterity = 15;
+            Intelligence = 10;
+            Constitution = 25;
         }
     }
 }

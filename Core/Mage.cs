@@ -6,9 +6,12 @@ namespace Core
 {
     class Mage : Character
     {
-        public Mage(int strength, int dexterity, int intelligence, int constitution) : base(strength, dexterity, intelligence, constitution)
+        public Mage()
         {
-
+            Strength = 15;
+            Dexterity = 20;
+            Intelligence = 30;
+            Constitution = 15;
         }
     }
 }

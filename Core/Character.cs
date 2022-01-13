@@ -8,10 +8,10 @@ namespace Core
         public string Name { set { name = value; } }
 
         private int strength;
-        public int Strength { get => strength; set { strength = value; } }
+        public int Strength { get => strength; set => strength = value;  }
 
         private int dexterity;
-        public int Dexterity { get => dexterity; set { dexterity = value; } }
+        public int Dexterity { get => dexterity; set => dexterity = value;  }
 
         private int intelligence;
         public int Intelligence { get => intelligence; set { intelligence = value; } }
@@ -31,14 +31,6 @@ namespace Core
         {
             get => Intelligence * 3;
             set { mana = value; }
-        }
-
-        public Character(int strength, int dexterity, int intelligence, int constitution)
-        {
-            this.strength = strength;
-            this.dexterity = dexterity;
-            this.intelligence = intelligence;
-            this.constitution = constitution;
         }
 
         public double PhysicalAttack()
