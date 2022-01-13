@@ -24,5 +24,15 @@ namespace BaseEmptyApp
         {
             InitializeComponent();
         }
+
+        private void btn_str_minus_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btn_str_plus_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
