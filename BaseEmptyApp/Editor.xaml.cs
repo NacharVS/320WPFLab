@@ -23,11 +23,6 @@ namespace BaseEmptyApp
         {
             InitializeComponent();
             Unit = unit;
-            this.DataContext = this;
-        }
-
-        private void Start_Click(object sender, RoutedEventArgs e)
-        {
             Name.Text = MainWindow.character;
             dexterity.Text = Unit.Dexterity.ToString();
             strengh.Text = Unit.Strength.ToString();
@@ -39,20 +34,72 @@ namespace BaseEmptyApp
             PDefense.Text = Unit.Physic.Defense.ToString();
             MAttack.Text = Unit.Magic.Attack.ToString();
             MDefense.Text = Unit.Magic.Defense.ToString();
+            PCryticalDefence.Text = Unit.Physic.Defense.ToString();
+            MCryticalDefence.Text = Unit.Magic.Defense.ToString();
+            PCryticalDamage.Text = Unit.Physic.CriticalDamage.ToString();
+            MCryticalDamage.Text = Unit.Magic.CriticalDamage.ToString();
+            Extra_Points.Text = Unit.ExtraPoint.ToString();
+            this.DataContext = this;
+        }
 
+        private void Start_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
         }
 
         private void StrengthMinus_Click(object sender, RoutedEventArgs e)
         {
-            
+            if(Unit.Strength > Unit.MinStrength)
+            {
+                Unit.Strength--;
+                strengh.Text = Unit.Strength.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Strength is minimal already");
+            }
         }
 
         private void DexterityMinus_Click(object sender, RoutedEventArgs e)
         {
-
+            if (Unit.Dexterity > Unit.MinDexterity)
+            {
+                Unit.Dexterity--;
+                dexterity.Text = Unit.Dexterity.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Dexterity is minimal already");
+            }
         }
 
-        private void Mana_TextChanged(object sender, TextChangedEventArgs e)
+        private void IntellegenceMinus_Click(object sender, RoutedEventArgs e)
+        {
+            if (Unit.Intelligence > Unit.MinIntelligence)
+            {
+                Unit.Intelligence--;
+                intellegence.Text = Unit.Intelligence.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Intelligence is minimal already");
+            }
+        }
+
+        private void ConstitutionMinus_Click(object sender, RoutedEventArgs e)
+        {
+            if (Unit.Constitution > Unit.MinConstitution)
+            {
+                Unit.Constitution--;
+                constitution.Text = Unit.Constitution.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Constitution is minimal already");
+            }
+        }
+
+        private void Extra_Points_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }

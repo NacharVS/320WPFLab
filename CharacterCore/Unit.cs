@@ -71,8 +71,6 @@ namespace CharacterCore
             get { return _physic; }
         }
 
-        protected int ExtraPoint = 500;
-
-
+        public int ExtraPoint = 100;
     }
 }
