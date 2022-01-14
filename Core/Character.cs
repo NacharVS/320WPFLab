@@ -6,6 +6,7 @@ namespace Core
 {
     class Character
     {
+        public string name;
         public double strength;
         public double dexterity;
         public double intelligence;
@@ -14,9 +15,9 @@ namespace Core
         public double Health { get;  set; }
         public double Mana { get; set; }
 
-        public Character(double strength, double dexterity, double intelligence, double constitution)
+        public Character(double strength, double dexterity, double intelligence, double constitution, string name)
         {
-
+            this.name = name;
             this.strength = strength;
             this.dexterity = dexterity;
             this.intelligence = intelligence;

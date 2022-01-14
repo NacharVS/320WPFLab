@@ -15,12 +15,13 @@ namespace Core
         public int maxI = 70;
         public int maxC = 70;
 
-        public Archer(double strength, double dexterity, double intelligence, double constitution) : base(strength, dexterity, intelligence, constitution)
+        public Archer(double strength, double dexterity, double intelligence, double constitution, string name) : base(strength, dexterity, intelligence, constitution, name)
         {
             strength = this.strength;
             dexterity = this.dexterity;
             intelligence = this.intelligence;
             constitution = this.constitution;
+            name = "Archer";
         }
         public void MaloHP()
         {

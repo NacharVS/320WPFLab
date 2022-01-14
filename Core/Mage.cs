@@ -14,12 +14,13 @@ namespace Core
         public int maxD = 70;
         public int maxI = 250;
         public int maxC = 65;
-        public Mage(double strength, double dexterity, double intelligence, double constitution) : base(strength, dexterity, intelligence, constitution)
+        public Mage(double strength, double dexterity, double intelligence, double constitution, string name) : base(strength, dexterity, intelligence, constitution, name)
         {
             strength = this.strength;
             dexterity = this.dexterity;
             intelligence = this.intelligence;
             constitution = this.constitution;
+            name = "Mage";
         }
         public void MaloHP()
         {
