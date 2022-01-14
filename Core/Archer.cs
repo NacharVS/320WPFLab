@@ -8,6 +8,18 @@ namespace Core
     {
         public Archer()
         {
+            MinStrength = 20;
+            MaxStrength = 55;
+
+            MinDexterity= 30;
+            MaxDexterity= 250;
+
+            MinIntelligence = 15;
+            MaxIntelligence= 70;
+
+            MinConstitution= 20;
+            MaxConstitution= 70;
+
             Strength = 20;
             Dexterity = 30;
             Intelligence = 15;

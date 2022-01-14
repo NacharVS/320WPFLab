@@ -8,6 +8,18 @@ namespace Core
     {
         public Warrior()
         {
+            MinStrength = 30;
+            MaxStrength = 250;
+
+            MinDexterity = 15;
+            MaxDexterity = 80;
+
+            MinIntelligence = 10;
+            MaxIntelligence = 50;
+
+            MinConstitution = 25;
+            MaxConstitution = 100;
+
             Strength = 30;
             Dexterity = 15;
             Intelligence = 10;

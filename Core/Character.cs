@@ -5,16 +5,55 @@ namespace Core
     public abstract class Character
     {
         private int strength;
-        public int Strength { get => strength; set => strength = value;  }
+        public int MinStrength { get; set; }
+        public int MaxStrength { get; set; }
+        public int Strength { get => strength; 
+            set
+            {
+                if (value >= MinStrength && value <= MaxStrength)
+                    strength = value;
+                else
+                    throw new Exception("!!!!!");
+            }
+        }
 
         private int dexterity;
-        public int Dexterity { get => dexterity; set => dexterity = value;  }
+        public int MinDexterity { get; set; }
+        public int MaxDexterity { get; set; }
+        public int Dexterity { get => dexterity; 
+            set
+            {
+                if (value >= MinDexterity && value <= MaxDexterity)
+                    dexterity = value;
+                else
+                    throw new Exception("!!!!!");
+            }
+        }
 
         private int intelligence;
-        public int Intelligence { get => intelligence; set => intelligence = value; }
+        public int MinIntelligence { get; set; }
+        public int MaxIntelligence { get; set; }
+        public int Intelligence { get => intelligence; 
+            set
+            {
+                if (value >= MinIntelligence && value <= MaxIntelligence)
+                    intelligence = value;
+                else
+                    throw new Exception("!!!!!");
+            }
+        }
 
         private int constitution;
-        public int Constitution { get => constitution; set => constitution = value; }
+        public int MinConstitution { get; set; }
+        public int MaxConstitution { get; set; }
+        public int Constitution { get => constitution; set
+            {
+                if (value >= MinConstitution && value <= MaxConstitution)
+                    constitution = value;
+                else
+                    throw new Exception("!!!!!");
+            }
+        }
 
         private double health => 2 * Constitution + 0.5 * Strength;
         public double Health { get { return health; } }
