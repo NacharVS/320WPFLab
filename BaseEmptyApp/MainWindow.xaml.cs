@@ -23,6 +23,9 @@ namespace BaseEmptyApp
         public MainWindow()
         {
             InitializeComponent();
+            navigateFrame.NavigationService.Navigate(new ChooseAvatarPage());
         }
+
+        
     }
 }

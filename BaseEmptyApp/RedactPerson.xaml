@@ -1,0 +1,61 @@
+﻿<Page x:Class="BaseEmptyApp.RedactPerson"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BaseEmptyApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RedactPerson">
+
+    <Grid>
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width="1*"  />
+            <ColumnDefinition Width="2*" />
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="13*"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="StrengthTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="37,43,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="21"/>
+        <Label Content="Strength" Grid.Column="1" HorizontalAlignment="Left" Margin="37,10,0,0" VerticalAlignment="Top" Height="28" Width="96"/>
+        <TextBox x:Name="DexterityTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="133,43,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="21"/>
+        <Label Content="Dexterity" Grid.Column="1" HorizontalAlignment="Left" Margin="133,10,0,0" VerticalAlignment="Top" Height="28" Width="96"/>
+        <TextBox x:Name="IntelliganceTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="229,43,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="21"/>
+        <Label Content="Intelligance" Grid.Column="1" HorizontalAlignment="Left" Margin="229,10,0,0" VerticalAlignment="Top" Height="28" Width="96"/>
+        <TextBox x:Name="ConstitutionTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="325,43,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="21"/>
+        <Label Content="Constitution" Grid.Column="1" HorizontalAlignment="Left" Margin="325,10,0,0" VerticalAlignment="Top" Height="28" Width="96"/>
+
+        <TextBox x:Name="PAttackTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="37,141,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="21" IsEnabled="False"/>
+        <Label Content="P. Attack" Grid.Column="1" HorizontalAlignment="Left" Margin="37,108,0,0" VerticalAlignment="Top" Height="28" Width="96"/>
+        <TextBox x:Name="PDefenseTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="133,141,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="21" IsEnabled="False"/>
+        <Label Content="P.Defense" Grid.Column="1" HorizontalAlignment="Left" Margin="133,108,0,0" VerticalAlignment="Top" Height="28" Width="96"/>
+        <TextBox x:Name="PCriticalChanseTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="229,141,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="21" IsEnabled="False"/>
+        <Label Content="P.Critical Chanse" Grid.Column="1" HorizontalAlignment="Left" Margin="229,108,0,0" VerticalAlignment="Top" Height="28" Width="105"/>
+        <TextBox x:Name="PCriticalDamageTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="348,141,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="21" IsEnabled="False"/>
+        <Label Content="P.CriticalDamage" Grid.Column="1" HorizontalAlignment="Left" Margin="348,108,0,0" VerticalAlignment="Top" Height="28" Width="105"/>
+
+        <TextBox x:Name="MAttackTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="37,219,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="21" IsEnabled="False"/>
+        <Label Content="M. Attack" Grid.Column="1" HorizontalAlignment="Left" Margin="37,186,0,0" VerticalAlignment="Top" Height="28" Width="96"/>
+        <TextBox x:Name="MDefenseTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="133,219,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="21" IsEnabled="False"/>
+        <Label Content="M.Defense" Grid.Column="1" HorizontalAlignment="Left" Margin="133,186,0,0" VerticalAlignment="Top" Height="28" Width="96"/>
+        <TextBox x:Name="MCriticalChanseTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="229,219,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="21" IsEnabled="False"/>
+        <Label Content="M.Critical Chanse" Grid.Column="1" HorizontalAlignment="Left" Margin="229,186,0,0" VerticalAlignment="Top" Height="28" Width="105"/>
+        <TextBox x:Name="MCriticalDamageTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="348,219,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="21" IsEnabled="False"/>
+        <Label Content="M.CriticalDamage" Grid.Column="1" HorizontalAlignment="Left" Margin="348,186,0,0" VerticalAlignment="Top" Height="28" Width="105"/>
+
+        <Button x:Name="StrenPlus" Content="+" Grid.Column="1" HorizontalAlignment="Left" Margin="36,69,0,0" VerticalAlignment="Top" Width="22" Click="StrenPlus_Click"/>
+        <Button x:Name="StrenMinus" Content="-" Grid.Column="1" HorizontalAlignment="Left" Margin="60,69,0,0" VerticalAlignment="Top" Width="22" Click="StrenMinus_Click"/>
+        <Button x:Name="DexPlus" Content="+" Grid.Column="1" HorizontalAlignment="Left" Margin="135,69,0,0" VerticalAlignment="Top" Width="22" Click="DexPlus_Click"/>
+        <Button x:Name="DexMinus" Content="-" Grid.Column="1" HorizontalAlignment="Left" Margin="159,69,0,0" VerticalAlignment="Top" Width="22" Click="DexMinus_Click"/>
+        <Button x:Name="IntPlus" Content="+" Grid.Column="1" HorizontalAlignment="Left" Margin="230,69,0,0" VerticalAlignment="Top" Width="22" Click="IntPlus_Click"/>
+        <Button x:Name="IntMinus" Content="-" Grid.Column="1" HorizontalAlignment="Left" Margin="254,69,0,0" VerticalAlignment="Top" Width="22" Click="IntMinus_Click"/>
+        <Button x:Name="ConPlus" Content="+" Grid.Column="1" HorizontalAlignment="Left" Margin="327,69,0,0" VerticalAlignment="Top" Width="22" Click="ConPlus_Click"/>
+        <Button x:Name="ConMinus" Content="-" Grid.Column="1" HorizontalAlignment="Left" Margin="351,69,0,0" VerticalAlignment="Top" Width="22" Click="ConMinus_Click"/>
+        <TextBox x:Name="pointsTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="439,43,0,0" Text="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" IsEnabled="False"/>
+        <Label Content="Points" Grid.Column="1" HorizontalAlignment="Left" Margin="439,12,0,0" VerticalAlignment="Top"/>
+        <Image x:Name="imagePerson" HorizontalAlignment="Left" Height="314" Margin="10,0,0,0" VerticalAlignment="Top" Width="242"/>
+        <Button x:Name="backToChooseBtn" Content="Назад" HorizontalAlignment="Center" Margin="0,39,0,0" Grid.Row="1" VerticalAlignment="Top" Height="46" Width="78" Click="backToChooseBtn_Click"/>
+    </Grid>
+</Page>

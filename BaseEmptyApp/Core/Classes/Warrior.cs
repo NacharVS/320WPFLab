@@ -5,10 +5,11 @@ using BaseEmptyApp.Classes;
 
 namespace BaseEmptyApp.Classes
 {
-    class Warrior : BaseClass
+    public class Warrior : BaseClass
     {
-        public Warrior()
+        public Warrior() 
         {
+            this.imgSource = @"C:\Users\secon\Source\Repos\320WPFLab\BaseEmptyApp\images\WarriorPng.jpg";
             this.MinStrenght = 30;
             this.MinDexterity = 15;
             this.MinIntelligance = 10;
@@ -23,6 +24,8 @@ namespace BaseEmptyApp.Classes
             this.MaxDexterity = 80;
             this.MaxIntelligance = 50;
             this.MaxConstitution = 100;
+
+            getStats();
         }
     }
 }

@@ -6,14 +6,15 @@ namespace BaseEmptyApp.Core
 {
     class HealthAndMana
     {
-        public double Health(int Constitution, int Strength)
+        public static double GetHealth(int Constitution, int Strenght)
         {
-            return 2*Constitution+ 0.5 *Strength;
+            return 2*Constitution+ 0.5 * Strenght;
         }
 
-        public double Mana(int Intelligence)
+        public static double GetMana(int Intelligance)
         {
-            return Intelligence * 3;
+            return Intelligance * 3;
         }
     }
+
 }
