@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Core;
+using static Core.Character;
 
 namespace BaseEmptyApp
 {
@@ -27,6 +28,11 @@ namespace BaseEmptyApp
         }
 
         private void ListCharacter_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
 
         }

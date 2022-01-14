@@ -9,28 +9,36 @@ namespace Characters
 {
     public class Warrior : Character
     {
-        public Warrior()
+        public Warrior(double strength, double dexterity, double intelligence, double constitution)
         {
-            try
+            HeroClass heroClass = HeroClass.Warrior;
+
+            int Min_Strength = 30;
+            int Min_Dexterity = 15;
+            int Min_Intelligence = 10;
+            int Min_Constitution = 25;
+
+            int Max_Strength = 250;
+            int Max_Dexterity = 80;
+            int Max_Intelligence = 50;
+            int Max_Constitution = 100;
+
+            if (strength < Max_Strength || strength > Min_Strength)
             {
-
+                this.Strength = strength;
             }
-            catch (Exception)
+            else if (dexterity < Max_Dexterity || dexterity > Min_Dexterity)
             {
-
-                throw;
+                this.Dexterity = dexterity;
             }
-
-            Strength = 30;
-            if (Strength < 30 || Strength > 250)
+            else if (intelligence < Max_Intelligence || intelligence > Min_Intelligence)
             {
-                
+                this.Intelligence = intelligence;
             }
-
-
-            Dexterity = 15;
-            Intelligence = 10;
-            Constitution = 25;
+            else if (constitution < Max_Constitution || constitution > Min_Constitution)
+            {
+                this.Constitution = constitution;
+            }
         }
     }
 }

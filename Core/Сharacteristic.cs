@@ -64,7 +64,7 @@ namespace Core
             set { p_criticalDamage = value; }
         }
 
-        public Сharacteristic(int Strength, int Dexterity, int Intelligence, int Constitution)
+        public Сharacteristic(double Strength, double Dexterity, double Intelligence, double Constitution)
         {
             m_attack = 4 * Intelligence;
             m_defense = 2 * Intelligence;

@@ -8,59 +8,72 @@ namespace Core
 {
     public abstract class Character
     {
-        private int strength;
-        public int Strength
+        public enum HeroClass
+        {
+            Archer,
+            Mage,
+            Warrior
+        }
+
+        private double strength;
+        public double Strength
         {
             get { return strength; }
 
             set { strength = value; }
         }
 
-        private int dexterity;
-        public int Dexterity
+        private double dexterity;
+        public double Dexterity
         {
             get { return dexterity; }
 
             set { dexterity = value; }
         }
 
-        private int intelligence;
-        public int Intelligence
+        private double intelligence;
+        public double Intelligence
         {
             get { return intelligence; }
 
             set { intelligence = value; }
         }
 
-        private int constitution;
-        public int Constitution
+        private double constitution;
+        public double Constitution
         {
             get { return constitution; }
 
             set { constitution = value; }
         }
 
-        private double health => 2 * constitution + 0.5 * strength;
+        private double health;
         public double Health
         {
             get 
             {
+                health = 2 * constitution + 0.5 * strength;
+
                 if (health < 0.5 * health)
                 {
-                    strength = (int)(- strength * 0.1);
-                    dexterity = (int)(- dexterity * 0.1);
-                    intelligence = (int)(- intelligence * 0.1);
-                    constitution = (int)(- constitution * 0.1);
+                    strength =- strength * 0.1;
+                    dexterity =- dexterity * 0.1;
+                    intelligence =- intelligence * 0.1;
+                    constitution =- constitution * 0.1;
                 }
                 return health; 
             }
+
+            set { health = value; }
         }
 
-        private double mana => Intelligence * 3;
+        private double mana;
         public double Mana
         {
             get 
             {
+                mana = Intelligence * 3;
+
                 if (mana < 0.2 * mana)
                 {
                     health =- health * 0.2;
@@ -69,9 +82,6 @@ namespace Core
             }
         }
 
-        /// <summary>
-        /// ///////////////////////////////////////
-        /// </summary>
         private Сharacteristic characts => 
             new Сharacteristic(Strength, Dexterity, Intelligence, Constitution);
         public Сharacteristic Сharacts
