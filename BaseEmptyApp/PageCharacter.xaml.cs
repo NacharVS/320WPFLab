@@ -27,14 +27,15 @@ namespace BaseEmptyApp
             UpdateStats();
         }
 
-        private void EditCharecteristic()
+        private void EditCharecteristic(int s, int d, int i, int c, int p)
         {
             try
             {
-                character.Strength = double.Parse(tbStrength.Text);
-                character.Dexterity = double.Parse(tbDexterity.Text);
-                character.Intelligence = double.Parse(tbIntelligence.Text);
-                character.Constitution = double.Parse(tbConstitution.Text);
+                character.Strength += s;
+                character.Dexterity += d;
+                character.Intelligence += i;
+                character.Constitution += c;
+                character.Points += p;
                 UpdateStats();
             }
             catch (Exception ex)
@@ -67,72 +68,55 @@ namespace BaseEmptyApp
 
         private void btnMinusStrengthClick(object sender, RoutedEventArgs e)
         {
-            tbStrength.Text = (int.Parse(tbStrength.Text) - 1).ToString();
-            character.Points += 1;
-            EditCharecteristic();
+            EditCharecteristic(-1, 0, 0, 0, 1);
             UpdateStats();
         }
 
         private void btnMinusDexterityClick(object sender, RoutedEventArgs e)
         {
-            tbDexterity.Text = (int.Parse(tbDexterity.Text) - 1).ToString();
-            character.Points += 1;
-            EditCharecteristic();
+            EditCharecteristic(0, -1, 0, 0, 1);
             UpdateStats();
         }
 
         private void btnMinusIntelligenceClick(object sender, RoutedEventArgs e)
         {
-            tbIntelligence.Text = (int.Parse(tbIntelligence.Text) - 1).ToString();
-            character.Points += 1;
-            EditCharecteristic();
+            EditCharecteristic(0, 0, -1, 0, 1);
             UpdateStats();
         }
 
         private void btnMinusConstitutionClick(object sender, RoutedEventArgs e)
         {
-            tbConstitution.Text = (int.Parse(tbConstitution.Text) - 1).ToString();
-            character.Points += 1;
-            EditCharecteristic();
+            EditCharecteristic(0, 0, 0, -1, 1);
             UpdateStats();
         }
 
         private void btnPlusStrengthClick(object sender, RoutedEventArgs e)
         {
-            tbStrength.Text = (int.Parse(tbStrength.Text) + 1).ToString();
-            character.Points -= 1;
-            EditCharecteristic();
+            EditCharecteristic(1, 0, 0, 0, -1);
             UpdateStats();
         }
 
         private void btnPlusDexterityClick(object sender, RoutedEventArgs e)
         {
-            tbDexterity.Text = (int.Parse(tbDexterity.Text) + 1).ToString();
-            character.Points -= 1;
-            EditCharecteristic();
+            EditCharecteristic(0, 1, 0, 0, -1);
             UpdateStats();
         }
 
         private void btnPlusIntelligenceClick(object sender, RoutedEventArgs e)
         {
-            tbIntelligence.Text = (int.Parse(tbIntelligence.Text) + 1).ToString();
-            character.Points -= 1;
-            EditCharecteristic();
+            EditCharecteristic(0, 0, 1, 0, -1);
             UpdateStats();
         }
 
         private void btnPlusConstitutionClick(object sender, RoutedEventArgs e)
         {
-            tbConstitution.Text = (int.Parse(tbConstitution.Text) + 1).ToString();
-            character.Points -= 1;
-            EditCharecteristic();
+            EditCharecteristic(0, 0, 0, 1, -1);
             UpdateStats();
         }
 
         private void btnPlusPointClick(object sender, RoutedEventArgs e)
         {
-            tbPoints.Text = (int.Parse(tbPoints.Text) + 1).ToString();
-            EditCharecteristic();
+            EditCharecteristic(0, 0, 0, 0, 1);
             UpdateStats();
         }
     }
