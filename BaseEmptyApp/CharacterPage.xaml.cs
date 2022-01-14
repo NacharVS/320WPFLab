@@ -31,8 +31,8 @@ namespace BaseEmptyApp
             TbConstitution.Text = character.Constitution.ToString();
 
             TbLabel.Text = character.ToString();
-            TbHealth.Text = character.MaxHp.ToString();
-            TbMana.Text = character.MaxMp.ToString();
+            TbHealth.Text = character.GetHp().ToString();
+            TbMana.Text = character.GetMana().ToString();
 
             TbPhAttack.Text = character.PhysicalAttack().ToString();
             TbPhDefense.Text = character.PhysicalAttack().ToString();

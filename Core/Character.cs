@@ -57,16 +57,19 @@ namespace Core
 
         public Character()
         {
+            MaxHp = 0;
+            MaxMp = 0;
+
             Health = MaxHp;
             Mana = MaxMp;
         }
 
-        private double GetHp()
+        public double GetHp()
         {
             return (2 * this.Constitution + 0.5 * this.Strength);
         }
 
-        private double GetMana()
+        public double GetMana()
         {
             return (this.Intelligence * 3);
         }
