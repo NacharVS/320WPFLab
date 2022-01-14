@@ -19,31 +19,27 @@
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
 
-
-
+        <Label x:Name="lb_char" Grid.Column="1" Content="Character: Warrior" FontSize="20" HorizontalAlignment="Center"/>
         <StackPanel Grid.Row="2" Grid.ColumnSpan="3" Margin="133,0,133,0">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="40">
                 <Button x:Name="btn_str_minus" Content="-" Padding="0, -30, 0, -20" Click="btn_str_minus_Click" FontSize="50" HorizontalAlignment="Center" Width="36"/>
-                <Label Content="Strength: 30" FontSize="20" Width="150"/>
+                <Label x:Name="lb_str" Content="Strength: 30" FontSize="20" Width="150"/>
                 <Button x:Name="btn_str_plus" Content="+" Padding="0, -30, 0, -20" Click="btn_str_plus_Click" FontSize="50" Width="36"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="40">
                 <Button x:Name="btn_dex_minus" Content="-" Padding="0, -30, 0, -20" Click="btn_str_minus_Click" FontSize="50" HorizontalAlignment="Center" Width="36"/>
-                <Label Content="Dexterity: 15" FontSize="20" Width="150"/>
+                <Label x:Name="lb_dex" Content="Dexterity: 15" FontSize="20" Width="150"/>
                 <Button x:Name="btn_dex_plus" Content="+" Padding="0, -30, 0, -20" Click="btn_str_plus_Click" FontSize="50" Width="36"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="40">
                 <Button x:Name="btn_int_minus" Content="-" Padding="0, -30, 0, -20" Click="btn_str_minus_Click" FontSize="50" HorizontalAlignment="Center" Width="36"/>
-                <Label Content="Intelligence: 10" FontSize="20" Width="150"/>
+                <Label x:Name="lb_int" Content="Intelligence: 10" FontSize="20" Width="150"/>
                 <Button x:Name="btn_int_plus" Content="+" Padding="0, -30, 0, -20" Click="btn_str_plus_Click" FontSize="50" Width="36"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="40">
                 <Button x:Name="btn_con_minus" Content="-" Padding="0, -30, 0, -20" Click="btn_str_minus_Click" FontSize="50" HorizontalAlignment="Center" Width="36"/>
-                <Label Content="Constitution: 25" FontSize="20" Width="150"/>
+                <Label x:Name="lb_const" Content="Constitution: 25" FontSize="20" Width="150"/>
                 <Button x:Name="btn_con_plus" Content="+" Padding="0, -30, 0, -20" Click="btn_str_plus_Click" FontSize="50" Width="36"/>
-            </StackPanel>
-            <StackPanel>
-                <Button x:Name="btn_appointEmployee" Content="Назначить работника" Padding="20,5,20,5" Click="btn_appointEmployee_Click" Width="243" HorizontalAlignment="Left" FontSize="20"/>
             </StackPanel>
         </StackPanel>
     </Grid>
