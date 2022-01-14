@@ -6,15 +6,15 @@ namespace Core
 {
     class Character
     {
-        public int strength;
-        public int dexterity;
-        public int intelligence;
-        public int constitution;
+        public double strength;
+        public double dexterity;
+        public double intelligence;
+        public double constitution;
 
-        public double Health { get; private set; }
-        public double Mana { get; private set; }
+        public double Health { get;  set; }
+        public double Mana { get; set; }
 
-        public Character(int strength, int dexterity, int intelligence, int constitution)
+        public Character(double strength, double dexterity, double intelligence, double constitution)
         {
 
             this.strength = strength;
@@ -26,12 +26,18 @@ namespace Core
             Mana = GetMana();
         }
 
-        private double GetHp()
+        public double GetHp()
         {
             return (2 * this.constitution + 0.5 * this.strength);
         }
-
-        private double GetMana()
+        public void HPMalo()
+        {
+            strength = strength * 0.9;
+            dexterity = dexterity * 0.9;
+            intelligence = intelligence * 0.9;
+            constitution *= 0.9; 
+        }
+        public double GetMana()
         {
             return (this.intelligence * 3);
         }
