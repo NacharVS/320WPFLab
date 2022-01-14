@@ -25,7 +25,7 @@ namespace BaseEmptyApp
         {
             InitializeComponent();
         }
-
+        
         private void ChooseWarriorBtn_Click(object sender, RoutedEventArgs e)
         {
             Warrior warrior = new Warrior();
