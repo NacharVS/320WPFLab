@@ -9,15 +9,15 @@ namespace BaseEmptyApp.Classes
         public double Health;
         public double Mana;
 
-        public static int MinStrenght;
-        public static int MinDexterity;
-        public static int MinIntelligance;
-        public static int MinConstitution;
+        public int MinStrenght;
+        public int MinDexterity;
+        public int MinIntelligance;
+        public int MinConstitution;
 
-        public int Strenght = MinStrenght;
-        public int Dexterity = MinDexterity;
-        public int Intelligance = MinIntelligance;
-        public int Constitution = MinConstitution;
+        public int Strenght;
+        public int Dexterity;
+        public int Intelligance;
+        public int Constitution;
 
         public int MaxStrenght;
         public int MaxDexterity;
