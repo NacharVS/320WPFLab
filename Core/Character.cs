@@ -12,8 +12,8 @@ namespace Core
             {
                 if (value >= MinStrength && value <= MaxStrength)
                     strength = value;
-                else
-                    throw new Exception("!!!!!");
+                //else
+                //    throw new Exception("!!!!!");
             }
         }
 
@@ -25,8 +25,8 @@ namespace Core
             {
                 if (value >= MinDexterity && value <= MaxDexterity)
                     dexterity = value;
-                else
-                    throw new Exception("!!!!!");
+                //else
+                //    throw new Exception("!!!!!");
             }
         }
 
