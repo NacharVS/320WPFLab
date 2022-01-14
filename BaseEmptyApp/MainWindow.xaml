@@ -7,14 +7,88 @@
         mc:Ignorable="d"
         Title="The Game" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="450"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0">
-            <TextBlock Text="{Binding Path=Name}"/>
-        </StackPanel>
-
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="ChooseWarriorBtn" Grid.Column="0" Content="{Binding Path=Name}" Margin="30 10 30 10"/>
+            <Button x:Name="ChooseMageBtn" Grid.Column="1" Content="{Binding Path=Name}" Margin="30 10 30 10"/>
+            <Button x:Name="ChooseArcherBtn" Grid.Column="2" Content="{Binding Path=Name}" Margin="30 10 30 10"/>
+        </Grid>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="450"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
+                <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Path=Name}"/>
+                
+                
+                <Grid Grid.Column="0" Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Strength, StringFormat= Strength: {0}}"/>
+                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Dexterity, StringFormat= Dexterity: {0}}"/>
+                    <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Path=PAttack, StringFormat= P. Attack: {0}}"/>
+                    <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Path=PResist, StringFormat= P. Resist: {0}}"/>
+                    <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding Path=PhysCritChance, StringFormat= P. Crit_Chance: {0}}"/>
+                    <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding Path=PhysCritDamage, StringFormat= P. Crit_Dmg: {0}}"/>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=Health, StringFormat= Health: {0}}"/>
+                </Grid>
+                
+                
+                <Grid Grid.Column="1" Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=Mana, StringFormat= Mana: {0}}"/>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Constitution, StringFormat= Constitution: {0}}"/>
+                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Intelligence, StringFormat= Intelligence: {0}}"/>
+                    <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Path=MAttack, StringFormat= M. Attack: {0}}"/>
+                    <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Path=MResist, StringFormat= M. Resist: {0}}"/>
+                    <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding Path=MagCritChance, StringFormat= M. Crit_Chance: {0}}"/>
+                    <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding Path=MagCritDamage, StringFormat= M. Crit_Dmg: {0}}"/>
+                </Grid>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>
