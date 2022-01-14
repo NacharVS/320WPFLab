@@ -2,22 +2,21 @@
 using System.Collections.Generic;
 using System.Text;
 using static BaseEmptyApp.Logics.Logic;
-
 namespace BaseEmptyApp.Models
 {
-    internal class Mage : Character
+    internal class Archer : Character
     {
         public override double Strength
         {
             get => base.Strength;
             set
             {
-                if (value <= 45 && value >= 15)
+                if (value <= 55 && value >= 20)
                     base.Strength = value;
-                else if (value > 45)
-                    base.Strength = 45;
+                else if (value > 55)
+                    base.Strength = 55;
                 else
-                    base.Strength = 15;
+                    base.Strength = 20;
             }
         }
 
@@ -26,12 +25,12 @@ namespace BaseEmptyApp.Models
             get => base.Dexterity;
             set
             {
-                if (value <= 70 && value >= 20)
+                if (value <= 250 && value >= 30)
                     base.Strength = value;
-                else if (value > 70)
-                    base.Strength = 70;
+                else if (value > 250)
+                    base.Strength = 250;
                 else
-                    base.Strength = 20;
+                    base.Strength = 30;
             }
         }
 
@@ -40,12 +39,12 @@ namespace BaseEmptyApp.Models
             get => base.Intelligence;
             set
             {
-                if (value <= 250 && value >= 30)
+                if (value <= 70 && value >= 15)
                     base.Intelligence = value;
-                else if (value > 250)
-                    base.Intelligence = 250;
+                else if (value > 70)
+                    base.Intelligence = 70;
                 else
-                    base.Intelligence = 30;
+                    base.Intelligence = 15;
             }
         }
 
@@ -54,22 +53,22 @@ namespace BaseEmptyApp.Models
             get => base.Constitution;
             set
             {
-                if (value <= 65 && value >= 15)
+                if (value <= 70 && value >= 20)
                     base.Constitution = value;
-                else if (value > 65)
-                    base.Constitution = 65;
+                else if (value > 70)
+                    base.Constitution = 70;
                 else
-                    base.Constitution = 15;
+                    base.Constitution = 20;
             }
         }
 
-        public Mage()
+        public Archer()
         {
-            Name = "Mage";
-            Strength = 15;
-            Dexterity = 20;
-            Intelligence = 30;
-            Constitution = 15;
+            Name = "Archer";
+            Strength = 20;
+            Dexterity = 30;
+            Intelligence = 15;
+            Constitution = 20;
             PAttack = CountPhysAtt(Strength, Dexterity);
             MAttack = CountMagAtt(Intelligence);
             PResist = CountPhysRes(Constitution, Dexterity);
