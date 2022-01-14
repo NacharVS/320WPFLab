@@ -89,11 +89,6 @@ namespace BaseEmptyApp
         public Warrior(double str, double dex, double inT, double con) : base(str, dex, inT, con)
         {   
         }
-
-        public double Health(double con, double str)
-        {
-            return 2 * con + 0.5 * str;
-        }
     }
 
     class Mage : Player
