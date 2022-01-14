@@ -15,6 +15,14 @@ public abstract class Player
 		dexterity = dex;
 		intelligence = intell;
 		constitution = con;
+		Pattack = str * 3 + 0.5 * dex;
+		Pdefense = con * 0.5 + dex * 3;
+		Mattack = intell * 4;
+		Mdefense = intell * 2;
+		Pcrit = 20 + dex * 0.3;
+		Mcrit = 20 + intell * 0.1;
+		Pcrid = Pattack * (2 + dex * 0.05);
+		Mcrid = Mattack * (2 + intell * 0.15);
 	}
 	public static double Health(double con, double str) 
 	{
@@ -24,4 +32,5 @@ public abstract class Player
 	{
 		Mana = intell * 3;
 	}
+
 }
