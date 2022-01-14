@@ -6,12 +6,27 @@ namespace BaseEmptyApp
 {
     class Player
     {
-        double Strength = 0;
-        double Dexterity = 0;
-        double Intelligence;
-        double Constitution;
-        double Health;
-        double Mana;
+        public double Strength { get; private set; }
+        public double Dexterity { get; private set; }
+        public double Intelligence { get; private set; }
+        public double Constitution { get; private set; }
+
+        public Player(double str, double dex, double inT, double con)
+        {
+            Strength = str;
+            Dexterity = dex;
+            Intelligence = inT;
+            Constitution = con;
+        }
+        public static double Health(double con, double str)
+        {
+            return 2 * con + 0.5 * str;
+        }
+
+        public static double Mana(double inT)
+        {
+            return inT * 3;
+        }
         public static double P_Attack(double str, double dex)
         {
 
@@ -44,6 +59,40 @@ namespace BaseEmptyApp
         public static double M_CriticalDamage(double inT)
         {
             return M_Attack(inT) * (2 + inT * 0.15);
+        }
+    }
+
+    class Warrior : Player
+    {
+        public Warrior (double str, double dex, double inT, double con)
+            : base (str, dex, inT, con)
+        {
+            str = 30;
+            dex = 15;
+            inT = 10;
+            con = 25;
+        }
+    }
+    class Mage : Player
+    {
+        public Mage(double str, double dex, double inT, double con)
+            : base(str, dex, inT, con)
+        {
+            str = 15;
+            dex = 20;
+            inT = 30;
+            con = 15;
+        }
+    }
+    class Archer : Player
+    {
+        public Archer(double str, double dex, double inT, double con)
+            : base(str, dex, inT, con)
+        {
+            str = 20;
+            dex = 30;
+            inT = 15;
+            con = 20;
         }
     }
 }
