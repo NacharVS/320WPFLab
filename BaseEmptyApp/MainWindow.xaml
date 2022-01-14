@@ -21,7 +21,7 @@
         <StackPanel Grid.Row="1" Grid.Column="1">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
                 <ListView x:Name="cb_char_type" FontSize="20" SelectionChanged="cb_char_type_SelectionChanged">
-                    <TextBlock Text="Warior" FontSize="20"/>
+                    <TextBlock Text="Warrior" FontSize="20"/>
                     <TextBlock Text="Mage" FontSize="20"/>
                     <TextBlock Text="Archer" FontSize="20"/>
                 </ListView>
