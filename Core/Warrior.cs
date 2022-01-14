@@ -19,14 +19,5 @@ namespace Core
 
         public override double MinConstitution { get; } = 25;
         public override double MaxConstitution { get; } = 100;
-
-
-        public Warrior()
-        {
-            Strength = 30;
-            Dexterity = 15;
-            Intelligence = 10;
-            Constitution = 25;
-        }
     }
 }

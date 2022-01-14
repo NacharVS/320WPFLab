@@ -19,13 +19,5 @@ namespace Core
 
         public override double MinConstitution { get; } = 15;
         public override double MaxConstitution { get; } = 65;
-
-        public Mage()
-        {
-            Strength = 15;
-            Dexterity = 20;
-            Intelligence = 30;
-            Constitution = 15;
-        }
     }
 }

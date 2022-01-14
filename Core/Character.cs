@@ -8,12 +8,23 @@ namespace Core
 {
     public abstract class Character
     {
+        public Character()
+        {
+            Strength = MinStrength;
+            Dexterity = MinDexterity;
+            Intelligence = MinIntelligence;
+            Constitution = MinConstitution;
+        }
+
         private double _strength;
         public virtual double MinStrength { get; }
         public virtual double MaxStrength { get; }
         public double Strength
         {
-            get { return _strength; }
+            get
+            {
+                return _strength;
+            }
 
             set
             {
@@ -95,6 +106,6 @@ namespace Core
             get { return _physic; }
         }
 
-        //public int ExtraPoint = 500;
+        public int Points { get; set; } = 100;
     }
 }

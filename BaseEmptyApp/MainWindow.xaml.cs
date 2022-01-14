@@ -28,17 +28,17 @@ namespace BaseEmptyApp
 
         private void WarriorClick(object sender, RoutedEventArgs e)
         {
-            frameCharacter.NavigationService.Navigate(new PageWarrior(new Warrior()));
+            frameCharacter.NavigationService.Navigate(new PageCharacter(new Warrior()));
         }
 
         private void MageClick(object sender, RoutedEventArgs e)
         {
-            frameCharacter.NavigationService.Navigate(new PageMage(new Warrior()));
+            frameCharacter.NavigationService.Navigate(new PageCharacter(new Mage()));
         }
 
         private void ArcherClick(object sender, RoutedEventArgs e)
         {
-            frameCharacter.NavigationService.Navigate(new PageArcher(new Archer()));
+            frameCharacter.NavigationService.Navigate(new PageCharacter(new Archer()));
         }
     }
 }
