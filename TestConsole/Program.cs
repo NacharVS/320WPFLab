@@ -12,13 +12,9 @@ namespace TestConsole
         static void Main(string[] args)
         {
             Warrior w = new Warrior();
-            Console.WriteLine(w.Health);
-            Console.WriteLine(w.Magic);
-            Console.WriteLine(w.Physic);
-            w.Strength *= 2;
-            Console.WriteLine(w.Health);
-            Console.WriteLine(w.Magic);
-            Console.WriteLine(w.Physic);
+            Console.WriteLine(w.Strength);
+            w.Strength = 10;
+            Console.WriteLine(w.Strength);
         }
     }
 }
