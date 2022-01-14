@@ -24,7 +24,27 @@ namespace BaseEmptyApp
         {
             InitializeComponent();
             Character = character;
+            TbLabel.Text = Character.ToString();
+            TbHealth.Text = Character.Health.ToString();
+            TbMana.Text = Character.Mana.ToString();
             this.DataContext = this;
+        }
+
+        private void BtnChange_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Character.Strength = int.Parse(TbStrength.Text);
+                Character.Dexterity = int.Parse(TbDexterity.Text);
+                Character.Intelligence = int.Parse(TbIntelligence.Text);
+                Character.Constitution = int.Parse(TbConstitution.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Wrong values");
+            }
+            NavigationService.Navigate(new CharacterPage(Character));
+
         }
     }
 }

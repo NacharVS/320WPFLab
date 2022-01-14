@@ -4,8 +4,20 @@ namespace CharacterLibrary
 {
     public abstract class Character
     {
-        private int _strength;
-        public int Strength
+        public virtual double minStrength { get; }
+        public virtual double maxStrength { get; }
+
+        public virtual double minDexterity { get; }
+        public virtual double maxDexterity { get; }
+
+        public virtual double minIntelligence { get; }
+        public virtual double maxIntelligence { get; }
+
+        public virtual double minConstitution { get; }
+        public virtual double maxConstitution { get; }
+
+        private double _strength;
+        public double Strength
         {
             get 
             { 
@@ -14,12 +26,13 @@ namespace CharacterLibrary
 
             set 
             { 
-                _strength = value; 
+                if (value <= maxStrength & value >= minStrength)
+                    _strength = value; 
             }
         }
 
-        private int _dexterity;
-        public int Dexterity
+        private double _dexterity;
+        public double Dexterity
         {
             get 
             { 
@@ -28,12 +41,13 @@ namespace CharacterLibrary
 
             set 
             { 
-                _dexterity = value; 
+                if (value <= maxDexterity & value >= minDexterity)
+                    _dexterity = value; 
             }
         }
 
-        private int _intelligence;
-        public int Intelligence
+        private double _intelligence;
+        public double Intelligence
         {
             get 
             { 
@@ -41,8 +55,10 @@ namespace CharacterLibrary
             }
 
             set 
-            { 
-                _intelligence = value; 
+            {
+                if (value <= maxIntelligence & value >= minIntelligence)
+                    _intelligence = value;
+
             }
         }
 
@@ -55,8 +71,9 @@ namespace CharacterLibrary
             }
 
             set 
-            { 
-                _constitution = value; 
+            {
+                if (value <= maxConstitution & value >= minConstitution)
+                    _constitution = value; 
             }
         }
 
