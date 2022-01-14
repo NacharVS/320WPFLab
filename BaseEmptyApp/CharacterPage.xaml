@@ -30,42 +30,59 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <ScrollViewer Name="scroll" CanContentScroll="True" Grid.Column="1" Grid.Row="1">
-            <StackPanel  DataContext="{Binding Character}">
-                <TextBlock x:Name="TbLabel" TextAlignment="Center"/>
-                <TextBlock Text="Strength"/>
-                <TextBox x:Name="TbStrength"/>
-                <TextBlock Text="Dexterity"/>
-                <TextBox x:Name="TbDexterity"/>
-                <TextBlock Text="Intelligence"/>
-                <TextBox x:Name="TbIntelligence"/>
-                <TextBlock Text="Constitution"/>
-                <TextBox x:Name="TbConstitution"/>
-                <TextBlock Text="Health"/>
-                <TextBox x:Name="TbHealth" IsEnabled="False"/>
-                <TextBlock Text="Mana"/>
-                <TextBox x:Name="TbMana" IsEnabled="False"/>
+            <StackPanel  DataContext="{Binding Character}" HorizontalAlignment="Center">
+                <TextBlock x:Name="TbLabel" TextAlignment="Center" FontSize="28" HorizontalAlignment="Center" Margin="10"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 0, 0, 10">
+                    <TextBlock Text="Strength: "/>
+                    <TextBlock x:Name="TbStrength"/>
+                </StackPanel>
 
-                <TextBlock Text="Physics" TextAlignment="Center"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0, 0, 0, 10">
+                    <TextBlock Text="Dexterity: "/>
+                    <TextBlock x:Name="TbDexterity"/>
+                </StackPanel>
 
-                <TextBlock Text="Attack"/>
-                <TextBox x:Name="TbPhAttack" IsEnabled="False"/>
-                <TextBlock Text="Defense"/>
-                <TextBox x:Name="TbPhDefense" IsEnabled="False"/>
-                <TextBlock Text="CriticalChance"/>
-                <TextBox x:Name="TbPhCritChance" IsEnabled="False"/>
-                <TextBlock Text="CriticalDamage"/>
-                <TextBox x:Name="TbPhCritDamage" IsEnabled="False"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 0, 0, 10">
+                    <TextBlock Text="Intelligence: "/>
+                    <TextBlock x:Name="TbIntelligence"/>
+                </StackPanel>
 
-                <TextBlock Text="Magic" TextAlignment="Center"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0, 0, 0, 10">
+                    <TextBlock Text="Constitution: "/>
+                    <TextBlock x:Name="TbConstitution"/>
+                </StackPanel>
 
-                <TextBlock Text="Attack"/>
-                <TextBox x:Name="TbMagAttack" IsEnabled="False"/>
-                <TextBlock Text="Defense"/>
-                <TextBox x:Name="TbMagDefense" IsEnabled="False"/>
-                <TextBlock Text="CriticalChance"/>
-                <TextBox x:Name="TbMagCritChance" IsEnabled="False"/>
-                <TextBlock Text="CriticalDamage"/>
-                <TextBox x:Name="TbMagCritDamage" IsEnabled="False"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 0, 0, 10">
+                    <TextBlock Text="Health: "/>
+                    <TextBlock x:Name="TbHealth"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0, 0, 0, 10">
+                    <TextBlock Text="Mana: "/>
+                    <TextBlock x:Name="TbMana"/>
+                </StackPanel>
+
+                <TextBlock Text="Physics" TextAlignment="Center" FontSize="28" Margin="10"/>
+
+                <TextBlock HorizontalAlignment="Center" Text="Attack"/>
+                <TextBlock HorizontalAlignment="Center" x:Name="TbPhAttack" IsEnabled="False"/>
+                <TextBlock HorizontalAlignment="Center" Text="Defense"/>
+                <TextBlock HorizontalAlignment="Center" x:Name="TbPhDefense" IsEnabled="False"/>
+                <TextBlock HorizontalAlignment="Center" Text="CriticalChance"/>
+                <TextBlock HorizontalAlignment="Center" x:Name="TbPhCritChance" IsEnabled="False"/>
+                <TextBlock HorizontalAlignment="Center" Text="CriticalDamage"/>
+                <TextBlock HorizontalAlignment="Center" x:Name="TbPhCritDamage" IsEnabled="False"/>
+
+                <TextBlock Text="Magic" TextAlignment="Center" FontSize="28" Margin="10"/>
+
+                <TextBlock HorizontalAlignment="Center" Text="Attack"/>
+                <TextBlock HorizontalAlignment="Center" x:Name="TbMagAttack" IsEnabled="False"/>
+                <TextBlock HorizontalAlignment="Center" Text="Defense"/>
+                <TextBlock HorizontalAlignment="Center" x:Name="TbMagDefense" IsEnabled="False"/>
+                <TextBlock HorizontalAlignment="Center" Text="CriticalChance"/>
+                <TextBlock HorizontalAlignment="Center" x:Name="TbMagCritChance" IsEnabled="False"/>
+                <TextBlock HorizontalAlignment="Center" Text="CriticalDamage"/>
+                <TextBlock HorizontalAlignment="Center" x:Name="TbMagCritDamage" IsEnabled="False"/>
 
                 <Button x:Name="BtnChange" Content="Change" FontSize="20" Margin="10" Click="BtnChange_Click"/>
             </StackPanel>
