@@ -22,10 +22,12 @@ namespace BaseEmptyApp
         {
             InitializeComponent();
             lb_char.Content = $"Your class: {CoreLibrary.Globals.character.CharacterType}";
-            lb_str.Content = $"";
-            lb_dex.Content = $"";
-            lb_int.Content = $"";
-            lb_con.Content = $"";
+            lb_str.Content = $"Strength: {CoreLibrary.Globals.character.Strength}";
+            lb_dex.Content = $"Dexterity: {CoreLibrary.Globals.character.Dexterity}";
+            lb_int.Content = $"Intelligence: {CoreLibrary.Globals.character.Intelligence}";
+            lb_con.Content = $"Constitution: {CoreLibrary.Globals.character.Constitution}";
+            lb_extra_points.Content = $"Extra Points: {CoreLibrary.Globals.character.extraPoints}";
+
         }
 
         private void btn_str_minus_Click(object sender, RoutedEventArgs e)
@@ -66,6 +68,13 @@ namespace BaseEmptyApp
         private void btn_con_plus_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow main = new MainWindow();
+            main.Show();
+            Close();
         }
     }
 }

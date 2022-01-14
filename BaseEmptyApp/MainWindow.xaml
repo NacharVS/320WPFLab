@@ -20,11 +20,11 @@
 
         <StackPanel Grid.Row="1" Grid.Column="1">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                <ComboBox x:Name="cb_char_type" FontSize="20" SelectionChanged="cb_char_type_SelectionChanged">
+                <ListView x:Name="cb_char_type" FontSize="20" SelectionChanged="cb_char_type_SelectionChanged">
                     <TextBlock Text="Warior" FontSize="20"/>
                     <TextBlock Text="Mage" FontSize="20"/>
                     <TextBlock Text="Archer" FontSize="20"/>
-                </ComboBox>
+                </ListView>
                 <Button x:Name="btn_create" Content="Create new character" FontSize="20" Click="btn_create_Click"/>
             </StackPanel>
         </StackPanel>

@@ -21,5 +21,12 @@ namespace BaseEmptyApp
         {
             InitializeComponent();
         }
+
+        private void btn_back_Click(object sender, RoutedEventArgs e)
+        {
+            ChangeStats changeStats = new ChangeStats();
+            changeStats.Show();
+            Close();
+        }
     }
 }

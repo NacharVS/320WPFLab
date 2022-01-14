@@ -35,7 +35,7 @@ namespace BaseEmptyApp
 
         private void cb_char_type_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string type = (sender as TextBlock).Text;
+            string type = ((sender as ListView).SelectedItem as TextBlock).Text;
             if (type == "Warrior") CoreLibrary.Globals.character = new Warrior();
             else if (type == "Mage") CoreLibrary.Globals.character = new Mage();
             else if (type == "Archer") CoreLibrary.Globals.character = new Archer();
