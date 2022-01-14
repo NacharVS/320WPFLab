@@ -95,6 +95,6 @@ namespace Core
             get { return _physic; }
         }
 
-        public int ExtraPoint = 500;
+        //public int ExtraPoint = 500;
     }
 }

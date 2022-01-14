@@ -7,6 +7,27 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="14*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Character Editor" Grid.Column="1" Grid.Row="0"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" >
+            <Button Content="Warrior" Margin="20,0" Click="WarriorClick"/>
+            <Button Content="Mage" Margin="20,0" Click="MageClick"/>
+            <Button Content="Archer" Margin="20,0" Click="ArcherClick"/>
+        </StackPanel>
+
+        <Frame x:Name="frameCharacter" Grid.Column="1" Grid.Row="2"/>
     </Grid>
 </Window>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Core;
 
 namespace BaseEmptyApp
 {
@@ -23,6 +24,21 @@ namespace BaseEmptyApp
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void WarriorClick(object sender, RoutedEventArgs e)
+        {
+            frameCharacter.NavigationService.Navigate(new PageWarrior(new Warrior()));
+        }
+
+        private void MageClick(object sender, RoutedEventArgs e)
+        {
+            frameCharacter.NavigationService.Navigate(new PageMage(new Warrior()));
+        }
+
+        private void ArcherClick(object sender, RoutedEventArgs e)
+        {
+            frameCharacter.NavigationService.Navigate(new PageArcher(new Archer()));
         }
     }
 }

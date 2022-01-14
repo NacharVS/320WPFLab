@@ -38,7 +38,7 @@ namespace Core
 
         public override string ToString()
         {
-            return $"{Attack} {Defense} {CriticalChance} {CriticalDamage}";
+            return $"Attack:{Attack} Defense:{Defense} CriticalChance:{CriticalChance} CriticalDamage:{CriticalDamage}";
         }
     }
 }
