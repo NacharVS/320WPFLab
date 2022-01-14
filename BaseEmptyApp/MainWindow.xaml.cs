@@ -26,14 +26,19 @@ namespace BaseEmptyApp
             InitializeComponent();
         }
 
-        private void btn_str_minus_Click(object sender, RoutedEventArgs e)
+        private void btn_create_Click(object sender, RoutedEventArgs e)
         {
-
+            ChangeStats changeStats = new ChangeStats();
+            changeStats.Show();
+            Close();
         }
 
-        private void btn_str_plus_Click(object sender, RoutedEventArgs e)
+        private void cb_char_type_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            string type = (sender as TextBlock).Text;
+            if (type == "Warrior") CoreLibrary.Globals.character = new Warrior();
+            else if (type == "Mage") CoreLibrary.Globals.character = new Mage();
+            else if (type == "Archer") CoreLibrary.Globals.character = new Archer();
         }
     }
 }

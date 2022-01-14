@@ -8,6 +8,8 @@ namespace CoreLibrary
 {
     public class Character
     {
+        public string CharacterType { get; set; }
+
         public int minStr { get; set; }
         public int maxStr { get; set; }
         public int minDex { get; set; }
@@ -42,6 +44,8 @@ namespace CoreLibrary
     {
         public Warrior()
         {
+            CharacterType = "Warrior";
+
             minStr = 30;
             maxStr = 250;
             minDex = 15;
@@ -69,6 +73,8 @@ namespace CoreLibrary
     {
         public Mage()
         {
+            CharacterType = "Mage";
+
             minStr = 15;
             maxStr = 45;
             minDex = 20;
@@ -96,6 +102,8 @@ namespace CoreLibrary
     {
         public Archer()
         {
+            CharacterType = "Archer";
+
             minStr = 20;
             maxStr = 55;
             minDex = 30;
@@ -118,5 +126,4 @@ namespace CoreLibrary
             Mana = maxMana;
         }
     }
-
 }

@@ -1,0 +1,49 @@
+﻿<Window x:Class="BaseEmptyApp.ChangeStats"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BaseEmptyApp"
+        mc:Ignorable="d"
+        Title="ChangeStats" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lb_char" Grid.Column="1" Content="Character: Warrior" FontSize="20" HorizontalAlignment="Center"/>
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="3" Margin="133,0,133,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="40">
+                <Button x:Name="btn_str_minus" Content="-" Padding="0, -30, 0, -20" Click="btn_str_minus_Click" FontSize="50" HorizontalAlignment="Center" Width="36"/>
+                <Label x:Name="lb_str" Content="Strength: 30" FontSize="20" Width="150"/>
+                <Button x:Name="btn_str_plus" Content="+" Padding="0, -30, 0, -20" Click="btn_str_plus_Click" FontSize="50" Width="36"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="40">
+                <Button x:Name="btn_dex_minus" Content="-" Padding="0, -30, 0, -20" Click="btn_dex_minus_Click" FontSize="50" HorizontalAlignment="Center" Width="36"/>
+                <Label x:Name="lb_dex" Content="Dexterity: 15" FontSize="20" Width="150"/>
+                <Button x:Name="btn_dex_plus" Content="+" Padding="0, -30, 0, -20" Click="btn_dex_plus_Click" FontSize="50" Width="36"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="40">
+                <Button x:Name="btn_int_minus" Content="-" Padding="0, -30, 0, -20" Click="btn_int_minus_Click" FontSize="50" HorizontalAlignment="Center" Width="36"/>
+                <Label x:Name="lb_int" Content="Intelligence: 10" FontSize="20" Width="150"/>
+                <Button x:Name="btn_int_plus" Content="+" Padding="0, -30, 0, -20" Click="btn_int_plus_Click" FontSize="50" Width="36"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="40">
+                <Button x:Name="btn_con_minus" Content="-" Padding="0, -30, 0, -20" Click="btn_con_minus_Click" FontSize="50" HorizontalAlignment="Center" Width="36"/>
+                <Label x:Name="lb_con" Content="Constitution: 25" FontSize="20" Width="150"/>
+                <Button x:Name="btn_con_plus" Content="+" Padding="0, -30, 0, -20" Click="btn_con_plus_Click" FontSize="50" Width="36"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="40">
+                <Label x:Name="lb_extra_points" Content="Extra Points: 400" FontSize="20"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

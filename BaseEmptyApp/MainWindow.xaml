@@ -13,33 +13,19 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="4*"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Label x:Name="lb_char" Grid.Column="1" Content="Character: Warrior" FontSize="20" HorizontalAlignment="Center"/>
-        <StackPanel Grid.Row="2" Grid.ColumnSpan="3" Margin="133,0,133,0">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="40">
-                <Button x:Name="btn_str_minus" Content="-" Padding="0, -30, 0, -20" Click="btn_str_minus_Click" FontSize="50" HorizontalAlignment="Center" Width="36"/>
-                <Label x:Name="lb_str" Content="Strength: 30" FontSize="20" Width="150"/>
-                <Button x:Name="btn_str_plus" Content="+" Padding="0, -30, 0, -20" Click="btn_str_plus_Click" FontSize="50" Width="36"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="40">
-                <Button x:Name="btn_dex_minus" Content="-" Padding="0, -30, 0, -20" Click="btn_str_minus_Click" FontSize="50" HorizontalAlignment="Center" Width="36"/>
-                <Label x:Name="lb_dex" Content="Dexterity: 15" FontSize="20" Width="150"/>
-                <Button x:Name="btn_dex_plus" Content="+" Padding="0, -30, 0, -20" Click="btn_str_plus_Click" FontSize="50" Width="36"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="40">
-                <Button x:Name="btn_int_minus" Content="-" Padding="0, -30, 0, -20" Click="btn_str_minus_Click" FontSize="50" HorizontalAlignment="Center" Width="36"/>
-                <Label x:Name="lb_int" Content="Intelligence: 10" FontSize="20" Width="150"/>
-                <Button x:Name="btn_int_plus" Content="+" Padding="0, -30, 0, -20" Click="btn_str_plus_Click" FontSize="50" Width="36"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="40">
-                <Button x:Name="btn_con_minus" Content="-" Padding="0, -30, 0, -20" Click="btn_str_minus_Click" FontSize="50" HorizontalAlignment="Center" Width="36"/>
-                <Label x:Name="lb_const" Content="Constitution: 25" FontSize="20" Width="150"/>
-                <Button x:Name="btn_con_plus" Content="+" Padding="0, -30, 0, -20" Click="btn_str_plus_Click" FontSize="50" Width="36"/>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                <ComboBox x:Name="cb_char_type" FontSize="20" SelectionChanged="cb_char_type_SelectionChanged">
+                    <TextBlock Text="Warior" FontSize="20"/>
+                    <TextBlock Text="Mage" FontSize="20"/>
+                    <TextBlock Text="Archer" FontSize="20"/>
+                </ComboBox>
+                <Button x:Name="btn_create" Content="Create new character" FontSize="20" Click="btn_create_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>
