@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Media;
 
 namespace BaseEmptyApp
 {
@@ -9,6 +10,8 @@ namespace BaseEmptyApp
     {
         Core.AppCore core = new Core.AppCore();
         Core.BaseUnit unit = new Core.BaseUnit();
+        ImageSourceConverter converter = new ImageSourceConverter();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -34,7 +37,37 @@ namespace BaseEmptyApp
 
         private void FillData(Core.BaseUnit unit)
         {
-            UnitType.Content = unit.Health.ToString();
+            ePoints.Content = unit.ExtraPoint;
+            Health.Content = unit.Health;
+            Mana.Content = unit.Mana;
+            Strenght.Content = unit.Strength;
+            Dexterity.Content = unit.Dexterity;
+            Intelligence.Content = unit.Intelligence;
+            Constitution.Content = unit.Constitution;
+        }
+
+        private void sPlus_Click(object sender, RoutedEventArgs e)
+        {
+            core.UpStrength(ref unit);
+            FillData(unit);
+        }
+
+        private void dPlus_Click(object sender, RoutedEventArgs e)
+        {
+            core.UpDexterity(ref unit);
+            FillData(unit);
+        }
+
+        private void iPlus_Click(object sender, RoutedEventArgs e)
+        {
+            core.UpIntelligence(ref unit);
+            FillData(unit);
+        }
+
+        private void cPlus_Click(object sender, RoutedEventArgs e)
+        {
+            core.UpConstitution(ref unit);
+            FillData(unit);
         }
     }
 }

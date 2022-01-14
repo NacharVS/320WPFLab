@@ -7,8 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="mage.png" />
+    <None Remove="media\img\mage.png" />
+    <None Remove="media\img\warrior.png" />
+    <None Remove="warrior.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="media\sounds\" />
-    <Folder Include="media\img\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="mage.png" />
+    <Resource Include="media\img\mage.png" />
+    <Resource Include="media\img\warrior.png" />
+    <Resource Include="warrior.png" />
   </ItemGroup>
 
 </Project>

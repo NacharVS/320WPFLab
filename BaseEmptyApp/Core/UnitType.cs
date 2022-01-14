@@ -12,6 +12,7 @@ namespace BaseEmptyApp.Core
             Dexterity = 15;
             Intelligence = 10;
             Constitution = 25;
+            Image = @"/warrior.png";
         }
     }
 
@@ -34,6 +35,7 @@ namespace BaseEmptyApp.Core
             Dexterity = 20;
             Intelligence = 30;
             Constitution = 15;
+            Image = @"../media/img/mage.png";
         }
     }
 }

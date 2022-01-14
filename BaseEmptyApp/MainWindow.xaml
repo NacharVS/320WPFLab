@@ -6,10 +6,19 @@
         xmlns:local="clr-namespace:BaseEmptyApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+            <Setter Property="BorderThickness" Value="1"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="87*"/>
             <RowDefinition Height="214*"/>
+            <RowDefinition Height="133*"/>
+            <RowDefinition Height="133*"/>
             <RowDefinition Height="133*"/>
             <RowDefinition Height="133*"/>
             <RowDefinition Height="133*"/>
@@ -21,10 +30,26 @@
             <ColumnDefinition Width="347*"/>
             <ColumnDefinition Width="217*"/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="UnitType" Grid.Column="1" Grid.Row="1"/>
-        <Label x:Name="Health" Grid.Column="1" Grid.Row="2"></Label>
-        <Button x:Name="btnWarrior" Grid.Row="6" Click="btnWarrior_Click"></Button>
-        <Button x:Name="btnMage" Grid.Row="6" Grid.Column="1" Click="btnMage_Click"></Button>
-        <Button x:Name="btnArcher" Grid.Row="6" Grid.Column="2" Click="btnArcher_Click"></Button>
+        <Image x:Name="UnitType" Grid.Column="1" Grid.Row="1" Source="/mage.png"/>
+        <Label x:Name='ePoints' Grid.Column="2" Grid.Row="0" Background="Gold"/>
+        <Label x:Name="Health" Grid.Column="1" Grid.Row="2" Background="Red"></Label>
+        <Label x:Name="Mana" Grid.Column="1" Grid.Row="3" Background="Blue"/>
+        <Label x:Name="Strenght" Grid.Column="1" Grid.Row="4"/>
+        <Label x:Name="Dexterity" Grid.Column="1" Grid.Row="5"/>
+        <Label x:Name="Intelligence" Grid.Column="1" Grid.Row="6"/>
+        <Label x:Name="Constitution" Grid.Column="1" Grid.Row="7"/>
+        <Label Content="Health" Grid.Column="0" Grid.Row="2"/>
+        <Label Content="Mana" Grid.Column="0" Grid.Row="3"/>
+        <Label Content="Strenght" Grid.Column="0" Grid.Row="4"/>
+        <Label Content="Dexterity" Grid.Column="0" Grid.Row="5"/>
+        <Label Content="Intelligence" Grid.Column="0" Grid.Row="6"/>
+        <Label Content="Constitution" Grid.Column="0" Grid.Row="7"/>
+        <Button x:Name='sPlus' Grid.Column="3" Grid.Row="4" Content="+" Click="sPlus_Click"/>
+        <Button x:Name='dPlus' Grid.Column="4" Grid.Row="5" Content="+" Click="dPlus_Click"/>
+        <Button x:Name='iPlus' Grid.Column="5" Grid.Row="6" Content="+" Click="iPlus_Click"/>
+        <Button x:Name='cPlus' Grid.Column="6" Grid.Row="7" Content="+" Click="cPlus_Click"/>
+        <Button x:Name="btnWarrior" Content="Warrior" Grid.Row="8" Click="btnWarrior_Click"></Button>
+        <Button x:Name="btnMage" Content="Mage" Grid.Row="8" Grid.Column="1" Click="btnMage_Click"></Button>
+        <Button x:Name="btnArcher" Content="Archer" Grid.Row="8" Grid.Column="2" Click="btnArcher_Click"></Button>
     </Grid>
 </Window>

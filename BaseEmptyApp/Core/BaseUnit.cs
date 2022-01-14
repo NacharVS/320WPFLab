@@ -93,7 +93,21 @@
             }
         }
 
-        protected int ExtraPoint = 500;
+        public string Image { get; set; }
+        
+        private int _extraPoints = 5;
+        public int ExtraPoint
+        {
+            get
+            {
+                return _extraPoints;
+            }
+            set
+            {
+                _extraPoints = _extraPoints - value;
+            }
+        }
+
     }
 
 
