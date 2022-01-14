@@ -5,10 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BaseEmptyApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Background="#FFFFF0">
     <Grid>
-        <StackPanel Grid.Column="1" Grid.Row="1" Background="#FFFFF0">
-            <Frame x:Name="NextPage" NavigationUIVisibility="Hidden"/>
-        </StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" Content="warrior" Width="133" Height="25" Click="Button_Click_1" />
+        <Button Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" Content="mage" Width="133" Height="25" />
+        <Button Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" Margin="1" Content="archer" Width="133" Height="25" Click="Button_Click" />
+        <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Сlasses:" Width="50"/>
+        
+        <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Content="Strength:"/>
+        <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" Content="Dexterity:"/>
+        <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" Content="Intelligence:"/>
+        <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" Content="Constitution:"/>
+
+        <Label x:Name="Str" Grid.Row="1" Grid.Column="1"  Content="Str"/>
+        <Label x:Name="Dex" Grid.Row="2" Grid.Column="1"  Content="Dex"/>
+        <Label x:Name="Int" Grid.Row="3" Grid.Column="1"  Content="Int"/>
+        <Label x:Name="Con" Grid.Row="4" Grid.Column="1"  Content="Con"/>
+        
+        
     </Grid>
+
 </Window>

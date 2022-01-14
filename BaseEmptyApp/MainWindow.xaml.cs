@@ -25,6 +25,17 @@ namespace BaseEmptyApp
             InitializeComponent();
             NextPage.NavigationService.Navigate(new character_Creation());
 
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Str.Text = (Heroes.Warrior.mistr).ToDouble();
         }
     }
 }
