@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BaseEmptyApp
 {
-    abstract class Player
+    public abstract class Player
     {
         public double Strength = 0;
         public double Dexterity = 0;
@@ -40,6 +40,11 @@ namespace BaseEmptyApp
         }
 
         public abstract double Strength_Plus();
+
+        public double NewChacarcter()
+        {
+            return 0;
+        }
 
         //public static double Health(double con, double str)
         //{
@@ -81,90 +86,5 @@ namespace BaseEmptyApp
         //{
         //    return M_Attack(inT) * (2 + inT * 0.15);
         //}
-    }
-
-    class Warrior : Player
-    {
-        double str = 30;
-        double dex = 15;
-        double inT = 10;
-        double con = 25;
-
-        double max_str = 250;
-        double max_dex = 80;
-        double max_inT = 50;
-        double max_con = 100;
-        public Warrior(double str, double dex, double inT, double con) : base(str, dex, inT, con)
-        {   
-        }
-
-        public override double Strength_Plus()
-        {
-            if (Strength < max_str)
-            {
-                Strength = Strength + 1;
-                return Strength;
-            }
-            else
-            {
-                return Strength;
-            }
-        }
-    }
-
-    class Mage : Player
-    {
-        double str = 15;
-        double dex = 20;
-        double inT = 30;
-        double con = 15;
-
-        double max_str = 45;
-        double max_dex = 70;
-        double max_inT = 250;
-        double max_con = 65;
-        public Mage(double str, double dex, double inT, double con) : base(str, dex, inT, con)
-        {
-        }
-        public override double Strength_Plus()
-        {
-            if (Strength <max_str)
-            {
-                Strength = Strength + 1;
-                return Strength;
-            }
-            else
-            {
-                return Strength;
-            }
-        }
-    }
-
-    class Archer : Player
-    {
-        double str = 20;
-        double dex = 30;
-        double inT = 15;
-        double con = 20;
-
-        double max_str = 55;
-        double max_dex = 250;
-        double max_inT = 70;
-        double max_con = 70;
-        public Archer(double str, double dex, double inT, double con) : base(str, dex, inT, con)
-        {
-        }
-        public override double Strength_Plus()
-        {
-            if (Strength < max_str)
-            {
-                Strength = Strength + 1;
-                return Strength;
-            }
-            else
-            {
-                return Strength;
-            }
-        }
     }
 }
