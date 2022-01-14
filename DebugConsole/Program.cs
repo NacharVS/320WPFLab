@@ -7,10 +7,10 @@ namespace DebugConsole
     {
         static void Main(string[] args)
         {
-            Warrior d = new Warrior("bob", 50, 50, 50, 50);
+            Archer d = new Archer("bob", 50, 50, 50, 50);
             d.SetStrength(60);
             Console.WriteLine(d.Strength);
-            d.SetStrength(500);
+            d.SetStrength(20);
             Console.WriteLine(d.Strength);
         }
     }
