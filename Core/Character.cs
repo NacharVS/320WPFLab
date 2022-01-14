@@ -12,11 +12,11 @@ namespace Core
         private double _maxHp;
         private double _maxMp;
 
-        private double MaxHp { 
+        public double MaxHp { 
             get => _maxHp;
             set => _maxHp = GetHp();
         }
-        private double MaxMp { 
+        public double MaxMp { 
             get => _maxMp;
             set => _maxMp = GetMana();
         }
@@ -45,8 +45,6 @@ namespace Core
         public double Mana { get; protected set; }
 
 
-
-
         public int minSrtength { get; protected set; }
         public int minDexterity { get; protected set; }
         public int minIntelligence { get; protected set; }
@@ -57,13 +55,10 @@ namespace Core
         public int maxIntelligence { get; protected set; }
         public int maxConstitution { get; protected set; }
 
-        public Character(int strength, int dexterity, int intelligence, int constitution)
+        public Character()
         {
-
-            this.Strength = strength;
-            this.Dexterity = dexterity;
-            this.Intelligence = intelligence;
-            this.Constitution = constitution;
+            Health = MaxHp;
+            Mana = MaxMp;
         }
 
         private double GetHp()

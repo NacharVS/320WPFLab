@@ -16,14 +16,39 @@ using Core;
 
 namespace BaseEmptyApp
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        public static int EP { get; set; }
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void WarriorClick(object sender, RoutedEventArgs e)
+        {
+            frameCharacter.NavigationService.Navigate(new CharacterPage(new Warrior()));
+        }
+
+        private void MagicianClick(object sender, RoutedEventArgs e)
+        {
+            frameCharacter.NavigationService.Navigate(new CharacterPage(new Magician()));
+        }
+
+        private void ArcherClick(object sender, RoutedEventArgs e)
+        {
+            frameCharacter.NavigationService.Navigate(new CharacterPage(new Archer()));
+        }
+
+        private void pointBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                EP = int.Parse((sender as TextBox).Text);
+            }
+            catch
+            {
+                (sender as TextBox).Text = EP.ToString();
+            }
         }
     }
 }

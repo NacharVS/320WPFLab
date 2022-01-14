@@ -5,8 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BaseEmptyApp"
         mc:Ignorable="d"
-        Title="CharacterEditor" Height="450" Width="800">
+        Title="CharacterEditor" Height="900" Width="1200">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition />
+            <RowDefinition Height="10*"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="warrion_btn" Content="Warior" VerticalAlignment="Center" Padding="8" FontSize="18" Click="WarriorClick"/>
+            <Button x:Name="magician_btn" Content="Magician"  VerticalAlignment="Center" Padding="8" FontSize="18" Margin="40, 0, 40, 0" Click="MagicianClick"/>
+            <Button x:Name="archer_btn" Content="Archer" VerticalAlignment="Center" Padding="8" FontSize="18" Click="ArcherClick"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+            <TextBlock Text="Extra Points: " FontSize="24" VerticalAlignment="Center"/>
+            <TextBox x:Name="pointBox" FontSize="22" VerticalAlignment="Center" Padding="8" Width="140" Text="0" TextChanged="pointBox_TextChanged"/>
+        </StackPanel>
+
+        <Frame x:Name="frameCharacter" Grid.Column="1" Grid.Row="2"  NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

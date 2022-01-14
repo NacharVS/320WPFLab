@@ -4,18 +4,22 @@ using System.Text;
 
 namespace Core
 {
-    class Warrior : Character
+    public class Warrior : Character
     {
-        public Warrior(int strength, int dexterity, int intelligence, int constitution) : base(strength, dexterity, intelligence, constitution)
+        public Warrior() : base()
         {
-            this.minSrtength = 30;
-            this.minDexterity = 15;
-            this.Intelligence = 10;
-            this.minConstitution = 25;
-            this.maxSrtength = 250;
-            this.maxDexterity = 80;
-            this.maxIntelligence = 50;
-            this.maxConstitution = 100;
+            Strength = minSrtength = 30;
+            Dexterity = minDexterity = 15;
+            Intelligence = minIntelligence = 10;
+            Constitution = minConstitution = 25;
+            maxSrtength = 250;
+            maxDexterity = 80;
+            maxIntelligence = 50;
+            maxConstitution = 100;
+        }
+        public override string ToString()
+        {
+            return "Warrior";
         }
     }
 }
