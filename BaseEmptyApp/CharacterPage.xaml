@@ -28,23 +28,47 @@
             <RowDefinition Height="10*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Column="1" Grid.Row="1" DataContext="{Binding Character}">
-            <TextBlock x:Name="TbLabel" TextAlignment="Center"/>
-            <TextBlock Text="Strength"/>
-            <TextBox x:Name="TbStrength" Text="{Binding Strength}"/>
-            <TextBlock Text="Dexterity"/>
-            <TextBox x:Name="TbDexterity"  Text="{Binding Dexterity}"/>
-            <TextBlock Text="Intelligence"/>
-            <TextBox x:Name="TbIntelligence" Text="{Binding Intelligence}"/>
-            <TextBlock Text="Constitution"/>
-            <TextBox x:Name="TbConstitution" Text="{Binding Constitution}"/>
-            <TextBlock Text="Health"/>
-            <TextBox x:Name="TbHealth" IsEnabled="False"/>
-            <TextBlock Text="Mana"/>
-            <TextBox x:Name="TbMana" IsEnabled="False"/>
-            <Button x:Name="BtnChange" Content="Change" FontSize="20" Margin="10" Click="BtnChange_Click"/>
-        </StackPanel>
-        
+        <ScrollViewer Name="scroll" CanContentScroll="True" Grid.Column="1" Grid.Row="1">
+            <StackPanel  DataContext="{Binding Character}">
+                <TextBlock x:Name="TbLabel" TextAlignment="Center"/>
+                <TextBlock Text="Strength"/>
+                <TextBox x:Name="TbStrength" Text="{Binding Strength}"/>
+                <TextBlock Text="Dexterity"/>
+                <TextBox x:Name="TbDexterity"  Text="{Binding Dexterity}"/>
+                <TextBlock Text="Intelligence"/>
+                <TextBox x:Name="TbIntelligence" Text="{Binding Intelligence}"/>
+                <TextBlock Text="Constitution"/>
+                <TextBox x:Name="TbConstitution" Text="{Binding Constitution}"/>
+                <TextBlock Text="Health"/>
+                <TextBox x:Name="TbHealth" IsEnabled="False"/>
+                <TextBlock Text="Mana"/>
+                <TextBox x:Name="TbMana" IsEnabled="False"/>
+                
+                <TextBlock Text="Physics" TextAlignment="Center"/>
+                
+                <TextBlock Text="Attack"/>
+                <TextBox x:Name="TbPhAttack" IsEnabled="False"/>
+                <TextBlock Text="Defense"/>
+                <TextBox x:Name="TbPhDefense" IsEnabled="False"/>
+                <TextBlock Text="CriticalChance"/>
+                <TextBox x:Name="TbPhCritChance" IsEnabled="False"/>
+                <TextBlock Text="CriticalDamage"/>
+                <TextBox x:Name="TbPhCritDamage" IsEnabled="False"/>
+
+                <TextBlock Text="Magic" TextAlignment="Center"/>
+
+                <TextBlock Text="Attack"/>
+                <TextBox x:Name="TbMagAttack" IsEnabled="False"/>
+                <TextBlock Text="Defense"/>
+                <TextBox x:Name="TbMagDefense" IsEnabled="False"/>
+                <TextBlock Text="CriticalChance"/>
+                <TextBox x:Name="TbMagCritChance" IsEnabled="False"/>
+                <TextBlock Text="CriticalDamage"/>
+                <TextBox x:Name="TbMagCritDamage" IsEnabled="False"/>
+
+                <Button x:Name="BtnChange" Content="Change" FontSize="20" Margin="10" Click="BtnChange_Click"/>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
     
 </Page>

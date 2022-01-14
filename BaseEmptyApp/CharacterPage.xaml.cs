@@ -27,6 +27,17 @@ namespace BaseEmptyApp
             TbLabel.Text = Character.ToString();
             TbHealth.Text = Character.Health.ToString();
             TbMana.Text = Character.Mana.ToString();
+
+            TbPhAttack.Text = Character.Physic.Attack.ToString();
+            TbPhDefense.Text = Character.Physic.Defense.ToString();
+            TbPhCritChance.Text = Character.Physic.CriticalChance.ToString();
+            TbPhCritDamage.Text = Character.Physic.CriticalDamage.ToString();
+
+            TbMagAttack.Text = Character.Magic.Attack.ToString();
+            TbMagDefense.Text = Character.Magic.Defense.ToString();
+            TbMagCritChance.Text = Character.Magic.CriticalChance.ToString();
+            TbMagCritDamage.Text = Character.Magic.CriticalDamage.ToString();
+
             this.DataContext = this;
         }
 
