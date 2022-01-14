@@ -34,6 +34,22 @@ namespace BaseEmptyApp.Core
             }
         }
 
+        public override double Strength_Minus()
+        {
+            if (Strength < max_str)
+            {
+                Strength = Strength - 1;
+                Up_P_Attack(Strength, Dexterity);
+                Up_P_CriticalDamage(P_Attack, Dexterity);
+                Up_Health(Constitution, Strength);
+                return Strength;
+            }
+            else
+            {
+                return Strength;
+            }
+        }
+
         public double Up_P_Attack(double str, double dex)
         {
             P_Attack = str * 3 + 0.5 * dex;

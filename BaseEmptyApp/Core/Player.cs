@@ -40,6 +40,7 @@ namespace BaseEmptyApp
         }
 
         public abstract double Strength_Plus();
+        public abstract double Strength_Minus();
 
         public double NewChacarcter()
         {
