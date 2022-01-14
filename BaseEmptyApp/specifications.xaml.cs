@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,15 +14,13 @@ using System.Windows.Shapes;
 namespace BaseEmptyApp
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для character_Creation.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class character_Creation : Page
     {
-        public MainWindow()
+        public character_Creation()
         {
             InitializeComponent();
-            NextPage.NavigationService.Navigate(new character_Creation());
-
         }
     }
 }
