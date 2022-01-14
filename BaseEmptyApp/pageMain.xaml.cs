@@ -17,114 +17,190 @@ namespace BaseEmptyApp
     public partial class pageMain : Page
     {
         public Character Character { get; set; }
-        string type { get; set; }
+        public string type { get; set; }
         public pageMain(Character character)
         {
             InitializeComponent();
             Character = character;
-            //health.Text = Character.Health.ToString();
-            //mana.Text = Character.Mana.ToString();
+            type_txt.Text = "Magical";
             this.DataContext = this;
+            GetCharacteristics();
         }
 
         private void revers_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
         }
+
         public void GetCharacteristics()
         {
-            if (position_txt.Text == "Magical")
+            if (type_txt.Text == "Magical")
             {
-                MagicalStats mag = new MagicalStats(Convert.ToInt32(str.Text), Convert.ToInt32(dex.Text), Convert.ToInt32(intel.Text), Convert.ToInt32(con.Text));
-                attack_value.Content = mag.Attack;
-                defense_value.Content = mag.Defense;
-                criticalChanse_value.Content = mag.CriticalChanse;
-                criticalDamage_value.Content = mag.CriticalDamage;
+                attack_value.Content = Character.Magical.Attack;
+                defense_value.Content = Character.Magical.Defense;
+                criticalChanse_value.Content = Character.Magical.CriticalChanse;
+                criticalDamage_value.Content = Character.Magical.CriticalDamage;
                 health_value.Content = Character.Health;
                 mana_value.Content = Character.Mana;
-                //MessageBox.Show($"{mag.Attack},{mag.Defense},{mag.CriticalChanse},{mag.CriticalDamage}");
             }
             else
             {
-                PhysicalStats phy = new PhysicalStats(Convert.ToInt32(str.Text), Convert.ToInt32(dex.Text), Convert.ToInt32(intel.Text), Convert.ToInt32(con.Text));
-                attack_value.Content = phy.Attack;
-                defense_value.Content = phy.Defense;
-                criticalChanse_value.Content = phy.CriticalChanse;
-                criticalDamage_value.Content = phy.CriticalDamage;
+                attack_value.Content = Character.Physical.Attack;
+                defense_value.Content = Character.Physical.Defense;
+                criticalChanse_value.Content = Character.Physical.CriticalChanse;
+                criticalDamage_value.Content = Character.Physical.CriticalDamage;
                 health_value.Content = Character.Health;
                 mana_value.Content = Character.Mana;
-                //MessageBox.Show($"{phy.Attack},{phy.Defense},{phy.CriticalChanse},{phy.CriticalDamage}");
             }
-        }
-
-        private void ok_Click(object sender, RoutedEventArgs e)
-        {
-            if (position_txt.Text == "Magical")
-            {
-                MagicalStats mag = new MagicalStats(Convert.ToInt32(str.Text), Convert.ToInt32(dex.Text), Convert.ToInt32(intel.Text), Convert.ToInt32(con.Text));
-                attack_value.Content = mag.Attack;
-                defense_value.Content = mag.Defense;
-                criticalChanse_value.Content = mag.CriticalChanse;
-                criticalDamage_value.Content = mag.CriticalDamage;
-                health_value.Content = Character.Health;
-                mana_value.Content = Character.Mana;
-                //MessageBox.Show($"{mag.Attack},{mag.Defense},{mag.CriticalChanse},{mag.CriticalDamage}");
-            }
-            else
-            {
-                PhysicalStats phy = new PhysicalStats(Convert.ToInt32(str.Text), Convert.ToInt32(dex.Text), Convert.ToInt32(intel.Text), Convert.ToInt32(con.Text));
-                attack_value.Content = phy.Attack;
-                defense_value.Content = phy.Defense;
-                criticalChanse_value.Content = phy.CriticalChanse;
-                criticalDamage_value.Content = phy.CriticalDamage;
-                health_value.Content = Character.Health;
-                mana_value.Content = Character.Mana;
-                //MessageBox.Show($"{phy.Attack},{phy.Defense},{phy.CriticalChanse},{phy.CriticalDamage}");
-            }
-        }
-
-        private void position_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            type = (sender as ComboBox).SelectedItem.ToString();
         }
 
         private void dexPlus_Click(object sender, RoutedEventArgs e)
         {
-            if (extraPoint.Text == "0")
+            if (Convert.ToInt32(dex.Text) < Character.MaxDexterity)
             {
-                MessageBox.Show("!!!");
-                dex.Text = Character.MinDexterity.ToString();
-            }
-            //if (dex.Text == Character.MaxDexterity.ToString())
-            //{
-            //    GetCharacteristics();
-            //    dex.Text = Character.MinDexterity.ToString();
-            //}
-                
-            dex.Text = Character.Dexterity++.ToString();
-            extraPoint.Text = (Convert.ToInt32(extraPoint.Text) - 1).ToString();
-            if (extraPoint.Text == "0")
-            {
-                MessageBox.Show("!!!");
-                dex.Text = Character.MinDexterity.ToString();
-            }
-            GetCharacteristics();
+                if (extraPoint.Text == "0")
+                {
+                    GetCharacteristics();
+                }
+                else
+                {
+                    Character.Dexterity++;
+                    dex.Text = Character.Dexterity.ToString();
+                    extraPoint.Text = (Convert.ToInt32(extraPoint.Text) - 1).ToString();
+                    GetCharacteristics();
+                }
+            }           
         }
 
         private void dexMinus_Click(object sender, RoutedEventArgs e)
         {
-            if (extraPoint.Text == "0")
+            if (Convert.ToInt32(dex.Text) > Character.MinDexterity)
             {
-                MessageBox.Show("!!!");
-                dex.Text = Character.MinDexterity.ToString();
-            }
-            else
-            {
-                dex.Text = Character.Dexterity--.ToString();
-                extraPoint.Text = (Convert.ToInt32(extraPoint.Text) - 1).ToString();
+                if (extraPoint.Text == "0")
+                {
+                    GetCharacteristics();
+                }
+                else
+                {
+                    Character.Dexterity--;
+                    dex.Text = Character.Dexterity.ToString();
+                    extraPoint.Text = (Convert.ToInt32(extraPoint.Text) - 1).ToString();
+                    GetCharacteristics();
+                }
+            }         
+        }
 
-                GetCharacteristics();
+        private void strMinus_Click(object sender, RoutedEventArgs e)
+        {
+            if (Convert.ToInt32(str.Text) > Character.MinStrength)
+            {
+                if (extraPoint.Text == "0")
+                {
+                    GetCharacteristics();
+                }
+                else
+                {
+                    Character.Strength--;
+                    str.Text = Character.Strength.ToString();
+                    extraPoint.Text = (Convert.ToInt32(extraPoint.Text) - 1).ToString();
+                    GetCharacteristics();
+                }
             }
+        }
+
+        private void strPlus_Click(object sender, RoutedEventArgs e)
+        {
+            if (Convert.ToInt32(str.Text) < Character.MaxStrength)
+            {
+                if (extraPoint.Text == "0")
+                {
+                    GetCharacteristics();
+                }
+                else
+                {
+                    Character.Strength++;
+                    str.Text = Character.Strength.ToString();
+                    extraPoint.Text = (Convert.ToInt32(extraPoint.Text) - 1).ToString();
+                    GetCharacteristics();
+                }
+            }
+        }
+
+        private void intelMinus_Click(object sender, RoutedEventArgs e)
+        {
+            if (Convert.ToInt32(intel.Text) > Character.MinIntelligence)
+            {
+                if (extraPoint.Text == "0")
+                {
+                    GetCharacteristics();
+                }
+                else
+                {
+                    Character.Intelligence--;
+                    intel.Text = Character.Intelligence.ToString();
+                    extraPoint.Text = (Convert.ToInt32(extraPoint.Text) - 1).ToString();
+                    GetCharacteristics();
+                }
+            }
+        }
+
+        private void intelPlus_Click(object sender, RoutedEventArgs e)
+        {
+            if (Convert.ToInt32(intel.Text) < Character.MaxIntelligence)
+            {
+                if (extraPoint.Text == "0")
+                {
+                    GetCharacteristics();
+                }
+                else
+                {
+                    Character.Intelligence++;
+                    intel.Text = Character.Intelligence.ToString();
+                    extraPoint.Text = (Convert.ToInt32(extraPoint.Text) - 1).ToString();
+                    GetCharacteristics();
+                }
+            }
+        }
+
+        private void conMinus_Click(object sender, RoutedEventArgs e)
+        {
+            if (Convert.ToInt32(con.Text) > Character.MinConstitution)
+            {
+                if (extraPoint.Text == "0")
+                {
+                    GetCharacteristics();
+                }
+                else
+                {
+                    Character.Constitution--;
+                    con.Text = Character.Constitution.ToString();
+                    extraPoint.Text = (Convert.ToInt32(extraPoint.Text) - 1).ToString();
+                    GetCharacteristics();
+                }
+            }
+        }
+
+        private void conPlus_Click(object sender, RoutedEventArgs e)
+        {
+            if (Convert.ToInt32(con.Text) < Character.MaxConstitution)
+            {
+                if (extraPoint.Text == "0")
+                {
+                    GetCharacteristics();
+                }
+                else
+                {
+                    Character.Constitution++;
+                    con.Text = Character.Constitution.ToString();
+                    extraPoint.Text = (Convert.ToInt32(extraPoint.Text) - 1).ToString();
+                    GetCharacteristics();
+                }
+            }
+        }
+
+        private void type_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            type = (sender as ComboBox).SelectedItem.ToString();
           
         }
     }
