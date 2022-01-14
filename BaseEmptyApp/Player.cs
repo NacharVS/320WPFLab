@@ -38,6 +38,9 @@ namespace BaseEmptyApp
             Health = 2 * con + 0.5 * str;
             Mana = inT * 3;
         }
+
+        public abstract double Strength_Plus();
+
         //public static double Health(double con, double str)
         //{
         //    return 2 * con + 0.5 * str;
@@ -86,8 +89,26 @@ namespace BaseEmptyApp
         double dex = 15;
         double inT = 10;
         double con = 25;
+
+        double max_str = 250;
+        double max_dex = 80;
+        double max_inT = 50;
+        double max_con = 100;
         public Warrior(double str, double dex, double inT, double con) : base(str, dex, inT, con)
         {   
+        }
+
+        public override double Strength_Plus()
+        {
+            if (Strength < max_str)
+            {
+                Strength = Strength + 1;
+                return Strength;
+            }
+            else
+            {
+                return Strength;
+            }
         }
     }
 
@@ -97,8 +118,25 @@ namespace BaseEmptyApp
         double dex = 20;
         double inT = 30;
         double con = 15;
+
+        double max_str = 45;
+        double max_dex = 70;
+        double max_inT = 250;
+        double max_con = 65;
         public Mage(double str, double dex, double inT, double con) : base(str, dex, inT, con)
         {
+        }
+        public override double Strength_Plus()
+        {
+            if (Strength <max_str)
+            {
+                Strength = Strength + 1;
+                return Strength;
+            }
+            else
+            {
+                return Strength;
+            }
         }
     }
 
@@ -108,10 +146,25 @@ namespace BaseEmptyApp
         double dex = 30;
         double inT = 15;
         double con = 20;
+
+        double max_str = 55;
+        double max_dex = 250;
+        double max_inT = 70;
+        double max_con = 70;
         public Archer(double str, double dex, double inT, double con) : base(str, dex, inT, con)
         {
         }
-
-
+        public override double Strength_Plus()
+        {
+            if (Strength < max_str)
+            {
+                Strength = Strength + 1;
+                return Strength;
+            }
+            else
+            {
+                return Strength;
+            }
+        }
     }
 }
