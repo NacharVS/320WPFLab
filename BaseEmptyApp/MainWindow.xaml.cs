@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Core;
 
 namespace BaseEmptyApp
 {
@@ -23,6 +24,11 @@ namespace BaseEmptyApp
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ListCharacter_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

@@ -7,6 +7,29 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        
+        <ListBox Name="ListCharacter" Margin="20" Grid.Row="0" Grid.Column="0" SelectionChanged="ListCharacter_SelectionChanged"/>
+        <TextBlock Text="Strength" Grid.Row="2" Grid.Column="0" TextAlignment="Center" FontSize="36" VerticalAlignment="Center"/>
+        <TextBlock Text="Dexterity" Grid.Row="3" Grid.Column="0" TextAlignment="Center" FontSize="36" VerticalAlignment="Center"/>
+        <TextBlock Text="Intelligence" Grid.Row="4" Grid.Column="0" TextAlignment="Center" FontSize="36" VerticalAlignment="Center"/>
+        <TextBlock Text="Constitution" Grid.Row="5" Grid.Column="0" TextAlignment="Center" FontSize="36" VerticalAlignment="Center"/>
 
+        <TextBox x:Name="text_strng" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" FontSize="36"/>
+        <TextBox x:Name="text_dex" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" FontSize="36"/>
+        <TextBox x:Name="text_intel" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" FontSize="36"/>
+        <TextBox x:Name="text_const" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" FontSize="36"/>
     </Grid>
 </Window>
