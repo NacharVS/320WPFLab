@@ -8,6 +8,8 @@ namespace CharacterCore
 {
     public abstract class Unit
     {
+        public virtual double MinStrength { get; }
+        public virtual double MaxStrength { get; }
         private int _strength;
         public int Strength
         {
@@ -17,6 +19,8 @@ namespace CharacterCore
         }
 
         private int _dexterity;
+        public virtual double MinDexterity { get; }
+        public virtual double MaxDexterity { get; }
         public int Dexterity
         {
             get { return _dexterity; }
@@ -25,6 +29,8 @@ namespace CharacterCore
         }
 
         private int _intelligence;
+        public virtual double MinIntelligence { get; }
+        public virtual double MaxIntelligence { get; }
         public int Intelligence
         {
             get { return _intelligence; }
@@ -33,6 +39,8 @@ namespace CharacterCore
         }
 
         private int _constitution;
+        public virtual double MinConstitution { get; }
+        public virtual double MaxConstitution { get; }
         public int Constitution
         {
             get { return _constitution; }
