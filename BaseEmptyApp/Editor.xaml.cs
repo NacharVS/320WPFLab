@@ -110,17 +110,24 @@ namespace BaseEmptyApp
 
         private void StrengthPlus_Click(object sender, RoutedEventArgs e)
         {
-            if(Unit.Strength < Unit.MaxStrength)
+            if(Unit.ExtraPoint !=0)
             {
-                Unit.Strength++;
-                strengh.Text = Unit.Strength.ToString();
-                Unit.ExtraPoint--;
-                Extra_Points.Text = Unit.ExtraPoint.ToString();
-                Refreshing();
+                if (Unit.Strength < Unit.MaxStrength)
+                {
+                    Unit.Strength++;
+                    strengh.Text = Unit.Strength.ToString();
+                    Unit.ExtraPoint--;
+                    Extra_Points.Text = Unit.ExtraPoint.ToString();
+                    Refreshing();
+                }
+                else
+                {
+                    MessageBox.Show("Strength is max");
+                }
             }
             else
             {
-                MessageBox.Show("Strengh is max");
+                MessageBox.Show("No more extra points");
             }
         }
         public void Refreshing()
@@ -139,17 +146,70 @@ namespace BaseEmptyApp
 
         private void IntellegencePlus_Click(object sender, RoutedEventArgs e)
         {
-            if (Unit.Intelligence < Unit.MaxIntelligence)
+            if (Unit.ExtraPoint != 0)
             {
-                Unit.Intelligence++;
-                intellegence.Text = Unit.Intelligence.ToString();
-                Unit.ExtraPoint--;
-                Extra_Points.Text = Unit.ExtraPoint.ToString();
-                Refreshing();
+                if (Unit.Intelligence < Unit.MaxIntelligence)
+                {
+                    Unit.Intelligence++;
+                    intellegence.Text = Unit.Intelligence.ToString();
+                    Unit.ExtraPoint--;
+                    Extra_Points.Text = Unit.ExtraPoint.ToString();
+                    Refreshing();
+                }
+                else
+                {
+                    MessageBox.Show("Intelligence is max");
+                }
             }
             else
             {
-                MessageBox.Show("Intelligence is max");
+                MessageBox.Show("No more extra points");
+            }
+        }
+
+        private void DexterityPlus_Click(object sender, RoutedEventArgs e)
+        {
+            if (Unit.ExtraPoint != 0)
+            {
+                if (Unit.Dexterity < Unit.MaxDexterity && Unit.ExtraPoint != 0)
+                {
+                    Unit.Dexterity++;
+                    dexterity.Text = Unit.Dexterity.ToString();
+                    Unit.ExtraPoint--;
+                    Extra_Points.Text = Unit.ExtraPoint.ToString();
+                    Refreshing();
+                }
+                else
+                {
+                    MessageBox.Show("Dexterity is max");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No more extra points");
+            }
+        }
+
+        private void ConstitutionPlus_Click(object sender, RoutedEventArgs e)
+        {
+            if (Unit.ExtraPoint != 0)
+            {
+                if (Unit.Constitution < Unit.MaxConstitution && Unit.ExtraPoint != 0)
+                {
+                    Unit.Constitution++;
+                    constitution.Text = Unit.Constitution.ToString();
+                    Unit.ExtraPoint--;
+                    Extra_Points.Text = Unit.ExtraPoint.ToString();
+                    Refreshing();
+                }
+                else
+                {
+                    MessageBox.Show("Constitution is max");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No more extra points");
             }
         }
     }
