@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace BaseEmptyApp.Units
+namespace CharacterCore
 {
-    public class Warrior: Unit
+    public class Warrior : Unit
     {
         public Warrior()
         {

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace BaseEmptyApp.Units
+namespace CharacterCore
 {
-    public class MagicСharacteristic: Сharacteristic
+    public class MagicСharacteristic : Сharacteristic
     {
         public MagicСharacteristic(int Strength, int Dexterity, int Intelligence, int Constitution)
         {

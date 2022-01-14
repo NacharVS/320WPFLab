@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанные со сборкой.
-[assembly: AssemblyTitle("CharactersLibrary")]
+[assembly: AssemblyTitle("CharacterCore")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CharactersLibrary")]
+[assembly: AssemblyProduct("CharacterCore")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("f03619b5-8dda-4b27-a2d9-6718b3e0cf21")]
+[assembly: Guid("b2ac1ded-6046-4a47-8ab2-9a6510d7f12f")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //
