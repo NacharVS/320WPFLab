@@ -18,15 +18,48 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Button x:Name="btn_back" Content="Назад" FontSize="30" Click="btn_back_Click" Margin="0,0,0,120"/>
+        <Button x:Name="btn_back" Content="Back" FontSize="20" Click="btn_back_Click" Margin="0,0,20,30"/>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <StackPanel Orientation="Horizontal" Height="41">
-                <Button x:Name="btn_addPlant" Content="Добавить растение" Padding="20,5,20,5" Width="243" FontSize="20"/>
-                <Button x:Name="btn_addEmployee" Content="Добавить сотрудника" Padding="20,5,20,5" Width="243" FontSize="20"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="30">
+                <Label Content="Health:" FontSize="18" Width="75"/>
+                <Label x:Name="lb_health" Content="100" FontSize="18"/>
             </StackPanel>
-            <StackPanel>
-                <Button x:Name="btn_appointEmployee" Content="Назначить работника" Padding="20,5,20,5" Width="243" HorizontalAlignment="Left" FontSize="20"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="30">
+                <Label Content="Mana:" FontSize="18" Width="75"/>
+                <Label x:Name="lb_mana" Content="100" FontSize="18"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="30">
+                <Label Content="P.Attack:" FontSize="18" Width="100"/>
+                <Label x:Name="lb_pAttack" Content="100" FontSize="18"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="30">
+                <Label Content="M.Attack:" FontSize="18" Width="100"/>
+                <Label x:Name="lb_mAttack" Content="100" FontSize="18"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="30">
+                <Label Content="P.Defense:" FontSize="18" Width="100"/>
+                <Label x:Name="lb_pDefense" Content="100" FontSize="18"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="30">
+                <Label Content="M.Defense:" FontSize="18" Width="100"/>
+                <Label x:Name="lb_mDefense" Content="100" FontSize="18"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="30">
+                <Label Content="P.Critical Chanse:" FontSize="18" Width="160"/>
+                <Label x:Name="lb_pCC" Content="100" FontSize="18"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="30">
+                <Label Content="M.Critical Chanse:" FontSize="18" Width="160"/>
+                <Label x:Name="lb_mCC" Content="100" FontSize="18"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="30">
+                <Label Content="P.Critical Damage:" FontSize="18" Width="160"/>
+                <Label x:Name="lb_pCD" Content="100" FontSize="18"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="35">
+                <Label Content="M.Critical Damage:" FontSize="18" Width="160"/>
+                <Label x:Name="lb_mCD" Content="100" FontSize="18"/>
             </StackPanel>
         </StackPanel>
     </Grid>

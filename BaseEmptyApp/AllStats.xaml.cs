@@ -20,6 +20,7 @@ namespace BaseEmptyApp
         public AllStats()
         {
             InitializeComponent();
+
         }
 
         private void btn_back_Click(object sender, RoutedEventArgs e)

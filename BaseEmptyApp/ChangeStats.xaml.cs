@@ -32,7 +32,7 @@ namespace BaseEmptyApp
 
         private void btn_str_minus_Click(object sender, RoutedEventArgs e)
         {
-            if (CoreLibrary.Globals.character.Strength > CoreLibrary.Globals.character.minStr)
+            if (CoreLibrary.Globals.character.Strength > CoreLibrary.Globals.character.minStr && CoreLibrary.Globals.character.extraPoints != 0)
             {
                 CoreLibrary.Globals.character.Strength--;
                 CoreLibrary.Globals.character.extraPoints++;
@@ -45,7 +45,7 @@ namespace BaseEmptyApp
 
         private void btn_str_plus_Click(object sender, RoutedEventArgs e)
         {
-            if (CoreLibrary.Globals.character.Strength < CoreLibrary.Globals.character.maxStr)
+            if (CoreLibrary.Globals.character.Strength < CoreLibrary.Globals.character.maxStr && CoreLibrary.Globals.character.extraPoints != 0)
             {
                 CoreLibrary.Globals.character.Strength++;
                 CoreLibrary.Globals.character.extraPoints--;
@@ -58,7 +58,7 @@ namespace BaseEmptyApp
 
         private void btn_dex_minus_Click(object sender, RoutedEventArgs e)
         {
-            if (CoreLibrary.Globals.character.Dexterity > CoreLibrary.Globals.character.minDex)
+            if (CoreLibrary.Globals.character.Dexterity > CoreLibrary.Globals.character.minDex && CoreLibrary.Globals.character.extraPoints != 0)
             {
                 CoreLibrary.Globals.character.Dexterity--;
                 CoreLibrary.Globals.character.extraPoints++;
@@ -71,7 +71,7 @@ namespace BaseEmptyApp
 
         private void btn_dex_plus_Click(object sender, RoutedEventArgs e)
         {
-            if (CoreLibrary.Globals.character.Dexterity < CoreLibrary.Globals.character.maxDex)
+            if (CoreLibrary.Globals.character.Dexterity < CoreLibrary.Globals.character.maxDex && CoreLibrary.Globals.character.extraPoints != 0)
             {
                 CoreLibrary.Globals.character.Dexterity++;
                 CoreLibrary.Globals.character.extraPoints--;
@@ -84,7 +84,7 @@ namespace BaseEmptyApp
 
         private void btn_int_minus_Click(object sender, RoutedEventArgs e)
         {
-            if (CoreLibrary.Globals.character.Intelligence > CoreLibrary.Globals.character.minInt)
+            if (CoreLibrary.Globals.character.Intelligence > CoreLibrary.Globals.character.minInt && CoreLibrary.Globals.character.extraPoints != 0)
             {
                 CoreLibrary.Globals.character.Intelligence--;
                 CoreLibrary.Globals.character.extraPoints++;
@@ -97,7 +97,7 @@ namespace BaseEmptyApp
     
         private void btn_int_plus_Click(object sender, RoutedEventArgs e)
         {
-            if (CoreLibrary.Globals.character.Intelligence < CoreLibrary.Globals.character.maxInt)
+            if (CoreLibrary.Globals.character.Intelligence < CoreLibrary.Globals.character.maxInt && CoreLibrary.Globals.character.extraPoints != 0)
             {
                 CoreLibrary.Globals.character.Intelligence++;
                 CoreLibrary.Globals.character.extraPoints--;
@@ -110,7 +110,7 @@ namespace BaseEmptyApp
 
         private void btn_con_minus_Click(object sender, RoutedEventArgs e)
         {
-            if (CoreLibrary.Globals.character.Constitution > CoreLibrary.Globals.character.minCon)
+            if (CoreLibrary.Globals.character.Constitution > CoreLibrary.Globals.character.minCon && CoreLibrary.Globals.character.extraPoints != 0)
             {
                 CoreLibrary.Globals.character.Constitution--;
                 CoreLibrary.Globals.character.extraPoints++;
@@ -123,7 +123,7 @@ namespace BaseEmptyApp
 
         private void btn_con_plus_Click(object sender, RoutedEventArgs e)
         {
-            if (CoreLibrary.Globals.character.Constitution < CoreLibrary.Globals.character.maxCon)
+            if (CoreLibrary.Globals.character.Constitution < CoreLibrary.Globals.character.maxCon && CoreLibrary.Globals.character.extraPoints != 0)
             {
                 CoreLibrary.Globals.character.Constitution++;
                 CoreLibrary.Globals.character.extraPoints--;
@@ -138,6 +138,13 @@ namespace BaseEmptyApp
         {
             MainWindow main = new MainWindow();
             main.Show();
+            Close();
+        }
+
+        private void btn_stats_Click(object sender, RoutedEventArgs e)
+        {
+            AllStats allStats = new AllStats();
+            allStats.Show();
             Close();
         }
     }
