@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaseEmptyApp", "BaseEmptyApp\BaseEmptyApp.csproj", "{5823DE77-7931-4EE2-B482-01E255B209B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitLibrary", "UnitLibrary\UnitLibrary.csproj", "{20F1D62B-6967-45F5-ABC7-C2E5BE9D1E29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharacterLibrary", "UnitLibrary\CharacterLibrary.csproj", "{20F1D62B-6967-45F5-ABC7-C2E5BE9D1E29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

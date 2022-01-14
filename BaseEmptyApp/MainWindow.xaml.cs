@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CharacterLibrary;
 
 namespace BaseEmptyApp
 {
@@ -23,6 +24,19 @@ namespace BaseEmptyApp
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void BtnMage_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new CharacterPage(new Mage()));
+        }
+        private void BtnWarrior_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new CharacterPage(new Warrior()));
+        }
+        private void BtnArcher_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new CharacterPage(new Archer()));
         }
     }
 }

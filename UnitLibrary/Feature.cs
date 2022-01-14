@@ -2,13 +2,41 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace UnitLibrary
+namespace CharacterLibrary
 {
-    class Feature
+    public class Feature
     {
-        public double Attack { get; set; }
-        public double Defense { get; set; }
-        public double CriticalChance { get; set; }
-        public double CriticalDamage { get; set; }
+        private double _attack;
+        public double Attack
+        {
+            get { return _attack; }
+            set { _attack = value; }
+        }
+
+        private double _defense;
+        public double Defense
+        {
+            get { return _defense; }
+            set { _defense = value; }
+        }
+
+        private double _criticalChance;
+        public double CriticalChance
+        {
+            get { return _criticalChance; }
+            set { _criticalChance = value; }
+        }
+
+        private double _criticalDamage;
+        public double CriticalDamage
+        {
+            get { return _criticalDamage; }
+            set { _criticalDamage = value; }
+        }
+
+        public override string ToString()
+        {
+            return $"{Attack} {Defense} {CriticalChance} {CriticalDamage}";
+        }
     }
 }
