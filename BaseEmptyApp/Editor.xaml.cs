@@ -33,14 +33,26 @@ namespace BaseEmptyApp
             strengh.Text = Unit.Strength.ToString();
             constitution.Text = Unit.Constitution.ToString();
             intellegence.Text = Unit.Intelligence.ToString();
+            Health.Text = Unit.Health.ToString();
+            Mana.Text = Unit.Mana.ToString();
+            PAttack.Text = Unit.Physic.Attack.ToString();
+            PDefense.Text = Unit.Physic.Defense.ToString();
+            MAttack.Text = Unit.Magic.Attack.ToString();
+            MDefense.Text = Unit.Magic.Defense.ToString();
+
         }
 
         private void StrengthMinus_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void DexterityMinus_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Mana_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
