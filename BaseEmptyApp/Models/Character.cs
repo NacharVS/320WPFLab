@@ -57,7 +57,7 @@ namespace BaseEmptyApp.Models
         }
 
         private double _health;
-        public double Health
+        public virtual double Health
         {
             get => _health;
             set
@@ -67,7 +67,7 @@ namespace BaseEmptyApp.Models
         }
 
         private double _mana;
-        public double Mana
+        public virtual double Mana
         {
             get => _mana;
             set
@@ -136,7 +136,11 @@ namespace BaseEmptyApp.Models
             }
         }
 
-        public double PhysCritDamage { get => physCritDamage; set => physCritDamage = value; }
-        private double physCritDamage;
+        public double PhysCritDamage { get => _physCritDamage; set => _physCritDamage = value; }
+        public double MagCritDamage { get => _magCritDamage; set => _magCritDamage = value; }
+
+        private double _physCritDamage;
+
+        private double _magCritDamage;
     }
 }
