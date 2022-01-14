@@ -18,8 +18,8 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Button x:Name="ChooseWarriorBtn" Grid.Column="0" Content="{Binding Path=Name}" Margin="30 10 30 10" Click="ChooseWarriorBtn_Click"/>
-            <Button x:Name="ChooseMageBtn" Grid.Column="1" Content="{Binding Path=Name}" Margin="30 10 30 10"/>
-            <Button x:Name="ChooseArcherBtn" Grid.Column="2" Content="{Binding Path=Name}" Margin="30 10 30 10"/>
+            <Button x:Name="ChooseMageBtn" Grid.Column="1" Content="{Binding Path=Name}" Margin="30 10 30 10" Click="ChooseMageBtn_Click"/>
+            <Button x:Name="ChooseArcherBtn" Grid.Column="2" Content="{Binding Path=Name}" Margin="30 10 30 10" Click="ChooseArcherBtn_Click"/>
         </Grid>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -36,14 +36,14 @@
                     <RowDefinition Height="30"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                
+
                 <TextBlock x:Name="NameTB" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
-                
-                
+
+
                 <Grid Grid.Column="0" Grid.Row="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
-                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="141"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
@@ -55,16 +55,16 @@
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <TextBlock x:Name="StrengthTB" Grid.Row="1" Grid.Column="1" />
-                    <TextBlock x:Name="DexterityTB" Grid.Row="2" Grid.Column="1"/>
-                    <TextBlock x:Name="PAttackTB" Grid.Row="3" Grid.Column="1"/>
-                    <TextBlock x:Name="PResistTB" Grid.Row="4" Grid.Column="1"/>
-                    <TextBlock x:Name="PhysCritChanceTB" Grid.Row="5" Grid.Column="1"/>
-                    <TextBlock x:Name="PhysCritDamageTB" Grid.Row="6" Grid.Column="1"/>
-                    <TextBlock x:Name="HealthTB" Grid.Row="0" Grid.Column="1"/>
+                    <TextBlock x:Name="StrengthTB" Grid.Row="1" Grid.Column="1" Margin="0,0,5,0" />
+                    <TextBlock x:Name="DexterityTB" Grid.Row="1" Grid.Column="1" Margin="0,50,5,50" Grid.RowSpan="3"/>
+                    <TextBlock x:Name="PAttackTB" Grid.Row="3" Grid.Column="1" Margin="0,0,5,0"/>
+                    <TextBlock x:Name="PResistTB" Grid.Row="3" Grid.Column="1" Margin="0,50,5,50" Grid.RowSpan="3"/>
+                    <TextBlock x:Name="PhysCritChanceTB" Grid.Row="5" Grid.Column="1" Margin="0,0,5,0"/>
+                    <TextBlock x:Name="PhysCritDamageTB" Grid.Row="5" Grid.Column="1" Margin="0,50,5,0" Grid.RowSpan="2"/>
+                    <TextBlock x:Name="HealthTB" Grid.Row="0" Grid.Column="1" Margin="0,0,5,50" Grid.RowSpan="2"/>
                 </Grid>
-                
-                
+
+
                 <Grid Grid.Column="1" Grid.Row="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
