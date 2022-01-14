@@ -25,5 +25,20 @@ namespace BaseEmptyApp
         {
             InitializeComponent();
         }
+
+        private void ChooseWarriorBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Warrior warrior = new Warrior();
+            NameTB.Text = warrior.Name;
+            StrengthTB.Text = "Strength: " + warrior.Strength.ToString();
+            DexterityTB.Text = "Dexterity: " + warrior.Dexterity.ToString();
+            PAttackTB.Text = "P. Attack: " + warrior.PAttack.ToString();
+            PResistTB.Text = "P.Resist: " + warrior.PResist.ToString();
+            PhysCritChanceTB.Text = "Phys. Crit Chance: " + warrior.PhysCritChance.ToString();
+            PhysCritDamageTB.Text = "Phys. Crit Damage: " + warrior.PhysCritDamage.ToString();
+            HealthTB.Text = "Health: " + warrior.Health.ToString();
+        }
+
+
     }
 }

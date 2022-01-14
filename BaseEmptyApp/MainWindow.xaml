@@ -17,7 +17,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="ChooseWarriorBtn" Grid.Column="0" Content="{Binding Path=Name}" Margin="30 10 30 10"/>
+            <Button x:Name="ChooseWarriorBtn" Grid.Column="0" Content="{Binding Path=Name}" Margin="30 10 30 10" Click="ChooseWarriorBtn_Click"/>
             <Button x:Name="ChooseMageBtn" Grid.Column="1" Content="{Binding Path=Name}" Margin="30 10 30 10"/>
             <Button x:Name="ChooseArcherBtn" Grid.Column="2" Content="{Binding Path=Name}" Margin="30 10 30 10"/>
         </Grid>
@@ -37,7 +37,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 
-                <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Path=Name}"/>
+                <TextBlock x:Name="NameTB" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
                 
                 
                 <Grid Grid.Column="0" Grid.Row="1">
@@ -55,13 +55,13 @@
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Strength, StringFormat= Strength: {0}}"/>
-                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Dexterity, StringFormat= Dexterity: {0}}"/>
-                    <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Path=PAttack, StringFormat= P. Attack: {0}}"/>
-                    <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Path=PResist, StringFormat= P. Resist: {0}}"/>
-                    <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding Path=PhysCritChance, StringFormat= P. Crit_Chance: {0}}"/>
-                    <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding Path=PhysCritDamage, StringFormat= P. Crit_Dmg: {0}}"/>
-                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=Health, StringFormat= Health: {0}}"/>
+                    <TextBlock x:Name="StrengthTB" Grid.Row="1" Grid.Column="1" />
+                    <TextBlock x:Name="DexterityTB" Grid.Row="2" Grid.Column="1"/>
+                    <TextBlock x:Name="PAttackTB" Grid.Row="3" Grid.Column="1"/>
+                    <TextBlock x:Name="PResistTB" Grid.Row="4" Grid.Column="1"/>
+                    <TextBlock x:Name="PhysCritChanceTB" Grid.Row="5" Grid.Column="1"/>
+                    <TextBlock x:Name="PhysCritDamageTB" Grid.Row="6" Grid.Column="1"/>
+                    <TextBlock x:Name="HealthTB" Grid.Row="0" Grid.Column="1"/>
                 </Grid>
                 
                 
@@ -80,13 +80,13 @@
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=Mana, StringFormat= Mana: {0}}"/>
-                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Constitution, StringFormat= Constitution: {0}}"/>
-                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Intelligence, StringFormat= Intelligence: {0}}"/>
-                    <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Path=MAttack, StringFormat= M. Attack: {0}}"/>
-                    <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Path=MResist, StringFormat= M. Resist: {0}}"/>
-                    <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding Path=MagCritChance, StringFormat= M. Crit_Chance: {0}}"/>
-                    <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding Path=MagCritDamage, StringFormat= M. Crit_Dmg: {0}}"/>
+                    <TextBlock x:Name="ManaTB" Grid.Row="0" Grid.Column="1"/>
+                    <TextBlock x:Name="ConstitutionTB"  Grid.Row="1" Grid.Column="1"/>
+                    <TextBlock x:Name="IntelligenceTB" Grid.Row="2" Grid.Column="1"/>
+                    <TextBlock x:Name="MAttackTB" Grid.Row="3" Grid.Column="1"/>
+                    <TextBlock x:Name="MResistTB" Grid.Row="4" Grid.Column="1"/>
+                    <TextBlock x:Name="MagCritChanceTB" Grid.Row="5" Grid.Column="1"/>
+                    <TextBlock x:Name="MagCritDamageTB" Grid.Row="6" Grid.Column="1"/>
                 </Grid>
             </Grid>
         </Grid>
