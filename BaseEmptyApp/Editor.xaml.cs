@@ -134,6 +134,23 @@ namespace BaseEmptyApp
             MCryticalDefence.Text = Unit.Magic.Defense.ToString();
             PCryticalDamage.Text = Unit.Physic.CriticalDamage.ToString();
             MCryticalDamage.Text = Unit.Magic.CriticalDamage.ToString();
+            Mana.Text = Unit.Mana.ToString();
+        }
+
+        private void IntellegencePlus_Click(object sender, RoutedEventArgs e)
+        {
+            if (Unit.Intelligence < Unit.MaxIntelligence)
+            {
+                Unit.Intelligence++;
+                intellegence.Text = Unit.Intelligence.ToString();
+                Unit.ExtraPoint--;
+                Extra_Points.Text = Unit.ExtraPoint.ToString();
+                Refreshing();
+            }
+            else
+            {
+                MessageBox.Show("Intelligence is max");
+            }
         }
     }
 }
