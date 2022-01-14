@@ -1,4 +1,5 @@
 ﻿using System;
+using Core;
 
 namespace DebugConsole
 {
@@ -6,7 +7,11 @@ namespace DebugConsole
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Warrior d = new Warrior("bob", 50, 50, 50, 50);
+            d.SetStrength(60);
+            Console.WriteLine(d.Strength);
+            d.SetStrength(500);
+            Console.WriteLine(d.Strength);
         }
     }
 }

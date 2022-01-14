@@ -7,13 +7,13 @@ namespace Core
     public abstract class Character
     { 
         public string Name { get; private set; }
-        public double Strength { get; private set; }
-        public double Dexterity { get; private set; }
-        public double Intelligence { get; private set; }
-        public double Constitution { get; private set; }
-        public double Health { get; private set; }
-        public double MaxHealth { get; private set; }
-        public double Mana { get; private set; }
+        public double Strength { get; protected set; }
+        public double Dexterity { get; protected set; }
+        public double Intelligence { get; protected set; }
+        public double Constitution { get; protected set; }
+        public double Health { get; protected set; }
+        public double MaxHealth { get; protected set; }
+        public double Mana { get; protected set; }
 
         public Character(string name, int s, int d, int i, int c)
         {
