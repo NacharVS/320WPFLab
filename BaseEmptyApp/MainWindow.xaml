@@ -7,6 +7,24 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="87*"/>
+            <RowDefinition Height="214*"/>
+            <RowDefinition Height="133*"/>
+            <RowDefinition Height="133*"/>
+            <RowDefinition Height="133*"/>
+            <RowDefinition Height="133*"/>
+            <RowDefinition Height="133*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="236*"/>
+            <ColumnDefinition Width="347*"/>
+            <ColumnDefinition Width="217*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="UnitType" Grid.Column="1" Grid.Row="1"/>
+        <Label x:Name="Health" Grid.Column="1" Grid.Row="2"></Label>
+        <Button x:Name="btnWarrior" Grid.Row="6" Click="btnWarrior_Click"></Button>
+        <Button x:Name="btnMage" Grid.Row="6" Grid.Column="1" Click="btnMage_Click"></Button>
+        <Button x:Name="btnArcher" Grid.Row="6" Grid.Column="2" Click="btnArcher_Click"></Button>
     </Grid>
 </Window>
