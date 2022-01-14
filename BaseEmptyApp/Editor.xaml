@@ -14,7 +14,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            
+
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -38,6 +38,7 @@
         <TextBox x:Name="intellegence" Grid.Column="1" Grid.Row="3" FontSize="20" IsEnabled="False"  Margin="40,5,5,5" Width="50"/>
         <TextBox x:Name="constitution" Grid.Column="1" Grid.Row="4" FontSize="20" IsEnabled="False" Margin="40,5,5,5" Width="50"/>
         <Button x:Name="StrengthMinus" Grid.Column="1" Grid.Row="1" Width="50" Margin="5,5,0,5" HorizontalAlignment="Left" Content="-" FontSize="20" Click="StrengthMinus_Click"/>
+        <Button x:Name="StrengthPlus" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Width="50" Margin="0,5,98,5" HorizontalAlignment="Right" Content="+" FontSize="20" Click="StrengthPlus_Click"/>
         <Button x:Name="DexterityMinus" Grid.Column="1" Grid.Row="2" Width="50" Margin="5,5,0,0" HorizontalAlignment="Left" Content="-" FontSize="20" Height="38" VerticalAlignment="Top" Click="DexterityMinus_Click"/>
         <Button x:Name="IntellegenceMinus" Grid.Column="1" Grid.Row="3" Width="50" Margin="5,5,0,0" HorizontalAlignment="Left" Content="-" FontSize="20" Height="38" VerticalAlignment="Top" Click="IntellegenceMinus_Click"/>
         <Button x:Name="ConstitutionMinus" Grid.Column="1" Grid.Row="4" Width="50" Margin="5,5,0,0" HorizontalAlignment="Left" Content="-" FontSize="20" Height="38" VerticalAlignment="Top" Click="ConstitutionMinus_Click"/>
@@ -62,6 +63,6 @@
         <TextBox x:Name="MCryticalDefence" Grid.Row="7" Grid.Column="4" FontSize="20" IsEnabled="False" Margin="20,5,5,5" Width="50" />
         <TextBox x:Name="PCryticalDamage" Grid.Row="8" Grid.Column="3" FontSize="20" IsEnabled="False" Margin="20,5,5,5" Width="50" />
         <TextBox x:Name="MCryticalDamage" Grid.Row="8" Grid.Column="4" FontSize="20" IsEnabled="False" Margin="20,5,5,5" Width="50" />
-        
+
     </Grid>
 </Window>

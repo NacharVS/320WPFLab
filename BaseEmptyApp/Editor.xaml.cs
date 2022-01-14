@@ -53,6 +53,7 @@ namespace BaseEmptyApp
             {
                 Unit.Strength--;
                 strengh.Text = Unit.Strength.ToString();
+                Refreshing();
             }
             else
             {
@@ -66,6 +67,7 @@ namespace BaseEmptyApp
             {
                 Unit.Dexterity--;
                 dexterity.Text = Unit.Dexterity.ToString();
+                Refreshing();
             }
             else
             {
@@ -79,6 +81,7 @@ namespace BaseEmptyApp
             {
                 Unit.Intelligence--;
                 intellegence.Text = Unit.Intelligence.ToString();
+                Refreshing();
             }
             else
             {
@@ -92,6 +95,7 @@ namespace BaseEmptyApp
             {
                 Unit.Constitution--;
                 constitution.Text = Unit.Constitution.ToString();
+                Refreshing();
             }
             else
             {
@@ -102,6 +106,34 @@ namespace BaseEmptyApp
         private void Extra_Points_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void StrengthPlus_Click(object sender, RoutedEventArgs e)
+        {
+            if(Unit.Strength < Unit.MaxStrength)
+            {
+                Unit.Strength++;
+                strengh.Text = Unit.Strength.ToString();
+                Unit.ExtraPoint--;
+                Extra_Points.Text = Unit.ExtraPoint.ToString();
+                Refreshing();
+            }
+            else
+            {
+                MessageBox.Show("Strengh is max");
+            }
+        }
+        public void Refreshing()
+        {
+            Health.Text = Unit.Health.ToString();
+            PAttack.Text = Unit.Physic.Attack.ToString();
+            PDefense.Text = Unit.Physic.Defense.ToString();
+            MAttack.Text = Unit.Magic.Attack.ToString();
+            MDefense.Text = Unit.Magic.Defense.ToString();
+            PCryticalDefence.Text = Unit.Physic.Defense.ToString();
+            MCryticalDefence.Text = Unit.Magic.Defense.ToString();
+            PCryticalDamage.Text = Unit.Physic.CriticalDamage.ToString();
+            MCryticalDamage.Text = Unit.Magic.CriticalDamage.ToString();
         }
     }
 }
