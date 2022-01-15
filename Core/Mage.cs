@@ -8,6 +8,8 @@ namespace Core
     {
         public Mage()
         {
+            imgCharacter = @"C:\Users\nasur\Source\Repos\320WPFLab1\BaseEmptyApp\images\mage.jpg";
+
             MinStrength = 15;
             MaxStrength = 45;
 
@@ -22,7 +24,7 @@ namespace Core
 
             Strength = 15;
             Dexterity = 20;
-            Intelligence = 30;
+            Intelligence = 15;
             Constitution = 20;
         }
     }
