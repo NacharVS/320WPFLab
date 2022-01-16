@@ -25,6 +25,20 @@ namespace BaseEmptyApp
         {
             InitializeComponent();
             character = ch;
+            UpdateCharacter();
+        }
+        private bool Change()
+        {
+            if (Case.EP > 0)
+            {
+                Case.EP--;
+                return true;
+            }
+            else MessageBox.Show("No extra points");
+            return false;
+        }
+        private void UpdateCharacter()
+        {
             TbStrength.Text = character.Strength.ToString();
             TbDexterity.Text = character.Dexterity.ToString();
             TbIntelligence.Text = character.Intelligence.ToString();
@@ -36,31 +50,76 @@ namespace BaseEmptyApp
 
             TbPhAttack.Text = character.PhysicalAttack().ToString();
             TbPhDefense.Text = character.PhysicalAttack().ToString();
-            TbPhCritChance.Text = character.PCritChance().ToString();
-            TbPhCritDamage.Text = character.PCritDamage().ToString();
+            TbPhCritChance.Text = Math.Round(character.PCritChance(), 2).ToString();
+            TbPhCritDamage.Text = Math.Round(character.PCritDamage(), 2).ToString();
 
             TbMagAttack.Text = character.MagicAttack().ToString();
             TbMagDefense.Text = character.MagicDef().ToString();
-            TbMagCritChance.Text = character.MCritChance().ToString();
-            TbMagCritDamage.Text = character.MCritDamage().ToString();
+            TbMagCritChance.Text =  Math.Round(character.MCritChance(), 2).ToString();
+            TbMagCritDamage.Text = Math.Round(character.MCritDamage(), 2).ToString();
+
 
             this.DataContext = this;
         }
 
-        private void BtnChange_Click(object sender, RoutedEventArgs e)
+        private void plusCon_btn_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (Change()) 
             {
-                character.Strength = int.Parse(TbStrength.Text);
-                character.Dexterity = int.Parse(TbDexterity.Text);
-                character.Intelligence = int.Parse(TbIntelligence.Text);
-                character.Constitution = int.Parse(TbConstitution.Text);
+                character.Constitution += 1;
+                UpdateCharacter();
             }
-            catch
+        }
+
+        private void plusInt_btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (Change())
             {
-                MessageBox.Show("Wrong values");
+                character.Intelligence += 1;
+                UpdateCharacter();
             }
-            NavigationService.Navigate(new CharacterPage(character));
+        }
+
+        private void plusDex_btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (Change())
+            {
+                character.Dexterity += 1;
+                UpdateCharacter();
+            }
+        }
+
+        private void plusStr_btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (Change())
+            {
+                character.Strength += 1;
+                UpdateCharacter();
+            }
+        }
+
+        private void minusStr_btn_Click(object sender, RoutedEventArgs e)
+        {
+            character.Strength -= 1;
+            UpdateCharacter();
+        }
+
+        private void minusDex_btn_Click(object sender, RoutedEventArgs e)
+        {
+            character.Dexterity -= 1;
+            UpdateCharacter();
+        }
+
+        private void minusInt_btn_Click(object sender, RoutedEventArgs e)
+        {
+            character.Intelligence -= 1;
+            UpdateCharacter();
+        }
+
+        private void minusCon_btn_Click(object sender, RoutedEventArgs e)
+        {
+            character.Constitution -= 1;
+            UpdateCharacter();
         }
     }
 }
