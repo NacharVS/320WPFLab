@@ -17,12 +17,12 @@ namespace BaseEmptyApp
     public partial class pageMain : Page
     {
         public Character Character { get; set; }
-        public string type { get; set; }
+
         public pageMain(Character character)
         {
             InitializeComponent();
             Character = character;
-            type_txt.Text = "Magical";
+            imageCharacter.Source = new BitmapImage(new Uri(Character.imgCharacter));
             this.DataContext = this;
             GetCharacteristics();
         }
@@ -34,174 +34,134 @@ namespace BaseEmptyApp
 
         public void GetCharacteristics()
         {
-            if (type_txt.Text == "Magical")
+            intel.Text = Character.Intelligence.ToString();
+            str.Text = Character.Strength.ToString();
+            con.Text = Character.Constitution.ToString();
+            dex.Text = Character.Dexterity.ToString();
+
+            mAttack_value.Content = Character.Magical.Attack;
+            mDefense_value.Content = Character.Magical.Defense;
+            mCriticalChanse_value.Content = Character.Magical.CriticalChanse;
+            mCriticalDamage_value.Content = Character.Magical.CriticalDamage;
+
+            pAttack_value.Content = Character.Physical.Attack;
+            pDefense_value.Content = Character.Physical.Defense;
+            pCriticalChanse_value.Content = Character.Physical.CriticalChanse;
+            pCriticalDamage_value.Content = Character.Physical.CriticalDamage;
+
+            health_value.Content = Character.Health;
+            mana_value.Content = Character.Mana;
+
+            extraPoint.Text = Character.ExtraPoint.ToString();
+        }
+
+        private bool IsTrue()
+        {
+            if (Character.ExtraPoint == 0)
             {
-                attack_value.Content = Character.Magical.Attack;
-                defense_value.Content = Character.Magical.Defense;
-                criticalChanse_value.Content = Character.Magical.CriticalChanse;
-                criticalDamage_value.Content = Character.Magical.CriticalDamage;
-                health_value.Content = Character.Health;
-                mana_value.Content = Character.Mana;
+                MessageBox.Show("Extra points are over");               
+                return false;
             }
             else
             {
-                attack_value.Content = Character.Physical.Attack;
-                defense_value.Content = Character.Physical.Defense;
-                criticalChanse_value.Content = Character.Physical.CriticalChanse;
-                criticalDamage_value.Content = Character.Physical.CriticalDamage;
-                health_value.Content = Character.Health;
-                mana_value.Content = Character.Mana;
+                Character.ExtraPoint--;
+                return true;
             }
         }
 
         private void dexPlus_Click(object sender, RoutedEventArgs e)
         {
-            if (Convert.ToInt32(dex.Text) < Character.MaxDexterity)
+            if (Character.Dexterity < Character.MaxDexterity)
             {
-                if (extraPoint.Text == "0")
-                {
+                if (IsTrue())
+                    Character.Dexterity++;     
                     GetCharacteristics();
-                }
-                else
-                {
-                    Character.Dexterity++;
-                    dex.Text = Character.Dexterity.ToString();
-                    extraPoint.Text = (Convert.ToInt32(extraPoint.Text) - 1).ToString();
-                    GetCharacteristics();
-                }
             }           
         }
 
         private void dexMinus_Click(object sender, RoutedEventArgs e)
         {
-            if (Convert.ToInt32(dex.Text) > Character.MinDexterity)
+            if (Character.Dexterity > Character.MinDexterity)
             {
-                if (extraPoint.Text == "0")
-                {
-                    GetCharacteristics();
-                }
-                else
-                {
-                    Character.Dexterity--;
-                    dex.Text = Character.Dexterity.ToString();
-                    extraPoint.Text = (Convert.ToInt32(extraPoint.Text) - 1).ToString();
-                    GetCharacteristics();
-                }
+                Character.Dexterity--;
+                Character.ExtraPoint++;
+                GetCharacteristics();
             }         
         }
 
         private void strMinus_Click(object sender, RoutedEventArgs e)
         {
-            if (Convert.ToInt32(str.Text) > Character.MinStrength)
+            if (Character.Strength > Character.MinStrength)
             {
-                if (extraPoint.Text == "0")
-                {
-                    GetCharacteristics();
-                }
-                else
-                {
-                    Character.Strength--;
-                    str.Text = Character.Strength.ToString();
-                    extraPoint.Text = (Convert.ToInt32(extraPoint.Text) - 1).ToString();
-                    GetCharacteristics();
-                }
+                Character.Strength--;
+                Character.ExtraPoint++;
+                GetCharacteristics();
             }
         }
 
         private void strPlus_Click(object sender, RoutedEventArgs e)
         {
-            if (Convert.ToInt32(str.Text) < Character.MaxStrength)
+            if (Character.Strength < Character.MaxStrength)
             {
-                if (extraPoint.Text == "0")
-                {
-                    GetCharacteristics();
-                }
-                else
-                {
+                if (IsTrue())
                     Character.Strength++;
-                    str.Text = Character.Strength.ToString();
-                    extraPoint.Text = (Convert.ToInt32(extraPoint.Text) - 1).ToString();
                     GetCharacteristics();
-                }
             }
         }
 
         private void intelMinus_Click(object sender, RoutedEventArgs e)
         {
-            if (Convert.ToInt32(intel.Text) > Character.MinIntelligence)
+            if (Character.Intelligence > Character.MinIntelligence)
             {
-                if (extraPoint.Text == "0")
-                {
-                    GetCharacteristics();
-                }
-                else
-                {
-                    Character.Intelligence--;
-                    intel.Text = Character.Intelligence.ToString();
-                    extraPoint.Text = (Convert.ToInt32(extraPoint.Text) - 1).ToString();
-                    GetCharacteristics();
-                }
+                Character.Intelligence--;
+                Character.ExtraPoint++;
+                GetCharacteristics();
             }
         }
 
         private void intelPlus_Click(object sender, RoutedEventArgs e)
         {
-            if (Convert.ToInt32(intel.Text) < Character.MaxIntelligence)
+            if (Character.Intelligence < Character.MaxIntelligence)
             {
-                if (extraPoint.Text == "0")
-                {
-                    GetCharacteristics();
-                }
-                else
-                {
+                if (IsTrue())
                     Character.Intelligence++;
-                    intel.Text = Character.Intelligence.ToString();
-                    extraPoint.Text = (Convert.ToInt32(extraPoint.Text) - 1).ToString();
                     GetCharacteristics();
-                }
             }
         }
 
         private void conMinus_Click(object sender, RoutedEventArgs e)
         {
-            if (Convert.ToInt32(con.Text) > Character.MinConstitution)
+            if (Character.Constitution > Character.MinConstitution)
             {
-                if (extraPoint.Text == "0")
-                {
-                    GetCharacteristics();
-                }
-                else
-                {
-                    Character.Constitution--;
-                    con.Text = Character.Constitution.ToString();
-                    extraPoint.Text = (Convert.ToInt32(extraPoint.Text) - 1).ToString();
-                    GetCharacteristics();
-                }
+                Character.Constitution--;
+                Character.ExtraPoint++;
+                GetCharacteristics();
             }
         }
 
         private void conPlus_Click(object sender, RoutedEventArgs e)
         {
-            if (Convert.ToInt32(con.Text) < Character.MaxConstitution)
+            if (Character.Constitution < Character.MaxConstitution)
             {
-                if (extraPoint.Text == "0")
-                {
-                    GetCharacteristics();
-                }
-                else
-                {
+                if (IsTrue())
                     Character.Constitution++;
-                    con.Text = Character.Constitution.ToString();
-                    extraPoint.Text = (Convert.ToInt32(extraPoint.Text) - 1).ToString();
                     GetCharacteristics();
-                }
             }
         }
 
-        private void type_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            type = (sender as ComboBox).SelectedItem.ToString();
-          
-        }
+        //private void extrPlus_Click(object sender, RoutedEventArgs e)
+        //{
+        //  <Button x:Name="extrMinus" Width="50" Content="-" Click="extrMinus_Click" Background="#FFA0D0F1"></Button>
+        //    if (Convert.ToInt32(extraPoint.Text) < Character.ExtraPoint)
+        //    {
+        //        extraPoint.Text = (Convert.ToInt32(extraPoint.Text) + 1).ToString();
+        //    }
+        //}
+
+        //private void extrMinus_Click(object sender, RoutedEventArgs e)
+        //{
+        // <Button x:Name="extrPlus" Width="50" Content="+" Click="extrPlus_Click" Background="#FFA0D0F1"></Button>
+        //    extraPoint.Text = (Convert.ToInt32(extraPoint.Text) - 1).ToString();
+        //}
     }
 }
