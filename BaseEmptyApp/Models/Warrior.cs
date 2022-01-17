@@ -70,6 +70,8 @@ namespace BaseEmptyApp.Models
             Dexterity = 15;
             Intelligence = 10;
             Constitution = 25;
+            Health = CountHealthPoints(Constitution, Strength);
+            Mana = CountManaPoints(Intelligence);
             PAttack = CountPhysAtt(Strength, Dexterity);
             MAttack = CountMagAtt(Intelligence);
             PResist = CountPhysRes(Constitution, Dexterity);

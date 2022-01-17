@@ -37,6 +37,13 @@ namespace BaseEmptyApp
             PhysCritChanceTB.Text = "Phys. Crit Chance: " + warrior.PhysCritChance.ToString();
             PhysCritDamageTB.Text = "Phys. Crit Damage: " + warrior.PhysCritDamage.ToString();
             HealthTB.Text = "Health: " + warrior.Health.ToString();
+            IntelligenceTB.Text = "Intelligence: " + warrior.Intelligence.ToString();
+            ConstitutionTB.Text = "Constitution: " + warrior.Constitution.ToString();
+            MAttackTB.Text = "M. Attack: " + warrior.MAttack.ToString();
+            MResistTB.Text = "M. Resist: " + warrior.MResist.ToString();
+            MagCritChanceTB.Text = "M. Crit Chance: " + warrior.PhysCritChance.ToString();
+            MagCritDamageTB.Text = "M. Crit Damage: " + warrior.PhysCritDamage.ToString();
+            ManaTB.Text = "Mana: " + warrior.Mana.ToString();
         }
 
         private void ChooseMageBtn_Click(object sender, RoutedEventArgs e)
@@ -50,6 +57,13 @@ namespace BaseEmptyApp
             PhysCritChanceTB.Text = "Phys. Crit Chance: " + mage.PhysCritChance.ToString();
             PhysCritDamageTB.Text = "Phys. Crit Damage: " + mage.PhysCritDamage.ToString();
             HealthTB.Text = "Health: " + mage.Health.ToString();
+            IntelligenceTB.Text = "Intelligence: " + mage.Intelligence.ToString();
+            ConstitutionTB.Text = "Constitution: " + mage.Constitution.ToString();
+            MAttackTB.Text = "M. Attack: " + mage.MAttack.ToString();
+            MResistTB.Text = "M. Resist: " + mage.MResist.ToString();
+            MagCritChanceTB.Text = "M. Crit Chance: " + mage.PhysCritChance.ToString();
+            MagCritDamageTB.Text = "M. Crit Damage: " + mage.PhysCritDamage.ToString();
+            ManaTB.Text = "Mana: " + mage.Mana.ToString();
         }
 
         private void ChooseArcherBtn_Click(object sender, RoutedEventArgs e)
@@ -63,6 +77,13 @@ namespace BaseEmptyApp
             PhysCritChanceTB.Text = "Phys. Crit Chance: " + archer.PhysCritChance.ToString();
             PhysCritDamageTB.Text = "Phys. Crit Damage: " + archer.PhysCritDamage.ToString();
             HealthTB.Text = "Health: " + archer.Health.ToString();
+            IntelligenceTB.Text = "Intelligence: " + archer.Intelligence.ToString();
+            ConstitutionTB.Text = "Constitution: " + archer.Constitution.ToString();
+            MAttackTB.Text = "M. Attack: " + archer.MAttack.ToString();
+            MResistTB.Text = "M. Resist: " + archer.MResist.ToString();
+            MagCritChanceTB.Text = "M. Crit Chance: " + archer.PhysCritChance.ToString();
+            MagCritDamageTB.Text = "M. Crit Damage: " + archer.PhysCritDamage.ToString();
+            ManaTB.Text = "Mana: " + archer.Mana.ToString();
         }
     }
 }
