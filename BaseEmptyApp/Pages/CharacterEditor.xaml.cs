@@ -20,65 +20,64 @@ namespace BaseEmptyApp.Pages
     /// </summary>
     public partial class CharacterEditor : Page
     {
-        BaseClass selectedPerson;
-        int valuePointtoChange = 100;
-        //int MaxPointToChange = 200;
-        int valuePoint = 1;
-        public CharacterEditor(BaseClass person)
+        BaseClass choosedChacter;
+        int defaultPoint = 100;
+        int amountPoint = 5;
+        public CharacterEditor(BaseClass character)
         {
             InitializeComponent();
 
-            selectedPerson = person;
+            choosedChacter = character;
             UpdateCharasteristics();
 
-            imagePerson.Source = new BitmapImage(new Uri(selectedPerson.imgPath));
+            imagePerson.Source = new BitmapImage(new Uri(choosedChacter.imgPath));
 
 
         }
         private void UpdateCharasteristics()
         {
-            HealthTextBox.Text = Convert.ToString(selectedPerson.Health);
-            ManaTextBox.Text = Convert.ToString(selectedPerson.Mana);
-            StrengthTextBox.Text = Convert.ToString(selectedPerson.Strenght);
-            DexterityTextBox.Text = Convert.ToString(selectedPerson.Dexterity);
-            IntelliganceTextBox.Text = Convert.ToString(selectedPerson.Intelligance);
-            ConstitutionTextBox.Text = Convert.ToString(selectedPerson.Constitution);
+            HealthTextBox.Text = Convert.ToString(choosedChacter.Health);
+            ManaTextBox.Text = Convert.ToString(choosedChacter.Mana);
+            StrengthTextBox.Text = Convert.ToString(choosedChacter.Strenght);
+            DexterityTextBox.Text = Convert.ToString(choosedChacter.Dexterity);
+            IntelliganceTextBox.Text = Convert.ToString(choosedChacter.Intelligance);
+            ConstitutionTextBox.Text = Convert.ToString(choosedChacter.Constitution);
 
-            PAttackTextBox.Text = Convert.ToString(selectedPerson.PhysAttack);
-            PDefenseTextBox.Text = Convert.ToString(selectedPerson.PhysDefense);
-            PCriticalChanseTextBox.Text = Convert.ToString(selectedPerson.PhysCriticalChanse);
-            PCriticalDamageTextBox.Text = Convert.ToString(selectedPerson.PhysCriticalDamage);
+            PAttackTextBox.Text = Convert.ToString(choosedChacter.PhysAttack);
+            PDefenseTextBox.Text = Convert.ToString(choosedChacter.PhysDefense);
+            PCriticalChanseTextBox.Text = Convert.ToString(choosedChacter.PhysCriticalChanse);
+            PCriticalDamageTextBox.Text = Convert.ToString(choosedChacter.PhysCriticalDamage);
 
-            MAttackTextBox.Text = Convert.ToString(selectedPerson.MagicAttack);
-            MDefenseTextBox.Text = Convert.ToString(selectedPerson.MagicDefense);
-            MCriticalChanseTextBox.Text = Convert.ToString(selectedPerson.MagicCriticalChanse);
-            MCriticalDamageTextBox.Text = Convert.ToString(selectedPerson.MagicCriticalDamage);
+            MAttackTextBox.Text = Convert.ToString(choosedChacter.MagicAttack);
+            MDefenseTextBox.Text = Convert.ToString(choosedChacter.MagicDefense);
+            MCriticalChanseTextBox.Text = Convert.ToString(choosedChacter.MagicCriticalChanse);
+            MCriticalDamageTextBox.Text = Convert.ToString(choosedChacter.MagicCriticalDamage);
 
-            pointsTextBox.Text = Convert.ToString(valuePointtoChange);
+            pointsTextBox.Text = Convert.ToString(defaultPoint);
         }
 
         private void StrenPlus_Click(object sender, RoutedEventArgs e)
         {
-            if (valuePointtoChange > 0 && selectedPerson.Strenght < selectedPerson.MaxStrenght)
+            if (defaultPoint > 0 && choosedChacter.Strenght < choosedChacter.MaxStrenght)
             {
-                valuePointtoChange -= 1;
-                pointsTextBox.Text = Convert.ToString(valuePointtoChange);
-                selectedPerson.Strenght += valuePoint;
-                StrengthTextBox.Text = Convert.ToString(selectedPerson.Strenght);
-                selectedPerson.StrenghtChange();
+                defaultPoint -= 1;
+                pointsTextBox.Text = Convert.ToString(defaultPoint);
+                choosedChacter.Strenght += amountPoint;
+                StrengthTextBox.Text = Convert.ToString(choosedChacter.Strenght);
+                choosedChacter.StrenghtChange();
                 UpdateCharasteristics();
             }
         }
 
         private void StrenMinus_Click(object sender, RoutedEventArgs e)
         {
-            if (valuePointtoChange >= 0 && selectedPerson.Strenght > selectedPerson.MinStrenght)
+            if (defaultPoint >= 0 && choosedChacter.Strenght > choosedChacter.MinStrenght)
             {
-                valuePointtoChange += 1;
-                pointsTextBox.Text = Convert.ToString(valuePointtoChange);
-                selectedPerson.Strenght -= valuePoint;
-                StrengthTextBox.Text = Convert.ToString(selectedPerson.Strenght);
-                selectedPerson.StrenghtChange();
+                defaultPoint += 1;
+                pointsTextBox.Text = Convert.ToString(defaultPoint);
+                choosedChacter.Strenght -= amountPoint;
+                StrengthTextBox.Text = Convert.ToString(choosedChacter.Strenght);
+                choosedChacter.StrenghtChange();
                 UpdateCharasteristics();
             }
 
@@ -86,13 +85,13 @@ namespace BaseEmptyApp.Pages
 
         private void DexPlus_Click(object sender, RoutedEventArgs e)
         {
-            if (valuePointtoChange > 0 && selectedPerson.Dexterity < selectedPerson.MaxDexterity)
+            if (defaultPoint > 0 && choosedChacter.Dexterity < choosedChacter.MaxDexterity)
             {
-                valuePointtoChange -= 1;
-                pointsTextBox.Text = Convert.ToString(valuePointtoChange);
-                selectedPerson.Dexterity += valuePoint;
-                DexterityTextBox.Text = Convert.ToString(selectedPerson.Dexterity);
-                selectedPerson.DexterityChange();
+                defaultPoint -= 1;
+                pointsTextBox.Text = Convert.ToString(defaultPoint);
+                choosedChacter.Dexterity += amountPoint;
+                DexterityTextBox.Text = Convert.ToString(choosedChacter.Dexterity);
+                choosedChacter.DexterityChange();
                 UpdateCharasteristics();
             }
 
@@ -101,26 +100,26 @@ namespace BaseEmptyApp.Pages
         private void DexMinus_Click(object sender, RoutedEventArgs e)
         {
 
-            if (valuePointtoChange >= 0 && selectedPerson.Dexterity > selectedPerson.MinDexterity)
+            if (defaultPoint >= 0 && choosedChacter.Dexterity > choosedChacter.MinDexterity)
             {
-                valuePointtoChange += 1;
-                pointsTextBox.Text = Convert.ToString(valuePointtoChange);
-                selectedPerson.Dexterity -= valuePoint;
-                DexterityTextBox.Text = Convert.ToString(selectedPerson.Dexterity);
-                selectedPerson.DexterityChange();
+                defaultPoint += 1;
+                pointsTextBox.Text = Convert.ToString(defaultPoint);
+                choosedChacter.Dexterity -= amountPoint;
+                DexterityTextBox.Text = Convert.ToString(choosedChacter.Dexterity);
+                choosedChacter.DexterityChange();
                 UpdateCharasteristics();
             }
         }
 
         private void IntPlus_Click(object sender, RoutedEventArgs e)
         {
-            if (valuePointtoChange > 0 && selectedPerson.Intelligance < selectedPerson.MaxIntelligance)
+            if (defaultPoint > 0 && choosedChacter.Intelligance < choosedChacter.MaxIntelligance)
             {
-                valuePointtoChange -= 1;
-                pointsTextBox.Text = Convert.ToString(valuePointtoChange);
-                selectedPerson.Intelligance += valuePoint;
-                IntelliganceTextBox.Text = Convert.ToString(selectedPerson.Intelligance);
-                selectedPerson.IntelliganceChange();
+                defaultPoint -= 1;
+                pointsTextBox.Text = Convert.ToString(defaultPoint);
+                choosedChacter.Intelligance += amountPoint;
+                IntelliganceTextBox.Text = Convert.ToString(choosedChacter.Intelligance);
+                choosedChacter.IntelliganceChange();
                 UpdateCharasteristics();
             }
 
@@ -128,13 +127,13 @@ namespace BaseEmptyApp.Pages
 
         private void IntMinus_Click(object sender, RoutedEventArgs e)
         {
-            if (valuePointtoChange >= 0 && selectedPerson.Intelligance > selectedPerson.MinIntelligance)
+            if (defaultPoint >= 0 && choosedChacter.Intelligance > choosedChacter.MinIntelligance)
             {
-                valuePointtoChange += 1;
-                pointsTextBox.Text = Convert.ToString(valuePointtoChange);
-                selectedPerson.Intelligance -= valuePoint;
-                IntelliganceTextBox.Text = Convert.ToString(selectedPerson.Intelligance);
-                selectedPerson.IntelliganceChange();
+                defaultPoint += 1;
+                pointsTextBox.Text = Convert.ToString(defaultPoint);
+                choosedChacter.Intelligance -= amountPoint;
+                IntelliganceTextBox.Text = Convert.ToString(choosedChacter.Intelligance);
+                choosedChacter.IntelliganceChange();
                 UpdateCharasteristics();
             }
 
@@ -142,13 +141,13 @@ namespace BaseEmptyApp.Pages
 
         private void ConPlus_Click(object sender, RoutedEventArgs e)
         {
-            if (valuePointtoChange > 0 && selectedPerson.Constitution < selectedPerson.MaxConstitution)
+            if (defaultPoint > 0 && choosedChacter.Constitution < choosedChacter.MaxConstitution)
             {
-                valuePointtoChange -= 1;
-                pointsTextBox.Text = Convert.ToString(valuePointtoChange);
-                selectedPerson.Constitution += valuePoint;
-                ConstitutionTextBox.Text = Convert.ToString(selectedPerson.Constitution);
-                selectedPerson.ConstitutionChange();
+                defaultPoint -= 1;
+                pointsTextBox.Text = Convert.ToString(defaultPoint);
+                choosedChacter.Constitution += amountPoint;
+                ConstitutionTextBox.Text = Convert.ToString(choosedChacter.Constitution);
+                choosedChacter.ConstitutionChange();
                 UpdateCharasteristics();
             }
 
@@ -156,13 +155,13 @@ namespace BaseEmptyApp.Pages
 
         private void ConMinus_Click(object sender, RoutedEventArgs e)
         {
-            if (valuePointtoChange >= 0 && selectedPerson.Constitution > selectedPerson.MinConstitution)
+            if (defaultPoint >= 0 && choosedChacter.Constitution > choosedChacter.MinConstitution)
             {
-                valuePointtoChange += 1;
-                pointsTextBox.Text = Convert.ToString(valuePointtoChange);
-                selectedPerson.Constitution -= valuePoint;
-                ConstitutionTextBox.Text = Convert.ToString(selectedPerson.Constitution);
-                selectedPerson.ConstitutionChange();
+                defaultPoint += 1;
+                pointsTextBox.Text = Convert.ToString(defaultPoint);
+                choosedChacter.Constitution -= amountPoint;
+                ConstitutionTextBox.Text = Convert.ToString(choosedChacter.Constitution);
+                choosedChacter.ConstitutionChange();
                 UpdateCharasteristics();
             }
 
@@ -176,8 +175,8 @@ namespace BaseEmptyApp.Pages
 
         private void btnPlusPointClick(object sender, RoutedEventArgs e)
         {
-            valuePointtoChange += 5;
-            pointsTextBox.Text = Convert.ToString(valuePointtoChange);
+            defaultPoint += 5;
+            pointsTextBox.Text = Convert.ToString(defaultPoint);
         }
     }
 }
