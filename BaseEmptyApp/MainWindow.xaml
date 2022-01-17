@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BaseEmptyApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="1000">
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
             <ColumnDefinition/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
@@ -18,10 +19,16 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
 
 
-        <ListBox Name="ListCharacter" Margin="20" Grid.Row="0" Grid.Column="0" SelectionChanged="ListCharacter_SelectionChanged"/>
+        <ComboBox Name="ComboCharacter" Margin="10" Grid.Row="0" Grid.Column="0" SelectionChanged="ComboCharacter_SelectionChanged">
+            <ComboBoxItem Content="Warrior"/>
+            <ComboBoxItem Content="Archer"/>
+            <ComboBoxItem Content="Mage"/>
+        </ComboBox>
         <TextBlock Text="Strength" Grid.Row="2" Grid.Column="0" TextAlignment="Center" FontSize="36" VerticalAlignment="Center"/>
         <TextBlock Text="Dexterity" Grid.Row="3" Grid.Column="0" TextAlignment="Center" FontSize="36" VerticalAlignment="Center"/>
         <TextBlock Text="Intelligence" Grid.Row="4" Grid.Column="0" TextAlignment="Center" FontSize="36" VerticalAlignment="Center"/>
@@ -31,7 +38,45 @@
         <Label Content="" x:Name="text_dex" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36"/>
         <Label Content="" x:Name="text_intel" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36"/>
         <Label Content="" x:Name="text_const" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36"/>
-        <!-- <Slider Value="0" Minimum="" Maximum="" SelectionStart="" Height="30" 
-        IsSelectionRangeEnabled="True" Grid.Column="1" HorizontalAlignment="Left" Margin="317,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="183" ValueChanged="Slider_ValueChanged"/>
-    --></Grid>
+        
+        <Label Content="" x:Name="text_point" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36"/>
+
+
+        <Button Content="-" FontSize="36" x:Name="btn_minus_str" Grid.Row="2" Grid.Column="1" Margin="0,0,210,0" Click="btn_minus_str_Click"/>
+        <Button Content="+" FontSize="36" x:Name="btn_plus_str" Grid.Row="2" Grid.Column="1" Margin="210,0,0,0" Click="btn_plus_str_Click"/>
+
+        <Button Content="-" FontSize="36" x:Name="btn_minus_dex" Grid.Row="3" Grid.Column="1" Margin="0,0,210,0" Click="btn_minus_dex_Click"/>
+        <Button Content="+" FontSize="36" x:Name="btn_plus_dex" Grid.Row="3" Grid.Column="1" Margin="210,0,0,0" Click="btn_plus_dex_Click"/>
+
+        <Button Content="-" FontSize="36" x:Name="btn_minus_intel" Grid.Row="4" Grid.Column="1" Margin="0,0,210,0" Click="btn_minus_intel_Click"/>
+        <Button Content="+" FontSize="36" x:Name="btn_plus_intel" Grid.Row="4" Grid.Column="1" Margin="210,0,0,0" Click="btn_plus_intel_Click"/>
+
+        <Button Content="-" FontSize="36" x:Name="btn_minus_cons" Grid.Row="5" Grid.Column="1" Margin="0,0,210,0" Click="btn_minus_cons_Click"/>
+        <Button Content="+" FontSize="36" x:Name="btn_plus_cons" Grid.Row="5" Grid.Column="1" Margin="210,0,0,0" Click="btn_plus_cons_Click"/>
+
+
+        <Label Content="P Attack" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" FontSize="20"/>
+        <Label Content="" x:Name="text_p_atck" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" FontSize="20"/>
+
+        <Label Content="M Attack" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" FontSize="20"/>
+        <Label Content="" x:Name="text_m_atck" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" FontSize="20"/>
+
+        <Label Content="P Defense" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" FontSize="20"/>
+        <Label Content="" x:Name="text_p_def" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" FontSize="20"/>
+
+        <Label Content="M Defense" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" FontSize="20"/>
+        <Label Content="" x:Name="text_m_def" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Right" FontSize="20"/>
+
+        <Label Content="P CriticalChance" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" FontSize="20"/>
+        <Label Content="" x:Name="text_p_CritlCh" Grid.Row="4" Grid.Column="2" HorizontalAlignment="Right" FontSize="20"/>
+
+        <Label Content="M CriticalChance" Grid.Row="5" Grid.Column="2" HorizontalAlignment="Left" FontSize="20"/>
+        <Label Content="" x:Name="text_m_CritlCh" Grid.Row="5" Grid.Column="2" HorizontalAlignment="Right" FontSize="20"/>
+
+        <Label Content="P CriticalDamage" Grid.Row="6" Grid.Column="2" HorizontalAlignment="Left" FontSize="20"/>
+        <Label Content="" x:Name="text_p_critDmg" Grid.Row="6" Grid.Column="2" HorizontalAlignment="Right" FontSize="20"/>
+
+        <Label Content="M CriticalDamage" Grid.Row="7" Grid.Column="2" HorizontalAlignment="Left" FontSize="20"/>
+        <Label Content="" x:Name="text_m_critDmg" Grid.Row="7" Grid.Column="2" HorizontalAlignment="Right" FontSize="20"/>
+    </Grid>
 </Window>

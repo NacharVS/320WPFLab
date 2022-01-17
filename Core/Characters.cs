@@ -8,87 +8,103 @@ namespace Core
 {
     public abstract class Character
     {
-        public enum HeroClass
-        {
-            Archer,
-            Mage,
-            Warrior
-        }
-
-        private double strength;
+        private double _strength;
+        public double Min_Strength { get; set; }
+        public double Max_Strength { get; set; }
         public double Strength
         {
-            get { return strength; }
-
-            set { strength = value; }
+            get { return _strength; }
+            set
+            {
+                if (value >= Min_Strength && value <= Max_Strength)
+                    _strength = value;
+            }
         }
 
-        private double dexterity;
+        private double _dexterity;
+        public double Min_Dexterity { get; set; }
+        public double Max_Dexterity { get; set; }
         public double Dexterity
         {
-            get { return dexterity; }
+            get { return _dexterity; }
 
-            set { dexterity = value; }
+            set
+            {
+                if (value >= Min_Dexterity && value <= Max_Dexterity)
+                    _dexterity = value;
+            }
         }
 
-        private double intelligence;
+        private double _intelligence;
+        public double Min_Intelligence { get; set; }
+        public double Max_Intelligence { get; set; }
         public double Intelligence
         {
-            get { return intelligence; }
+            get { return _intelligence; }
 
-            set { intelligence = value; }
+            set
+            {
+                if (value >= Min_Intelligence && value <= Max_Intelligence)
+                    _intelligence = value;
+            }
         }
 
-        private double constitution;
+        private double _constitution;
+        public double Min_Constitution { get; set; }
+        public double Max_Constitution { get; set; }
         public double Constitution
         {
-            get { return constitution; }
+            get { return _constitution; }
 
-            set { constitution = value; }
+            set
+            {
+                if (value >= Min_Constitution && value <= Max_Constitution)
+                    _constitution = value;
+            }
         }
 
-        private double health;
+        private double _health;
         public double Health
         {
             get 
             {
-                health = 2 * constitution + 0.5 * strength;
+                _health = (2 * _constitution) + (0.5 * _strength);
 
-                if (health < 0.5 * health)
+                if (_health < 0.5 * _health)
                 {
-                    strength =- strength * 0.1;
-                    dexterity =- dexterity * 0.1;
-                    intelligence =- intelligence * 0.1;
-                    constitution =- constitution * 0.1;
+                    _strength =- _strength * 0.1;
+                    _dexterity =- _dexterity * 0.1;
+                    _intelligence =- _intelligence * 0.1;
+                    _constitution =- _constitution * 0.1;
                 }
-                return health; 
+                return _health; 
             }
 
-            set { health = value; }
+            set { _health = value; }
         }
 
-        private double mana;
+        private double _mana;
         public double Mana
         {
             get 
             {
-                mana = Intelligence * 3;
+                _mana = Intelligence * 3;
 
-                if (mana < 0.2 * mana)
+                if (_mana < 0.2 * _mana)
                 {
-                    health =- health * 0.2;
+                    _health =- _health * 0.2;
                 }
-                return mana; 
+                return _mana; 
             }
         }
 
-        private Сharacteristic characts => 
+        private Сharacteristic _characts => 
             new Сharacteristic(Strength, Dexterity, Intelligence, Constitution);
         public Сharacteristic Сharacts
         {
-            get { return characts; }
+            get { return _characts; }
         }
 
-        protected int ExtraPoint = 500;
+        public int ExtraPoint = 5;
     }
 }
