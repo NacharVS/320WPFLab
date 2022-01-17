@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Button x:Name="ButtonWarrior" Content="Warrior" HorizontalAlignment="Left" Margin="46,162,0,0" VerticalAlignment="Top" Height="100" Width="150" FontSize="30" Click="ButtonWarrior_Click"/>
+        <Button x:Name="ButtonMage" Content="Mage" HorizontalAlignment="Center" Margin="0,162,0,0" VerticalAlignment="Top" Height="100" Width="150" FontSize="30" Click="ButtonMage_Click"/>
+        <Button x:Name="ButtonArcher" Content="Archer" HorizontalAlignment="Left" Margin="601,162,0,0" VerticalAlignment="Top" Height="100" Width="150" FontSize="30" Click="ButtonArcher_Click"/>
     </Grid>
 </Window>

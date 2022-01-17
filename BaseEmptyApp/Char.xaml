@@ -1,0 +1,70 @@
+﻿<Window x:Class="BaseEmptyApp.Char"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BaseEmptyApp"
+        mc:Ignorable="d"
+        Title="Char" Height="450" Width="800" Background="Bisque">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="Name" Text="" Grid.Row="0" FontSize="24" Grid.Column="2" Grid.ColumnSpan="2" TextAlignment="Center"/>
+        <TextBlock Text="Strength" Grid.Row="1" FontSize="20" TextAlignment="Right" Margin="10,10,10,10"/>
+        <TextBlock Text="Dexterity" Grid.Row="2" FontSize="20" TextAlignment="Right" Margin="10,10,10,10"/>
+        <TextBlock Text="Intellegence" Grid.Row="3" FontSize="20" TextAlignment="Right" Margin="10,10,10,10"/>
+        <TextBlock Text="Constitution" Grid.Row="4" FontSize="20" TextAlignment="Right" Margin="10,10,10,10"/>
+        <TextBox x:Name="strengh" Grid.Column="1" Grid.Row="1" FontSize="20" IsEnabled="False" Margin="40,5,5,5" Width="50" TextChanged="strengh_TextChanged"/>
+        <TextBox x:Name="dexterity" Grid.Column="1" Grid.Row="2" FontSize="20" IsEnabled="False"  Margin="40,5,5,5" Width="50" TextChanged="dexterity_TextChanged"/>
+        <TextBox x:Name="intellegence" Grid.Column="1" Grid.Row="3" FontSize="20" IsEnabled="False"  Margin="40,5,5,5" Width="50" TextChanged="intellegence_TextChanged"/>
+        <TextBox x:Name="constitution" Grid.Column="1" Grid.Row="4" FontSize="20" IsEnabled="False" Margin="40,5,5,5" Width="50" TextChanged="constitution_TextChanged"/>
+        <Button x:Name="StrengthMinus" Grid.Column="1" Grid.Row="1" Margin="5,5,79,5" Content="-" FontSize="20" Click="StrengthMinus_Click"/>
+        <Button x:Name="StrengthPlus" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Width="50" Margin="119,5,0,0" HorizontalAlignment="Left" Content="+" FontSize="20" Click="StrengthPlus_Click" Height="34" VerticalAlignment="Top"/>
+        <Button x:Name="DexterityMinus" Grid.Column="1" Grid.Row="2" Width="50" Margin="5,5,0,0" HorizontalAlignment="Left" Content="-" FontSize="20" Height="38" VerticalAlignment="Top" Click="DexterityMinus_Click"/>
+        <Button x:Name="DexterityPlus" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Width="50" Margin="0,5,98,5" HorizontalAlignment="Right" Content="+" FontSize="20" Click="DexterityPlus_Click"/>
+        <Button x:Name="IntellegenceMinus" Grid.Column="1" Grid.Row="3" Width="50" Margin="5,5,0,0" HorizontalAlignment="Left" Content="-" FontSize="20" Height="38" VerticalAlignment="Top" Click="IntellegenceMinus_Click"/>
+        <Button x:Name="IntellegencePlus" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Width="50" Margin="0,5,98,5" HorizontalAlignment="Right" Content="+" FontSize="20" Click="IntellegencePlus_Click"/>
+        <Button x:Name="ConstitutionMinus" Grid.Column="1" Grid.Row="4" Width="50" Margin="5,5,0,0" HorizontalAlignment="Left" Content="-" FontSize="20" Height="38" VerticalAlignment="Top" Click="ConstitutionMinus_Click"/>
+        <Button x:Name="ConstitutionPlus" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Width="50" Margin="0,5,98,5" HorizontalAlignment="Right" Content="+" FontSize="20" Click="ConstitutionPlus_Click"/>
+        <TextBlock Text="Health" Grid.Row="1" Grid.Column="2" TextAlignment="Right" Margin="0,10,10,10" FontSize="20" HorizontalAlignment="Right" Width="113" Foreground="Red"/>
+        <TextBox x:Name="Health" Grid.Row="1" Grid.Column="3" FontSize="20" IsEnabled="False" Margin="20,5,5,5" Width="80" TextChanged="Health_TextChanged"/>
+        <TextBlock Text="Mana" Grid.Row="2" Grid.Column="2" TextAlignment="Right" Margin="10,10,10,10" FontSize="20" Foreground="Blue"/>
+        <TextBlock Text="Extra Points" Grid.Row="1" Grid.Column="4" TextAlignment="Right" Margin="10,10,10,10" FontSize="20" Foreground="Violet"/>
+        <TextBox x:Name="Extra_Points" Grid.Row="1" Grid.Column="5" FontSize="20" IsEnabled="False" Margin="20,5,5,5" Width="70" TextChanged="Extra_Points_TextChanged" />
+        <TextBox x:Name="Mana" Grid.Row="2" Grid.Column="3" FontSize="20" IsEnabled="False" Margin="20,5,5,5" Width="80" TextChanged="Mana_TextChanged" />
+        <TextBlock Text="Physic" Grid.Row="4" Grid.Column="3" TextAlignment="Center"  FontSize="20"/>
+        <TextBlock Text="Magic" Grid.Row="4" Grid.Column="4" TextAlignment="Center"  FontSize="20"/>
+        <TextBlock Text="Attack" Grid.Row="5" Grid.Column="2" TextAlignment="Right"  FontSize="20"/>
+        <TextBlock Text="Defence" Grid.Row="6" Grid.Column="2" TextAlignment="Right"  FontSize="20"/>
+        <TextBlock Text="Crytical Chance" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Right"  FontSize="20"/>
+        <TextBlock Text="Crytical Damage" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2" TextAlignment="Right"  FontSize="20"/>
+        <TextBox x:Name="PAttack" Grid.Row="5" Grid.Column="3" FontSize="20" IsEnabled="False" Margin="20,5,5,5" Width="80" TextChanged="PAttack_TextChanged" />
+        <TextBox x:Name="MAttack" Grid.Row="5" Grid.Column="4" FontSize="20" IsEnabled="False" Margin="20,5,5,5" Width="80" TextChanged="MAttack_TextChanged" />
+        <TextBox x:Name="PDefense" Grid.Row="6" Grid.Column="3" FontSize="20" IsEnabled="False" Margin="20,5,5,5" Width="80" TextChanged="PDefense_TextChanged" />
+        <TextBox x:Name="MDefense" Grid.Row="6" Grid.Column="4" FontSize="20" IsEnabled="False" Margin="20,5,5,5" Width="80" TextChanged="MDefense_TextChanged" />
+        <TextBox x:Name="PCryticalChance" Grid.Row="7" Grid.Column="3" FontSize="20" IsEnabled="False" Margin="20,5,5,5" Width="80" TextChanged="PCryticalDefence_TextChanged" />
+        <TextBox x:Name="MCryticalChance" Grid.Row="7" Grid.Column="4" FontSize="20" IsEnabled="False" Margin="20,5,5,5" Width="80" TextChanged="MCryticalDefence_TextChanged" />
+        <TextBox x:Name="PCryticalDamage" Grid.Row="8" Grid.Column="3" FontSize="20" IsEnabled="False" Margin="20,5,5,5" Width="80" TextChanged="PCryticalDamage_TextChanged" />
+        <TextBox x:Name="MCryticalDamage" Grid.Row="8" Grid.Column="4" FontSize="20" IsEnabled="False" Margin="20,5,5,5" Width="80" TextChanged="MCryticalDamage_TextChanged" />
+        <TextBlock x:Name="name" Grid.Column="2" HorizontalAlignment="Left" Margin="52,0,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Center" Grid.ColumnSpan="2" Width="155" Height="23" FontSize="20"/>
+    </Grid>
+</Window>
