@@ -10,10 +10,10 @@ namespace Core
     {
         public PhysicСharacteristic(double Strength, double Dexterity, double Intelligence, double Constitution)
         {
-            Attack = 3 * Strength + 0.5 * Dexterity;
-            Defense = 0.5 * Constitution + 3 * Dexterity;
-            CriticalChance = 20 + 0.3 * Constitution;
-            CriticalDamage = Attack * (2 + 0.05 * Constitution);
+            Attack = Math.Round(3 * Strength + 0.5 * Dexterity, 5);
+            Defense = Math.Round(0.5 * Constitution + 3 * Dexterity, 5);
+            CriticalChance = Math.Round(20 + 0.3 * Constitution, 5);
+            CriticalDamage = Math.Round(Attack * (2 + 0.05 * Constitution), 5);
         }
     }
 }

@@ -21,17 +21,12 @@ namespace Core
         public virtual double MaxStrength { get; }
         public double Strength
         {
-            get
-            {
-                return _strength;
-            }
+            get { return _strength; }
 
             set
             {
-                if (value >= MinStrength & value <= MaxStrength)
+                if (value >= MinStrength & value <= MaxStrength & Points > 0)
                     _strength = value;
-                else
-                    throw new Exception("Cannot set this value");
             }
         }
 
@@ -44,10 +39,8 @@ namespace Core
 
             set
             {
-                if (value >= MinDexterity & value <= MaxDexterity)
+                if (value >= MinDexterity & value <= MaxDexterity & Points > 0)
                     _dexterity = value;
-                else
-                    throw new Exception("Cannot set this value");
             }
         }
 
@@ -60,10 +53,8 @@ namespace Core
 
             set
             {
-                if (value >= MinIntelligence & value <= MaxIntelligence)
+                if (value >= MinIntelligence & value <= MaxIntelligence & Points > 0)
                     _intelligence = value;
-                else
-                    throw new Exception("Cannot set this value");
             }
         }
 
@@ -76,10 +67,8 @@ namespace Core
 
             set
             {
-                if (value >= MinConstitution & value <= MaxConstitution)
+                if (value >= MinConstitution & value <= MaxConstitution & Points > 0)
                     _constitution = value;
-                else
-                    throw new Exception("Cannot set this value");
             }
         }
 
@@ -106,6 +95,16 @@ namespace Core
             get { return _physic; }
         }
 
-        public int Points { get; set; } = 100;
+        private int _points = 10;
+        public int Points
+        {
+            get { return _points; }
+
+            set
+            {
+                if (value > 0)
+                    _points = value;
+            }
+        }
     }
 }

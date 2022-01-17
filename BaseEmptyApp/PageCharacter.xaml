@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PageCharacter">
 
-    <Grid >
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="10*"/>
@@ -25,36 +25,36 @@
         <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" DataContext="{Binding character}">
             <StackPanel Margin="0,0,0,50">
                 <TextBlock Text="Points" FontSize="25"/>
-                <TextBox x:Name="tbPoints" Width="150"/>
+                <TextBox Width="150" Text="{Binding Points}"/>
                 <Button Content="+"  Width="25" Height="25" Padding="0" Margin="5" Click="btnPlusPointClick"/>
             </StackPanel>
             <StackPanel>
                 <TextBlock Text="Strength" FontSize="25"/>
                 <Button Content="-"  Width="25" Height="25" Padding="0" Margin="5" Click="btnMinusStrengthClick"/>
-                <TextBox x:Name="tbStrength" Width="150"/>
+                <TextBox Width="150" Text="{Binding Strength}"/>
                 <Button Content="+"  Width="25" Height="25" Padding="0" Margin="5" Click="btnPlusStrengthClick"/>
             </StackPanel>
             <StackPanel>
                 <TextBlock Text="Dexterity" FontSize="25"/>
                 <Button Content="-"  Width="25" Height="25" Padding="0" Margin="5" Click="btnMinusDexterityClick"/>
-                <TextBox x:Name="tbDexterity" Width="150"/>
+                <TextBox Width="150" Text="{Binding Dexterity}"/>
                 <Button Content="+"  Width="25" Height="25" Padding="0" Margin="5" Click="btnPlusDexterityClick"/>
             </StackPanel>
             <StackPanel>
                 <TextBlock Text="Intelligence" FontSize="25"/>
                 <Button Content="-"  Width="25" Height="25" Padding="0" Margin="5" Click="btnMinusIntelligenceClick"/>
-                <TextBox x:Name="tbIntelligence" Width="150"/>
+                <TextBox Width="150" Text="{Binding Intelligence}"/>
                 <Button Content="+"  Width="25" Height="25" Padding="0" Margin="5" Click="btnPlusIntelligenceClick"/>
             </StackPanel>
             <StackPanel>
                 <TextBlock Text="Constitution" FontSize="25"/>
                 <Button Content="-"  Width="25" Height="25" Padding="0" Margin="5" Click="btnMinusConstitutionClick"/>
-                <TextBox x:Name="tbConstitution" Width="150"/>
+                <TextBox Width="150" Text="{Binding Constitution}"/>
                 <Button Content="+"  Width="25" Height="25" Padding="0" Margin="5" Click="btnPlusConstitutionClick"/>
             </StackPanel>
         </StackPanel>
 
-        <Grid Grid.Column="2" Grid.Row="1">
+        <Grid Grid.Column="2" Grid.Row="1" DataContext="{Binding character}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -84,16 +84,16 @@
             <TextBlock FontSize="20" Grid.Row="8" Grid.Column="0" Text="P.Critical Damage"/>
             <TextBlock FontSize="20" Grid.Row="9" Grid.Column="0" Text="M.Critical Damage"/>
 
-            <TextBlock Grid.Row="0" Grid.Column="1" x:Name="tbHealth"/>
-            <TextBlock Grid.Row="1" Grid.Column="1" x:Name="tbMana"/>
-            <TextBlock Grid.Row="2" Grid.Column="1" x:Name="tbPAttack"/>
-            <TextBlock Grid.Row="3" Grid.Column="1" x:Name="tbPDefense"/>
-            <TextBlock Grid.Row="4" Grid.Column="1" x:Name="tbMAttack"/>
-            <TextBlock Grid.Row="5" Grid.Column="1" x:Name="tbMDefense"/>
-            <TextBlock Grid.Row="6" Grid.Column="1" x:Name="tbPCriticalChance"/>
-            <TextBlock Grid.Row="7" Grid.Column="1" x:Name="tbMCriticalChance"/>
-            <TextBlock Grid.Row="8" Grid.Column="1" x:Name="tbPCriticalDamage"/>
-            <TextBlock Grid.Row="9" Grid.Column="1" x:Name="tbMCriticalDamage"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Health}" />
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Mana}" x:Name="tbMana"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Physic.Attack}"/>
+            <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Physic.Defense}"/>
+            <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding Magic.Attack}"/>
+            <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding Magic.Defense}"/>
+            <TextBlock Grid.Row="6" Grid.Column="1" Text="{Binding Physic.CriticalChance}"/>
+            <TextBlock Grid.Row="7" Grid.Column="1" Text="{Binding Magic.CriticalChance}"/>
+            <TextBlock Grid.Row="8" Grid.Column="1" Text="{Binding Physic.CriticalDamage}"/>
+            <TextBlock Grid.Row="9" Grid.Column="1" Text="{Binding Magic.CriticalDamage}"/>
         </Grid>
     </Grid>
 </Page>
