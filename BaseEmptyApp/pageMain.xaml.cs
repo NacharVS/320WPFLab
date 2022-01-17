@@ -148,20 +148,5 @@ namespace BaseEmptyApp
                     GetCharacteristics();
             }
         }
-
-        //private void extrPlus_Click(object sender, RoutedEventArgs e)
-        //{
-        //  <Button x:Name="extrMinus" Width="50" Content="-" Click="extrMinus_Click" Background="#FFA0D0F1"></Button>
-        //    if (Convert.ToInt32(extraPoint.Text) < Character.ExtraPoint)
-        //    {
-        //        extraPoint.Text = (Convert.ToInt32(extraPoint.Text) + 1).ToString();
-        //    }
-        //}
-
-        //private void extrMinus_Click(object sender, RoutedEventArgs e)
-        //{
-        // <Button x:Name="extrPlus" Width="50" Content="+" Click="extrPlus_Click" Background="#FFA0D0F1"></Button>
-        //    extraPoint.Text = (Convert.ToInt32(extraPoint.Text) - 1).ToString();
-        //}
     }
 }

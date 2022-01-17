@@ -8,6 +8,8 @@ namespace Core
     {
         public Archer()
         {
+            imgCharacter = @"C:\Users\nasur\Source\Repos\320WPFLab1\BaseEmptyApp\images\archer.jpg";
+
             MinStrength = 20;
             MaxStrength = 55;
 

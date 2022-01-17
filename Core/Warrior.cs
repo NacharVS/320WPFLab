@@ -8,6 +8,8 @@ namespace Core
     {
         public Warrior()
         {
+            imgCharacter = @"C:\Users\nasur\Source\Repos\320WPFLab1\BaseEmptyApp\images\warrier.jpg";
+
             MinStrength = 30;
             MaxStrength = 250;
 

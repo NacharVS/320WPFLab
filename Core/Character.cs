@@ -4,6 +4,8 @@ namespace Core
 {
     public abstract class Character
     {
+        public string imgCharacter;
+
         private int strength;
         public int MinStrength { get; set; }
         public int MaxStrength { get; set; }
@@ -12,8 +14,8 @@ namespace Core
             {
                 if (value >= MinStrength && value <= MaxStrength)
                     strength = value;
-                //else
-                //    throw new Exception("!!!!!");
+                else
+                    throw new Exception("!!!!!");
             }
         }
 
@@ -25,8 +27,8 @@ namespace Core
             {
                 if (value >= MinDexterity && value <= MaxDexterity)
                     dexterity = value;
-                //else
-                //    throw new Exception("!!!!!");
+                else
+                    throw new Exception("!!!!!");
             }
         }
 
@@ -66,5 +68,7 @@ namespace Core
 
         private MagicalStats magical => new MagicalStats(Strength, Dexterity, Intelligence, Constitution);
         public MagicalStats Magical { get { return magical; } }
+
+        public int ExtraPoint { get; set; } = 5;
     }
 }
