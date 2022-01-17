@@ -8,39 +8,82 @@ namespace Core
 {
     public abstract class Character
     {
-        private int _strength;
-        public int Strength
+        public Character()
         {
-            get { return _strength; }
-
-            set { _strength = value; }
+            Strength = MinStrength;
+            Dexterity = MinDexterity;
+            Intelligence = MinIntelligence;
+            Constitution = MinConstitution;
         }
 
-        private int _dexterity;
-        public int Dexterity
+        private double _strength;
+        public virtual double MinStrength { get; }
+        public virtual double MaxStrength { get; }
+        public double Strength
+        {
+            get
+            {
+                return _strength;
+            }
+
+            set
+            {
+                if (value >= MinStrength & value <= MaxStrength)
+                    _strength = value;
+                else
+                    throw new Exception("Cannot set this value");
+            }
+        }
+
+        private double _dexterity;
+        public virtual double MinDexterity { get; }
+        public virtual double MaxDexterity { get; }
+        public double Dexterity
         {
             get { return _dexterity; }
-            
-            set { _dexterity = value; }
+
+            set
+            {
+                if (value >= MinDexterity & value <= MaxDexterity)
+                    _dexterity = value;
+                else
+                    throw new Exception("Cannot set this value");
+            }
         }
 
-        private int _intelligence;
-        public int Intelligence
+        private double _intelligence;
+        public virtual double MinIntelligence { get; }
+        public virtual double MaxIntelligence { get; }
+        public double Intelligence
         {
             get { return _intelligence; }
-            
-            set { _intelligence = value; }
+
+            set
+            {
+                if (value >= MinIntelligence & value <= MaxIntelligence)
+                    _intelligence = value;
+                else
+                    throw new Exception("Cannot set this value");
+            }
         }
 
-        private int _constitution;
-        public int Constitution
+        private double _constitution;
+        public virtual double MinConstitution { get; }
+        public virtual double MaxConstitution { get; }
+        public double Constitution
         {
             get { return _constitution; }
 
-            set { _constitution = value; }
+            set
+            {
+                if (value >= MinConstitution & value <= MaxConstitution)
+                    _constitution = value;
+                else
+                    throw new Exception("Cannot set this value");
+            }
         }
 
-        private double _health => 2 * _constitution + 0.5 * _strength;
+        private double _health => 2 * Constitution + 0.5 * Strength;
         public double Health
         {
             get { return _health; }
@@ -63,6 +106,6 @@ namespace Core
             get { return _physic; }
         }
 
-        protected int ExtraPoint = 500;
+        public int Points { get; set; } = 100;
     }
 }

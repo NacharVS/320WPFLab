@@ -8,12 +8,16 @@ namespace Core
 {
     public class Mage : Character
     {
-        public Mage()
-        {
-            Strength = 15;
-            Dexterity = 20;
-            Intelligence = 30;
-            Constitution = 15;
-        }
+        public override double MinStrength { get; } = 15;
+        public override double MaxStrength { get; } = 45;
+
+        public override double MinDexterity { get; } = 20;
+        public override double MaxDexterity { get; } = 70;
+
+        public override double MinIntelligence { get; } = 30;
+        public override double MaxIntelligence { get; } = 250;
+
+        public override double MinConstitution { get; } = 15;
+        public override double MaxConstitution { get; } = 65;
     }
 }

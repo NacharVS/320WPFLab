@@ -8,7 +8,7 @@ namespace Core
 {
     public class PhysicСharacteristic : Сharacteristic
     {
-        public PhysicСharacteristic(int Strength, int Dexterity, int Intelligence, int Constitution)
+        public PhysicСharacteristic(double Strength, double Dexterity, double Intelligence, double Constitution)
         {
             Attack = 3 * Strength + 0.5 * Dexterity;
             Defense = 0.5 * Constitution + 3 * Dexterity;

@@ -8,7 +8,7 @@ namespace Core
 {
     public class MagicСharacteristic : Сharacteristic
     {
-        public MagicСharacteristic(int Strength, int Dexterity, int Intelligence, int Constitution)
+        public MagicСharacteristic(double Strength, double Dexterity, double Intelligence, double Constitution)
         {
             Attack = 4 * Intelligence;
             Defense = 2 * Intelligence;

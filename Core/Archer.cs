@@ -8,12 +8,16 @@ namespace Core
 {
     public class Archer : Character
     {
-        public Archer()
-        {
-            Strength = 20;
-            Dexterity = 30;
-            Intelligence = 15;
-            Constitution = 20;
-        }
+        public override double MinStrength => 20;
+        public override double MaxStrength => 55;
+
+        public override double MinDexterity => 30;
+        public override double MaxDexterity => 250;
+
+        public override double MinIntelligence => 15;
+        public override double MaxIntelligence => 70;
+
+        public override double MinConstitution => 20;
+        public override double MaxConstitution => 70;
     }
 }
