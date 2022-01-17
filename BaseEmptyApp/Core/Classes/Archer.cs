@@ -9,7 +9,7 @@ namespace BaseEmptyApp.Core
     {
         public Archer()
         {
-            this.imgPath = @"C:\Users\secon\Source\Repos\320WPFLab\BaseEmptyApp\images\archerJpg.jpg";
+            this.imgPath = @"C:\Users\danil\Source\Repos\320WPFLab\BaseEmptyApp\images\archer.png";
             this.MinStrenght = 20;
             this.MinDexterity = 30;
             this.MinIntelligance = 15;

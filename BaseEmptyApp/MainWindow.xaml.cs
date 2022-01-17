@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace BaseEmptyApp
 {
     /// <summary>
@@ -23,7 +24,7 @@ namespace BaseEmptyApp
         public MainWindow()
         {
             InitializeComponent();
-            //frame_autho_reg.NavigationService.Navigate(new ChooseCharacter());
+            frame.NavigationService.Navigate(new Pages.ChooseCharacter());
         }
     }
 }

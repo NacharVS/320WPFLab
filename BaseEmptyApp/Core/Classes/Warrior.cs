@@ -9,7 +9,7 @@ namespace BaseEmptyApp.Core
     {
         public Warrior()
         {
-            this.imgPath = @"C:\Users\secon\Source\Repos\320WPFLab\BaseEmptyApp\images\WarriorPng.jpg";
+            this.imgPath = @"C:\Users\danil\Source\Repos\320WPFLab\BaseEmptyApp\images\warrior.png";
             this.MinStrenght = 30;
             this.MinDexterity = 15;
             this.MinIntelligance = 10;

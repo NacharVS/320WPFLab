@@ -9,6 +9,66 @@
       Title="CharacterEditor">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width="1*"  />
+            <ColumnDefinition Width="2*" />
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="71*"/>
+            <RowDefinition Height="19*"/>
+        </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Left" Height="280" Margin="43,60,0,0" VerticalAlignment="Top" Width="425" Background="#FFE1AC45" Grid.Column="1">
+            <TextBox x:Name="StrengthTextBox" HorizontalAlignment="Left" Margin="40,45,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" Height="21"/>
+            <Label Content="Strength" HorizontalAlignment="Left" Margin="35,20,0,0" VerticalAlignment="Top" Height="28" Width="55"/>
+            <TextBox x:Name="DexterityTextBox" HorizontalAlignment="Left" Margin="40,105,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" Height="21" RenderTransformOrigin="0.333,0.524"/>
+            <Label Content="Dexterity" HorizontalAlignment="Left" Margin="35,80,0,0" VerticalAlignment="Top" Height="28" Width="60"/>
+            <TextBox x:Name="IntelliganceTextBox" HorizontalAlignment="Left" Margin="40,165,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" Height="21" RenderTransformOrigin="0.539,0.478"/>
+            <Label Content="Intelligance" HorizontalAlignment="Left" Margin="35,140,0,0" VerticalAlignment="Top" Height="28" Width="75"/>
+            <TextBox x:Name="ConstitutionTextBox" HorizontalAlignment="Left" Margin="40,229,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" Height="21"/>
+            <Label Content="Constitution" HorizontalAlignment="Left" Margin="35,200,0,0" VerticalAlignment="Top" Height="28" Width="96"/>
+
+            <TextBox x:Name="PAttackTextBox" HorizontalAlignment="Left" Margin="338,42,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="21" IsEnabled="False" RenderTransformOrigin="0.539,0.526"/>
+            <TextBox x:Name="PDefenseTextBox" HorizontalAlignment="Left" Margin="338,81,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="21" IsEnabled="False"/>
+            <TextBox x:Name="PCriticalChanseTextBox" HorizontalAlignment="Left" Margin="338,121,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="21" IsEnabled="False"/>
+            <TextBox x:Name="PCriticalDamageTextBox" HorizontalAlignment="Left" Margin="338,162,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="21" IsEnabled="False" RenderTransformOrigin="0.539,0.621"/>
+
+            <TextBox x:Name="MAttackTextBox" HorizontalAlignment="Left" Margin="258,42,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="21" IsEnabled="False" RenderTransformOrigin="0.535,0.716"/>
+            <Label Content="Attack" HorizontalAlignment="Left" Margin="160,37,0,0" VerticalAlignment="Top" Height="28" Width="61"/>
+            <TextBox x:Name="MDefenseTextBox" HorizontalAlignment="Left" Margin="258,81,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="21" IsEnabled="False" RenderTransformOrigin="0.475,0.526"/>
+            <Label Content="Defense" HorizontalAlignment="Left" Margin="159,77,0,0" VerticalAlignment="Top" Height="28" Width="66"/>
+            <TextBox x:Name="MCriticalChanseTextBox" HorizontalAlignment="Left" Margin="258,121,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="21" IsEnabled="False"/>
+            <Label Content="Critical Chanse" HorizontalAlignment="Left" Margin="160,117,0,0" VerticalAlignment="Top" Height="28" Width="110"/>
+            <TextBox x:Name="MCriticalDamageTextBox" HorizontalAlignment="Left" Margin="258,162,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="21" IsEnabled="False"/>
+            <Label Content="CriticalDamage" HorizontalAlignment="Left" Margin="160,157,0,0" VerticalAlignment="Top" Height="28" Width="105" RenderTransformOrigin="0.479,0.537"/>
+
+            <RepeatButton x:Name="StrenPlus" Content="+" HorizontalAlignment="Left" Margin="13,46,0,0" VerticalAlignment="Top" Width="22" Click="StrenPlus_Click" RenderTransformOrigin="0.561,0.754"/>
+            <RepeatButton x:Name="StrenMinus" Content="-" HorizontalAlignment="Left" Margin="90,46,0,0" VerticalAlignment="Top" Width="22" Click="StrenMinus_Click"/>
+            <RepeatButton x:Name="DexPlus" Content="+" HorizontalAlignment="Left" Margin="13,106,0,0" VerticalAlignment="Top" Width="22" Click="DexPlus_Click"/>
+            <RepeatButton x:Name="DexMinus" Content="-" HorizontalAlignment="Left" Margin="90,106,0,0" VerticalAlignment="Top" Width="22" Click="DexMinus_Click" RenderTransformOrigin="0.47,0.503"/>
+            <RepeatButton x:Name="IntPlus" Content="+" HorizontalAlignment="Left" Margin="13,166,0,0" VerticalAlignment="Top" Width="22" Click="IntPlus_Click" RenderTransformOrigin="0.455,0.551"/>
+            <RepeatButton x:Name="IntMinus" Content="-" HorizontalAlignment="Left" Margin="90,166,0,0" VerticalAlignment="Top" Width="22" Click="IntMinus_Click" RenderTransformOrigin="0.47,0.503"/>
+            <RepeatButton x:Name="ConPlus" Content="+" HorizontalAlignment="Left" Margin="13,230,0,0" VerticalAlignment="Top" Width="22" Click="ConPlus_Click"/>
+            <RepeatButton x:Name="ConMinus" Content="-" HorizontalAlignment="Left" Margin="90,230,0,0" VerticalAlignment="Top" Width="22" Click="ConMinus_Click"/>
+            <Label Content="Magic" HorizontalAlignment="Left" Margin="260,16,0,0" VerticalAlignment="Top" Width="45"/>
+            <Label Content="Physical" HorizontalAlignment="Left" Margin="335,16,0,0" VerticalAlignment="Top" Width="55"/>
+            <Label Content="Mana" HorizontalAlignment="Left" Margin="160,209,0,0" VerticalAlignment="Top" Width="45" RenderTransformOrigin="0.452,0.578"/>
+            <TextBox x:Name="ManaTextBox" HorizontalAlignment="Left" Margin="220,210,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="21" IsEnabled="False"/>
+            <Label Content="Health" HorizontalAlignment="Left" Margin="296,209,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.231,-0.77"/>
+            <TextBox x:Name="HealthTextBox" HorizontalAlignment="Left" Margin="360,210,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Height="21" IsEnabled="False"/>
+        </Grid>
+        <StackPanel HorizontalAlignment="Left" Margin="49,17,0,0" Orientation="Horizontal" VerticalAlignment="Top" Background="#FFE1AC45" Width="171" Height="38">
+            <Label Content="Points" FontSize="18" Width="71"/>
+            <TextBox x:Name="pointsTextBox" TextAlignment="Center"  FontSize="18" Text="0" TextWrapping="Wrap" Width="65" IsEnabled="False" Height="25"/>
+            <RepeatButton Content="+"  Width="25" Height="23" Padding="0" Margin="5" Click="btnPlusPointClick"/>
+        </StackPanel>
+        <Image x:Name="imagePerson" HorizontalAlignment="Left" Height="235" Margin="30,65,0,0" VerticalAlignment="Top" Width="220"/>
+        <Button x:Name="backToChooseBtn" Content="Назад" HorizontalAlignment="Left" Margin="368,25,0,0" Grid.Row="1" VerticalAlignment="Top" Height="40" Background="#FFE1AC45" Width="100" Click="backToChooseBtn_Click" Grid.Column="1">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Page>

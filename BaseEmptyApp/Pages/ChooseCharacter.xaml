@@ -9,6 +9,42 @@
       Title="ChooseCharacter">
 
     <Grid>
-        
+
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition  />
+            <ColumnDefinition />
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="13*"/>
+        </Grid.RowDefinitions>
+        <Image Source="C:\Users\danil\Source\Repos\320WPFLab\BaseEmptyApp\images\warrior.png" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="237" Margin="-2,-12,0,0"/>
+        <Image Source="C:\Users\danil\Source\Repos\320WPFLab\BaseEmptyApp\images\mage.png" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Margin="11,-3,256,3"/>
+        <Image Source="C:\Users\danil\Source\Repos\320WPFLab\BaseEmptyApp\images\archer.png" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Margin="253,0,14,0"/>
+
+
+
+        <Button x:Name="chooseWarrior" Content="Выбрать воина" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Height="42" Width="178" Click="chooseWarrior_Click" Background="#FFE1AC45">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="ChooseMage" Content="Выбрать мага" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Height="42" Width="178" Click="ChooseMage_Click" Background="#FFE1AC45">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="chooseArcher" Content="Выбрать лучника" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" Height="42" Width="178" Click="chooseArcher_Click" Background="#FFE1AC45">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Page>

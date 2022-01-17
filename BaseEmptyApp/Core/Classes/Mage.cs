@@ -9,7 +9,8 @@ namespace BaseEmptyApp.Core
     {
         public Mage()
         {
-            this.imgPath = @"C:\Users\secon\Source\Repos\320WPFLab\BaseEmptyApp\images\ArtHumanMage.jpg"; this.MinStrenght = 15;
+            this.imgPath = @"C:\Users\danil\Source\Repos\320WPFLab\BaseEmptyApp\images\mage.png";
+            this.MinStrenght = 15;
             this.MinDexterity = 20;
             this.MinIntelligance = 30;
             this.MinConstitution = 15;

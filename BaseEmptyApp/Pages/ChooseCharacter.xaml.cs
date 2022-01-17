@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BaseEmptyApp.Core;
+using BaseEmptyApp.Core.Classes;
 
 namespace BaseEmptyApp.Pages
 {
@@ -21,6 +23,24 @@ namespace BaseEmptyApp.Pages
         public ChooseCharacter()
         {
             InitializeComponent();
+        }
+
+        private void chooseWarrior_Click(object sender, RoutedEventArgs e)
+        {
+            Warrior hero = new Warrior();
+            NavigationService.Navigate(new CharacterEditor(hero));
+        }
+
+        private void ChooseMage_Click(object sender, RoutedEventArgs e)
+        {
+            Mage hero = new Mage();
+            NavigationService.Navigate(new CharacterEditor(hero));
+        }
+
+        private void chooseArcher_Click(object sender, RoutedEventArgs e)
+        {
+            Archer hero = new Archer();
+            NavigationService.Navigate(new CharacterEditor(hero));
         }
     }
 }
