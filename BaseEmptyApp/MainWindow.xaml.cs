@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BaseEmptyApp.Models;
+using static BaseEmptyApp.Logics.Logic;
 
 namespace BaseEmptyApp
 {
@@ -29,6 +30,7 @@ namespace BaseEmptyApp
         private void ChooseWarriorBtn_Click(object sender, RoutedEventArgs e)
         {
             Warrior warrior = new Warrior();
+            ExtraPointsTB.Text = warrior.ExtraPoint.ToString();
             NameTB.Text = warrior.Name;
             StrengthTB.Text = "Strength: " + warrior.Strength.ToString();
             DexterityTB.Text = "Dexterity: " + warrior.Dexterity.ToString();
@@ -49,6 +51,7 @@ namespace BaseEmptyApp
         private void ChooseMageBtn_Click(object sender, RoutedEventArgs e)
         {
             Mage mage = new Mage();
+            ExtraPointsTB.Text = mage.ExtraPoint.ToString();
             NameTB.Text = mage.Name;
             StrengthTB.Text = "Strength: " + mage.Strength.ToString();
             DexterityTB.Text = "Dexterity: " + mage.Dexterity.ToString();
@@ -69,6 +72,7 @@ namespace BaseEmptyApp
         private void ChooseArcherBtn_Click(object sender, RoutedEventArgs e)
         {
             Archer archer = new Archer();
+            ExtraPointsTB.Text = archer.ExtraPoint.ToString();
             NameTB.Text = archer.Name;
             StrengthTB.Text = "Strength: " + archer.Strength.ToString();
             DexterityTB.Text = "Dexterity: " + archer.Dexterity.ToString();
@@ -78,12 +82,36 @@ namespace BaseEmptyApp
             PhysCritDamageTB.Text = "Phys. Crit Damage: " + archer.PhysCritDamage.ToString();
             HealthTB.Text = "Health: " + archer.Health.ToString();
             IntelligenceTB.Text = "Intelligence: " + archer.Intelligence.ToString();
-            ConstitutionTB.Text = "Constitution: " + archer.Constitution.ToString();
+            ConstitutionTB.Text = archer.Constitution.ToString();
             MAttackTB.Text = "M. Attack: " + archer.MAttack.ToString();
             MResistTB.Text = "M. Resist: " + archer.MResist.ToString();
             MagCritChanceTB.Text = "M. Crit Chance: " + archer.PhysCritChance.ToString();
             MagCritDamageTB.Text = "M. Crit Damage: " + archer.PhysCritDamage.ToString();
             ManaTB.Text = "Mana: " + archer.Mana.ToString();
+        }
+
+        private void ConstUpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            int constit = Convert.ToInt32(ConstitutionTB.Text);
+            int extraPoints = Convert.ToInt32(ExtraPointsTB.Text);
+            if (extraPoints > 0)
+            {
+                constit++;
+                extraPoints--;
+                ConstitutionTB.Text = constit.ToString();
+                ExtraPointsTB.Text = extraPoints.ToString();
+            }
+            else
+                MessageBox.Show("error");
+        }
+
+        private void ConstDownBtn_Click(object sender, RoutedEventArgs e)
+        {
+            //int constit = Convert.ToInt32(ConstitutionTB.Text);
+            //int extraPoints = Convert.ToInt32(ExtraPointsTB.Text);
+            //constit--;
+            //extraPoints++;
+            //if()
         }
     }
 }

@@ -6,6 +6,16 @@ namespace BaseEmptyApp.Models
 {
     internal abstract class Character
     {
+        private int _extraPoint;
+        public int ExtraPoint
+        {
+            get => _extraPoint;
+            set
+            {
+                _extraPoint = value;
+            }
+        }
+
         private string _name;
         public string Name
         {
@@ -16,8 +26,8 @@ namespace BaseEmptyApp.Models
             }
         }
 
-        private double _strength;
-        public virtual double Strength
+        private int _strength;
+        public virtual int Strength
         {
             get => _strength;
             set
@@ -26,8 +36,8 @@ namespace BaseEmptyApp.Models
             }
         }
 
-        private double _dexterity;
-        public virtual double Dexterity
+        private int _dexterity;
+        public virtual int Dexterity
         {
             get => _dexterity;
             set
@@ -36,8 +46,8 @@ namespace BaseEmptyApp.Models
             }
         }
 
-        private double _intelligence;
-        public virtual double Intelligence
+        private int _intelligence;
+        public virtual int Intelligence
         {
             get => _intelligence;
             set
@@ -46,8 +56,8 @@ namespace BaseEmptyApp.Models
             }
         }
 
-        private double _constitution;
-        public virtual double Constitution
+        private int _constitution;
+        public virtual int Constitution
         {
             get => _constitution;
             set

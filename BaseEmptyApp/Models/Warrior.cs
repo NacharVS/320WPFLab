@@ -7,7 +7,7 @@ namespace BaseEmptyApp.Models
 {
     internal class Warrior : Character
     {
-        public override double Strength
+        public override int Strength
         { 
             get => base.Strength;
             set 
@@ -21,21 +21,21 @@ namespace BaseEmptyApp.Models
             }
         }
 
-        public override double Dexterity
+        public override int Dexterity
         {
             get => base.Dexterity;
             set 
             {
                 if(value <= 80 && value >= 15)
-                    base.Strength = value;
+                    base.Dexterity = value;
                 else if (value > 80)
-                    base.Strength = 80;
+                    base.Dexterity = 80;
                 else
-                    base.Strength = 15;
+                    base.Dexterity = 15;
             } 
         }
 
-        public override double Intelligence
+        public override int Intelligence
         {
             get => base.Intelligence;
             set
@@ -49,7 +49,7 @@ namespace BaseEmptyApp.Models
             }
         }
 
-        public override double Constitution
+        public override int Constitution
         {
             get => base.Constitution;
             set
@@ -65,6 +65,7 @@ namespace BaseEmptyApp.Models
 
         public Warrior()
         {
+            ExtraPoint = 5;
             Name = "Warrior";
             Strength = 30;
             Dexterity = 15;

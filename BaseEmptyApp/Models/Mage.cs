@@ -7,7 +7,7 @@ namespace BaseEmptyApp.Models
 {
     internal class Mage : Character
     {
-        public override double Strength
+        public override int Strength
         {
             get => base.Strength;
             set
@@ -21,21 +21,21 @@ namespace BaseEmptyApp.Models
             }
         }
 
-        public override double Dexterity
+        public override int Dexterity
         {
             get => base.Dexterity;
             set
             {
                 if (value <= 70 && value >= 20)
-                    base.Strength = value;
+                    base.Dexterity = value;
                 else if (value > 70)
-                    base.Strength = 70;
+                    base.Dexterity = 70;
                 else
-                    base.Strength = 20;
+                    base.Dexterity = 20;
             }
         }
 
-        public override double Intelligence
+        public override int Intelligence
         {
             get => base.Intelligence;
             set
@@ -49,7 +49,7 @@ namespace BaseEmptyApp.Models
             }
         }
 
-        public override double Constitution
+        public override int Constitution
         {
             get => base.Constitution;
             set
@@ -65,6 +65,7 @@ namespace BaseEmptyApp.Models
 
         public Mage()
         {
+            ExtraPoint = 5;
             Name = "Mage";
             Strength = 15;
             Dexterity = 20;
