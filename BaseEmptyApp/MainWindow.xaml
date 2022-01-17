@@ -29,5 +29,6 @@
         <Button x:Name="Archer" Grid.Row="5" Content="Create Archer" Click="Archer_Click"/>
         <Button x:Name="Warrior" Grid.Row="5" Grid.Column="2" Content="Create Warrior" Click="Warrior_Click"/>
         <Button x:Name="Mage" Grid.Row="5" Grid.Column="4" Content="Create Mage" Click="Mage_Click"/>
+        
     </Grid>
 </Window>
