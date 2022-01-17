@@ -25,10 +25,17 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="10*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Grid.ColumnSpan="2">
+            <TextBlock Text="Extra Points: " FontSize="24" VerticalAlignment="Center"/>
+            <TextBox x:Name="pointBox" FontSize="22" VerticalAlignment="Center" Padding="8" Width="140" Text="0" TextChanged="pointBox_TextChanged"/>
+        </StackPanel>
+
+
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
             <StackPanel  DataContext="{Binding Character}" HorizontalAlignment="Center" Orientation="Vertical">
                 <TextBlock x:Name="TbLabel" TextAlignment="Center" FontSize="28" HorizontalAlignment="Center" Margin="10"/>

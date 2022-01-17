@@ -32,6 +32,7 @@ namespace BaseEmptyApp
             if (Case.EP > 0)
             {
                 Case.EP--;
+                pointBox.Text = Case.EP.ToString();
                 return true;
             }
             else MessageBox.Show("No extra points");
@@ -57,7 +58,6 @@ namespace BaseEmptyApp
             TbMagDefense.Text = character.MagicDef().ToString();
             TbMagCritChance.Text =  Math.Round(character.MCritChance(), 2).ToString();
             TbMagCritDamage.Text = Math.Round(character.MCritDamage(), 2).ToString();
-
 
             this.DataContext = this;
         }
@@ -121,5 +121,14 @@ namespace BaseEmptyApp
             character.Constitution -= 1;
             UpdateCharacter();
         }
+
+        private void pointBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                Case.EP = int.Parse((sender as TextBox).Text);
+            }
+            catch (Exception) { }
+        }   
     }
 }

@@ -19,11 +19,9 @@ namespace BaseEmptyApp
 {
     public partial class MainWindow : Window
     {
-        private static TextBox PB { get; set; }
         public MainWindow()
         {
             InitializeComponent();
-            PB = pointBox;
             ChangePage(new Warrior());
         }
 
@@ -40,15 +38,6 @@ namespace BaseEmptyApp
         private void ArcherClick(object sender, RoutedEventArgs e)
         {
             ChangePage(new Archer());
-        }
-
-        private void pointBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            try
-            {
-                Case.EP = int.Parse((sender as TextBox).Text);
-            }
-            catch (Exception) { }
         }
 
         private void ChangePage(Character character)
