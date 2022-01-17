@@ -16,17 +16,5 @@ namespace BaseEmptyApp.Logics
         internal static double CountMagCritDmg(double mAttack, int intel) => mAttack * (2 + intel * 0.15);
         internal static double CountHealthPoints(int con, int str) => 2 * con + 0.5 * str;
         internal static double CountManaPoints(int intel) => intel * 3;
-
-        internal static void PlusExtraPoints(int stat, int extraPoint)
-        {
-            if (extraPoint > 0)
-            {
-                stat++;
-                extraPoint--;
-            }
-            else
-                return;
-        }
-
     }
 }

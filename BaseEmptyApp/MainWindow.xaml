@@ -63,10 +63,10 @@
                     <TextBlock x:Name="PhysCritDamageTB" Grid.Row="6" Grid.Column="1"/>
                     <TextBlock x:Name="HealthTB" Grid.Row="0" Grid.Column="1"/>
 
-                    <Button x:Name="StrengthDownBtn" Grid.Column="0" Grid.Row="1"/>
-                    <Button x:Name="DexDownBtn" Grid.Column="0" Grid.Row="2"/>
-                    <Button x:Name="StrengthUpBtn" Grid.Column="2" Grid.Row="1"/>
-                    <Button x:Name="DexUpBtn" Grid.Column="2" Grid.Row="2"/>
+                    <Button x:Name="StrengthDownBtn" Grid.Column="0" Grid.Row="1" Click="StrengthDownBtn_Click"/>
+                    <Button x:Name="DexDownBtn" Grid.Column="0" Grid.Row="2" Click="DexDownBtn_Click"/>
+                    <Button x:Name="StrengthUpBtn" Grid.Column="2" Grid.Row="1" Click="StrengthUpBtn_Click"/>
+                    <Button x:Name="DexUpBtn" Grid.Column="2" Grid.Row="2" Click="DexUpBtn_Click"/>
                 </Grid>
 
 
@@ -94,9 +94,9 @@
                     <TextBlock x:Name="MagCritDamageTB" Grid.Row="6" Grid.Column="1"/>
 
                     <Button x:Name="ConstDownBtn" Grid.Column="0" Grid.Row="1" Click="ConstDownBtn_Click"/>
-                    <Button x:Name="IntelDownBtn" Grid.Column="0" Grid.Row="2"/>
+                    <Button x:Name="IntelDownBtn" Grid.Column="0" Grid.Row="2" Click="IntelDownBtn_Click"/>
                     <Button x:Name="ConstUpBtn" Grid.Column="2" Grid.Row="1" Click="ConstUpBtn_Click"/>
-                    <Button x:Name="IntelUpBtn" Grid.Column="2" Grid.Row="2"/>
+                    <Button x:Name="IntelUpBtn" Grid.Column="2" Grid.Row="2" Click="IntelUpBtn_Click"/>
                 </Grid>
             </Grid>
             <Grid Grid.Column="0" Grid.Row="0">
@@ -105,7 +105,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock x:Name="ExtraPointsTB" Grid.Row="0" Margin="31,162,31,0"/>
-                <Button x:Name="PlusExtrtaBtn" Margin="31,192,31,158" Grid.RowSpan="2" Content="+5"/>
+                <Button x:Name="PlusExtrtaBtn" Margin="31,192,31,158" Grid.RowSpan="2" Content="+5" Click="PlusExtrtaBtn_Click"/>
             </Grid>
         </Grid>
     </Grid>
