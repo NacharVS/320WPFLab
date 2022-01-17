@@ -23,6 +23,7 @@ namespace BaseEmptyApp
         public MainWindow()
         {
             InitializeComponent();
+            frame_autho_reg.NavigationService.Navigate(new ChooseCharacter());
         }
     }
 }
