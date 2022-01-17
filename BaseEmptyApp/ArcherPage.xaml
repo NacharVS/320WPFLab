@@ -1,0 +1,82 @@
+﻿<Page x:Class="BaseEmptyApp.ArcherPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BaseEmptyApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ArcherPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="Archer" Foreground="Red" FontSize="25"/>
+
+        <Button x:Name="btn_Arch_Str_Plus" Content="+" Grid.Column="3" Grid.Row="1" Click="btn_Arch_Str_Plus_Click"/>
+        <Button x:Name="btn_Arch_Dex_Plus" Content="+" Grid.Column="3" Grid.Row="2" Click="btn_Arch_Dex_Plus_Click"/>
+        <Button x:Name="btn_Arch_Int_Plus" Content="+" Grid.Column="3" Grid.Row="3" Click="btn_Arch_Int_Plus_Click"/>
+        <Button x:Name="btn_Arch_Con_Plus" Content="+" Grid.Column="3" Grid.Row="4" Click="btn_Arch_Con_Plus_Click"/>
+        <Button x:Name="btn_Arch_Str_Minus" Content="-" Grid.Column="1" Grid.Row="1" Click="btn_Arch_Str_Minus_Click"/>
+        <Button x:Name="btn_Arch_Dex_Minus" Content="-" Grid.Column="1" Grid.Row="2" Click="btn_Arch_Dex_Minus_Click"/>
+        <Button x:Name="btn_Arch_Int_Minus" Content="-" Grid.Column="1" Grid.Row="3" Click="btn_Arch_Int_Minus_Click"/>
+        <Button x:Name="btn_Arch_Con_Minus" Content="-" Grid.Column="1" Grid.Row="4" Click="btn_Arch_Con_Minus_Click"/>
+        <TextBlock x:Name="tb_Arch_Str_txt" Grid.Column="2" Grid.Row="1" Foreground="White"  FontSize="22"/>
+        <TextBlock x:Name="tb_Arch_Dex_txt" Grid.Column="2" Grid.Row="2" Foreground="White"  FontSize="22"/>
+        <TextBlock x:Name="tb_Arch_Int_txt" Grid.Column="2" Grid.Row="3" Foreground="White"  FontSize="22"/>
+        <TextBlock x:Name="tb_Arch_Con_txt" Grid.Column="2" Grid.Row="4" Foreground="White"  FontSize="22"/>
+        <Label Content="Strength" Foreground="White" Grid.Column="0" Grid.Row="1"  FontSize="18"/>
+        <Label Content="Dexterity" Foreground="White" Grid.Column="0" Grid.Row="2" FontSize="18"/>
+        <Label Content="Intelligence" Foreground="White" Grid.Column="0" Grid.Row="3" FontSize="17"/>
+        <Label Content="Constitution" Foreground="White" Grid.Column="0" Grid.Row="4" FontSize="16"/>
+
+        <Label Content="Helth:" Grid.Column="5" Grid.Row="1" Foreground="White"/>
+        <Label Content="Mana:" Grid.Column="5" Grid.Row="2" Foreground="White"/>
+        <Label Content="P.Attack:" Grid.Column="5" Grid.Row="3" Foreground="White"/>
+        <Label Content="P.Defense:" Grid.Column="5" Grid.Row="4" Foreground="White"/>
+        <Label Content="M.Attack:" Grid.Column="5" Grid.Row="5" Foreground="White"/>
+        <Label Content="M.Defense:" Grid.Column="5" Grid.Row="6" Foreground="White"/>
+        <Label Content="P.Critical Chanse:" Grid.Column="5" Grid.Row="7" Foreground="White"/>
+        <Label Content="M.Critical Chanse:" Grid.Column="5" Grid.Row="8" Foreground="White"/>
+        <Label Content="P.Critical Damage:" Grid.Column="5" Grid.Row="9" Foreground="White"/>
+        <Label Content="M.Critical Damage:" Grid.Column="5" Grid.Row="10" Foreground="White"/>
+
+        <TextBlock x:Name="tb_Arch_Helth" Grid.Column="6" Grid.Row="1" Foreground="White"/>
+        <TextBlock x:Name="tb_Arch_Mana" Grid.Column="6" Grid.Row="2" Foreground="White"/>
+        <TextBlock x:Name="tb_Arch_P_Attack" Grid.Column="6" Grid.Row="3" Foreground="White"/>
+        <TextBlock x:Name="tb_Arch_P_Defense" Grid.Column="6" Grid.Row="4" Foreground="White"/>
+        <TextBlock x:Name="tb_Arch_M_Attack" Grid.Column="6" Grid.Row="5" Foreground="White"/>
+        <TextBlock x:Name="tb_Arch_M_Defense" Grid.Column="6" Grid.Row="6" Foreground="White"/>
+        <TextBlock x:Name="tb_Arch_P_Critical_Chanse" Grid.Column="6" Grid.Row="7" Foreground="White"/>
+        <TextBlock x:Name="tb_Arch_M_Critical_Chanse" Grid.Column="6" Grid.Row="8" Foreground="White"/>
+        <TextBlock x:Name="tb_Arch_P_Critical_Damage" Grid.Column="6" Grid.Row="9" Foreground="White"/>
+        <TextBlock x:Name="tb_Arch_M_Critical_Damage" Grid.Column="6" Grid.Row="10" Foreground="White"/>
+
+        <Label Content="Point" Grid.Column="0" Grid.Row="6" Foreground="White" FontSize="18"/>
+        <TextBox x:Name="tbx_Arch_Point" Grid.Column="1" Grid.Row="6" FontSize="22"/>
+
+        <Button x:Name="btn_back" Grid.Column="12" Grid.Row="0" Content="Back" Click="btn_back_Click"/>
+    </Grid>
+</Page>

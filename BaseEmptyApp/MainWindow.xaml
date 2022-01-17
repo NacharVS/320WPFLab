@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:BaseEmptyApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+    <Grid Background="Black">
+        <Frame x:Name="frame_auto_reg" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BaseEmptyApp.Core
 {
-    class Archer : Player
+    public class Archer : Player
     {
         double str = 20;
         double dex = 30;
@@ -36,7 +36,7 @@ namespace BaseEmptyApp.Core
 
         public override double Strength_Minus()
         {
-            if (Strength < max_str)
+            if (Strength > str)
             {
                 Strength = Strength - 1;
                 Up_P_Attack(Strength, Dexterity);
@@ -69,7 +69,7 @@ namespace BaseEmptyApp.Core
 
         public override double Dexterity_Minus()
         {
-            if (Dexterity < max_dex)
+            if (Dexterity > dex)
             {
                 Dexterity = Dexterity - 1;
                 Up_P_Attack(Strength, Dexterity);
@@ -104,7 +104,7 @@ namespace BaseEmptyApp.Core
 
         public override double Intelligence_Minus()
         {
-            if (Intelligence < max_inT)
+            if (Intelligence > inT)
             {
                 Intelligence = Intelligence - 1;
                 Up_M_Attack(Intelligence);
@@ -137,7 +137,7 @@ namespace BaseEmptyApp.Core
 
         public override double Constitution_Minus()
         {
-            if (Constitution < max_con)
+            if (Constitution > con)
             {
                 Constitution = Constitution - 1;
                 Up_Health(Constitution, Strength);

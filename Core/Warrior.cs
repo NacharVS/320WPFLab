@@ -4,18 +4,18 @@ using System.Text;
 
 namespace BaseEmptyApp.Core
 {
-    class Mage : Player
+    public class Warrior : Player
     {
-        double str = 15;
-        double dex = 20;
-        double inT = 30;
-        double con = 15;
+        double str = 30;
+        double dex = 15;
+        double inT = 10;
+        double con = 25;
 
-        double max_str = 45;
-        double max_dex = 70;
-        double max_inT = 250;
-        double max_con = 65;
-        public Mage(double str, double dex, double inT, double con) : base(str, dex, inT, con)
+        double max_str = 250;
+        double max_dex = 80;
+        double max_inT = 50;
+        double max_con = 100;
+        public Warrior(double str, double dex, double inT, double con) : base(str, dex, inT, con)
         {
         }
 
@@ -37,7 +37,7 @@ namespace BaseEmptyApp.Core
 
         public override double Strength_Minus()
         {
-            if (Strength < max_str)
+            if (Strength > str)
             {
                 Strength = Strength - 1;
                 Up_P_Attack(Strength, Dexterity);
@@ -70,7 +70,7 @@ namespace BaseEmptyApp.Core
 
         public override double Dexterity_Minus()
         {
-            if (Dexterity < max_dex)
+            if (Dexterity > dex)
             {
                 Dexterity = Dexterity - 1;
                 Up_P_Attack(Strength, Dexterity);
@@ -105,7 +105,7 @@ namespace BaseEmptyApp.Core
 
         public override double Intelligence_Minus()
         {
-            if (Intelligence < max_inT)
+            if (Intelligence > inT)
             {
                 Intelligence = Intelligence - 1;
                 Up_M_Attack(Intelligence);
@@ -138,7 +138,7 @@ namespace BaseEmptyApp.Core
 
         public override double Constitution_Minus()
         {
-            if (Constitution < max_con)
+            if (Constitution > con)
             {
                 Constitution = Constitution - 1;
                 Up_Health(Constitution, Strength);
@@ -150,6 +150,5 @@ namespace BaseEmptyApp.Core
                 return Constitution;
             }
         }
-
     }
 }
