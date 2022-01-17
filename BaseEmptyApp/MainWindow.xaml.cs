@@ -23,6 +23,7 @@ namespace BaseEmptyApp
     public partial class MainWindow : Window
     {
         private string chosenChar;
+
         public MainWindow()
         {
             InitializeComponent();
