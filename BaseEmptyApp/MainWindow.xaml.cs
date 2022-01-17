@@ -20,22 +20,28 @@ namespace BaseEmptyApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        
+        public partial class MainWindow : Window
         {
-            InitializeComponent();
-            NextPage.NavigationService.Navigate(new character_Creation());
+            public MainWindow()
+            {
+                InitializeComponent();
+            }
 
+            private void WarriorClick(object sender, RoutedEventArgs e)
+            {
+                frameCharacter.NavigationService.Navigate(new PageCharacter(new Warrior()));
+            }
 
-        }
+            private void MageClick(object sender, RoutedEventArgs e)
+            {
+                frameCharacter.NavigationService.Navigate(new PageCharacter(new Mage()));
+            }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Str.Text = (Heroes.Warrior.mistr).ToDouble();
+            private void ArcherClick(object sender, RoutedEventArgs e)
+            {
+                frameCharacter.NavigationService.Navigate(new PageCharacter(new Archer()));
+            }
         }
     }
 }

@@ -9,38 +9,26 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="13*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="14*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Button Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" Content="warrior" Width="133" Height="25" Click="Button_Click_1" />
-        <Button Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" Content="mage" Width="133" Height="25" />
-        <Button Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" Margin="1" Content="archer" Width="133" Height="25" Click="Button_Click" />
-        <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Сlasses:" Width="50"/>
-        
-        <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Content="Strength:"/>
-        <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" Content="Dexterity:"/>
-        <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" Content="Intelligence:"/>
-        <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" Content="Constitution:"/>
+        <TextBlock Text="Character Editor" Grid.Column="1" Grid.Row="0"/>
 
-        <Label x:Name="Str" Grid.Row="1" Grid.Column="1"  Content="Str"/>
-        <Label x:Name="Dex" Grid.Row="2" Grid.Column="1"  Content="Dex"/>
-        <Label x:Name="Int" Grid.Row="3" Grid.Column="1"  Content="Int"/>
-        <Label x:Name="Con" Grid.Row="4" Grid.Column="1"  Content="Con"/>
-        
-        
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" >
+            <Button Content="Warrior" Margin="20,0" Click="WarriorClick"/>
+            <Button Content="Mage" Margin="20,0" Click="MageClick"/>
+            <Button Content="Archer" Margin="20,0" Click="ArcherClick"/>
+        </StackPanel>
+
+        <Frame x:Name="frameCharacter" Grid.Column="1" Grid.Row="2" NavigationUIVisibility="Hidden"/>
     </Grid>
 
 </Window>
