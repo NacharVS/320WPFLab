@@ -25,31 +25,31 @@
         <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1" DataContext="{Binding character}">
             <StackPanel Margin="0,0,0,50">
                 <TextBlock Text="Points" FontSize="25"/>
-                <TextBox Width="150" Text="{Binding Points}"/>
+                <TextBox Width="150" Text="{Binding Points}" IsEnabled="False"/>
                 <Button Content="+"  Width="25" Height="25" Padding="0" Margin="5" Click="btnPlusPointClick"/>
             </StackPanel>
             <StackPanel>
                 <TextBlock Text="Strength" FontSize="25"/>
                 <Button Content="-"  Width="25" Height="25" Padding="0" Margin="5" Click="btnMinusStrengthClick"/>
-                <TextBox Width="150" Text="{Binding Strength}"/>
+                <TextBox Width="150" Text="{Binding Strength}" IsEnabled="False"/>
                 <Button Content="+"  Width="25" Height="25" Padding="0" Margin="5" Click="btnPlusStrengthClick"/>
             </StackPanel>
             <StackPanel>
                 <TextBlock Text="Dexterity" FontSize="25"/>
                 <Button Content="-"  Width="25" Height="25" Padding="0" Margin="5" Click="btnMinusDexterityClick"/>
-                <TextBox Width="150" Text="{Binding Dexterity}"/>
+                <TextBox Width="150" Text="{Binding Dexterity}" IsEnabled="False"/>
                 <Button Content="+"  Width="25" Height="25" Padding="0" Margin="5" Click="btnPlusDexterityClick"/>
             </StackPanel>
             <StackPanel>
                 <TextBlock Text="Intelligence" FontSize="25"/>
                 <Button Content="-"  Width="25" Height="25" Padding="0" Margin="5" Click="btnMinusIntelligenceClick"/>
-                <TextBox Width="150" Text="{Binding Intelligence}"/>
+                <TextBox Width="150" Text="{Binding Intelligence}" IsEnabled="False"/>
                 <Button Content="+"  Width="25" Height="25" Padding="0" Margin="5" Click="btnPlusIntelligenceClick"/>
             </StackPanel>
             <StackPanel>
                 <TextBlock Text="Constitution" FontSize="25"/>
                 <Button Content="-"  Width="25" Height="25" Padding="0" Margin="5" Click="btnMinusConstitutionClick"/>
-                <TextBox Width="150" Text="{Binding Constitution}"/>
+                <TextBox Width="150" Text="{Binding Constitution}" IsEnabled="False"/>
                 <Button Content="+"  Width="25" Height="25" Padding="0" Margin="5" Click="btnPlusConstitutionClick"/>
             </StackPanel>
         </StackPanel>
