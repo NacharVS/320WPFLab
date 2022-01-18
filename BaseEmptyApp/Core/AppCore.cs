@@ -21,51 +21,79 @@
 
         public void UpStrength(ref BaseUnit unit)
         {
-            unit.Strength += 1;
-            unit.ExtraPoint = 1;
+            if(unit.ExtraPoint != 0 && unit.Strength < unit.MaxStrength)
+            {
+                unit.Strength += 1;
+                unit.ExtraPoint = 1;
+            }
         }
 
         public void UpDexterity(ref BaseUnit unit)
         {
-            unit.Dexterity += 1;
-            unit.ExtraPoint = 1;
+            if (unit.ExtraPoint != 0 && unit.Dexterity < unit.MaxDexterity)
+            {
+                unit.Dexterity += 1;
+                unit.ExtraPoint = 1;
+            }
         }
 
         public void UpIntelligence(ref BaseUnit unit)
         {
-            unit.Intelligence += 1;
-            unit.ExtraPoint = 1;
+            if (unit.ExtraPoint != 0 && unit.Intelligence < unit.MaxIntelligence)
+            {
+                unit.Intelligence += 1;
+                unit.ExtraPoint = 1;
+            }
         }
 
         public void UpConstitution(ref BaseUnit unit)
         {
-            unit.Constitution += 1;
-            unit.ExtraPoint = 1;
+            if (unit.ExtraPoint != 0 && unit.Constitution < unit.MaxConstitution)
+            {
+                unit.Constitution += 1;
+                unit.ExtraPoint = 1;
+            }
         }
 
         public void DownStrength(ref BaseUnit unit)
         {
-            unit.Strength -= 1;
-            unit.ExtraPoint = 1;
+            if(unit.ExtraPoint != 0 & unit.Strength > unit.MinStrength)
+            {
+                unit.Strength -= 1;
+                unit.ExtraPoint = -1;
+            }
         }
 
         public void DownDexterity(ref BaseUnit unit)
         {
-            unit.Dexterity -= 1;
-            unit.ExtraPoint = 1;
+            if (unit.ExtraPoint != 0 & unit.Dexterity > unit.MinDexterity)
+            {
+                unit.Dexterity -= 1;
+                unit.ExtraPoint = -1;
+            }
         }
 
         public void DownIntelligence(ref BaseUnit unit)
         {
-            unit.Intelligence -= 1;
-            unit.ExtraPoint = 1;
+            if (unit.ExtraPoint != 0 & unit.Intelligence > unit.MinIntelligence)
+            {
+                unit.Intelligence -= 1;
+                unit.ExtraPoint = -1;
+            }
         }
 
         public void DownConstitution(ref BaseUnit unit)
         {
-            unit.Constitution -= 1;
-            unit.ExtraPoint = 1;
+            if (unit.ExtraPoint != 0 & unit.Constitution > unit.MinConstitution)
+            {
+                unit.Constitution -= 1;
+                unit.ExtraPoint = -1;
+            }
         }
 
+        public void UpExtraPoints(ref BaseUnit unit)
+        {
+            unit.ExtraPoint = -10;
+        }
     }
 }

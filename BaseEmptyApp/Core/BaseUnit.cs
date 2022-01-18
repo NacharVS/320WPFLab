@@ -3,6 +3,8 @@
     public class BaseUnit
     {
         private int _strength;
+        public virtual double MinStrength { get; }
+        public virtual double MaxStrength { get; }
         public int Strength
         {
             get
@@ -12,9 +14,12 @@
 
             set
             {
-                _strength = value;
+                    _strength = value;
             }
         }
+
+        public virtual double MinDexterity { get; }
+        public virtual double MaxDexterity { get; }
 
         private int _dexterity;
         public int Dexterity
@@ -30,6 +35,9 @@
             }
         }
 
+        public virtual double MinIntelligence { get; }
+        public virtual double MaxIntelligence { get; }
+
         private int _intelligence;
         public int Intelligence
         {
@@ -43,6 +51,10 @@
                 _intelligence = value;
             }
         }
+
+
+        public virtual double MinConstitution { get; }
+        public virtual double MaxConstitution { get; }
 
         private int _constitution;
         public int Constitution

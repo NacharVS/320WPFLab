@@ -5,18 +5,71 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BaseEmptyApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Background="White">
     <Window.Resources>
         <Style TargetType="Label">
             <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
             <Setter Property="BorderBrush" Value="Black"></Setter>
             <Setter Property="BorderThickness" Value="1"></Setter>
         </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="25"/>
+        </Style>
+
+        <Style TargetType="ComboBox">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="30"/>
+        </Style>
+
+        <Style TargetType="ComboBoxItem">
+            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="Margin" Value="0 0 0 10"/>
+            <Setter Property="Width" Value="300"/>
+            <Setter Property="Background" Value="Bisque"/>
+        </Style>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <ControlTemplate x:Key="CornerButton" TargetType="{x:Type ButtonBase}">
+            <Border x:Name="border" CornerRadius="150" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true">
+                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="Button.IsDefaulted" Value="true">
+                    <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="true">
+                    <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                    <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="87*"/>
-            <RowDefinition Height="214*"/>
+            <RowDefinition Height="133*"/>
+            <RowDefinition Height="133*"/>
+            <RowDefinition Height="133*"/>
+            <RowDefinition Height="133*"/>
             <RowDefinition Height="133*"/>
             <RowDefinition Height="133*"/>
             <RowDefinition Height="133*"/>
@@ -26,30 +79,53 @@
             <RowDefinition Height="133*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="236*"/>
-            <ColumnDefinition Width="347*"/>
-            <ColumnDefinition Width="217*"/>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="43*"/>
+            <ColumnDefinition Width="41*"/>
+            <ColumnDefinition Width="41*"/>
+            <ColumnDefinition Width="168*"/>
+            <ColumnDefinition Width="268*"/>
         </Grid.ColumnDefinitions>
-        <Image x:Name="UnitType" Grid.Column="1" Grid.Row="1" Source="/mage.png"/>
-        <Label x:Name='ePoints' Grid.Column="2" Grid.Row="0" Background="Gold"/>
-        <Label x:Name="Health" Grid.Column="1" Grid.Row="2" Background="Red"></Label>
-        <Label x:Name="Mana" Grid.Column="1" Grid.Row="3" Background="Blue"/>
-        <Label x:Name="Strenght" Grid.Column="1" Grid.Row="4"/>
-        <Label x:Name="Dexterity" Grid.Column="1" Grid.Row="5"/>
-        <Label x:Name="Intelligence" Grid.Column="1" Grid.Row="6"/>
-        <Label x:Name="Constitution" Grid.Column="1" Grid.Row="7"/>
-        <Label Content="Health" Grid.Column="0" Grid.Row="2"/>
-        <Label Content="Mana" Grid.Column="0" Grid.Row="3"/>
-        <Label Content="Strenght" Grid.Column="0" Grid.Row="4"/>
-        <Label Content="Dexterity" Grid.Column="0" Grid.Row="5"/>
-        <Label Content="Intelligence" Grid.Column="0" Grid.Row="6"/>
-        <Label Content="Constitution" Grid.Column="0" Grid.Row="7"/>
-        <Button x:Name='sPlus' Grid.Column="3" Grid.Row="4" Content="+" Click="sPlus_Click"/>
-        <Button x:Name='dPlus' Grid.Column="4" Grid.Row="5" Content="+" Click="dPlus_Click"/>
-        <Button x:Name='iPlus' Grid.Column="5" Grid.Row="6" Content="+" Click="iPlus_Click"/>
-        <Button x:Name='cPlus' Grid.Column="6" Grid.Row="7" Content="+" Click="cPlus_Click"/>
-        <Button x:Name="btnWarrior" Content="Warrior" Grid.Row="8" Click="btnWarrior_Click"></Button>
-        <Button x:Name="btnMage" Content="Mage" Grid.Row="8" Grid.Column="1" Click="btnMage_Click"></Button>
-        <Button x:Name="btnArcher" Content="Archer" Grid.Row="8" Grid.Column="2" Click="btnArcher_Click"></Button>
+        <ComboBox Grid.Row="0" x:Name="cmBoxUnits" SelectionChanged="cmBoxUnits_SelectionChanged" Grid.ColumnSpan="2" Margin="44,0,0,0">
+            <ComboBoxItem>Warrior</ComboBoxItem>
+            <ComboBoxItem>Mage</ComboBoxItem>
+            <ComboBoxItem>Archer</ComboBoxItem>
+        </ComboBox>
+
+
+        <Label Content="Characters" Grid.Row="4" Grid.ColumnSpan="4"/>
+        <Label Content="Strength" Grid.Row="4" Grid.Column="0" Margin="0,39,0,39" Grid.RowSpan="3" />
+        <Label Content="Dexterity" Grid.Row="6" Grid.Column="0"/>
+        <Label Content="Intelligence" Grid.Row="6" Grid.Column="0" Margin="0,39,0,39" Grid.RowSpan="3"/>
+        <Label Content="Constitution" Grid.Row="8" Grid.Column="0"/>
+        <Label Content="" Grid.Row="4" Grid.Column="2" x:Name="Strength" Margin="0,39,0,39" Grid.RowSpan="3"/>
+        <Label Content="" Grid.Row="6" Grid.Column="2" x:Name="Dexterity"/>
+        <Label Content="" Grid.Row="6" Grid.Column="2" x:Name="Intelligence" Margin="0,39,0,39" Grid.RowSpan="3"/>
+        <Label Content="" Grid.Row="8" Grid.Column="2" x:Name="Constitution"/>
+        <Label Content="Extra Points" Grid.Row="10" Grid.Column="0"/>
+        <Label Content="" Grid.Row="10" Grid.Column="2" x:Name="ePoints"/>
+        <Button Template="{DynamicResource CornerButton}" Content="+" Grid.Column="3" Grid.Row="10" x:Name="btnEPlus" Click="btnEPlus_Click" />
+        <Button Template="{DynamicResource CornerButton}" Content="+" Grid.Column="3" Grid.Row="4" x:Name="btnSPlus" Click="btnSPlus_Click" Margin="0,39,0,39" Grid.RowSpan="3"/>
+        <Button Template="{DynamicResource CornerButton}" Content="+" Grid.Column="3" Grid.Row="6" x:Name="btnDPlus" Click="btnDPlus_Click"  />
+        <Button Template="{DynamicResource CornerButton}" Content="+" Grid.Column="3" Grid.Row="6" x:Name="btnIPlus" Click="btnIPlus_Click" Margin="0,39,0,39" Grid.RowSpan="3"  />
+        <Button Template="{DynamicResource CornerButton}" Content="+" Grid.Column="3" Grid.Row="8" x:Name="btnCPlus" Click="btnCPlus_Click" />
+        <Button Template="{DynamicResource CornerButton}" Content="-" Grid.Column="1" Grid.Row="4" x:Name="btnSMinus" Click="btnSMinus_Click" Margin="0,39,0,39" Grid.RowSpan="3" />
+        <Button Template="{DynamicResource CornerButton}" Content="-" Grid.Column="1" Grid.Row="6" x:Name="btnDMinus" Click="btnDMinus_Click"/>
+        <Button Template="{DynamicResource CornerButton}" Content="-" Grid.Column="1" Grid.Row="6" x:Name="btnIMinus" Click="btnIMinus_Click" Margin="0,39,0,39" Grid.RowSpan="3"/>
+        <Button Template="{DynamicResource CornerButton}" Content="-" Grid.Column="1" Grid.Row="8" x:Name="btnCMinus" Click="btnCMinus_Click"/>
+        <Label Grid.Column="5" Content="Main characteristics" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <Label Grid.Row="2" Grid.Column="5" Content="Health"/>
+        <TextBlock Grid.Row="2" Grid.Column="6" x:Name="Health"/>
+        <Label Grid.Row="3" Grid.Column="5" Content="Mana"/>
+        <TextBlock Grid.Row="3" Grid.Column="6"  x:Name="Mana"/>
+        <Label Grid.Row="4" Grid.Column="5" Content="Attack"/>
+        <TextBlock Grid.Row="4" Grid.Column="6"  x:Name="Attack"/>
+        <Label Grid.Row="5" Grid.Column="5" Content="Defence"/>
+        <TextBlock Grid.Row="5" Grid.Column="6"  x:Name="Defence"/>
+        <Label Grid.Row="6" Grid.Column="5" Content="Critical Chanse"/>
+        <TextBlock Grid.Row="6" Grid.Column="6"  x:Name="critChanse"/>
+        <Label Grid.Row="7" Grid.Column="5" Content="Critical Damage "/>
+        <TextBlock Grid.Row="7" Grid.Column="6"  x:Name="critDamage"/>
     </Grid>
 </Window>

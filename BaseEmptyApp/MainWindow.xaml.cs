@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace BaseEmptyApp
@@ -17,57 +18,94 @@ namespace BaseEmptyApp
             InitializeComponent();
         }
 
-        private void btnWarrior_Click(object sender, RoutedEventArgs e)
+        private void cmBoxUnits_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            unit = core.MakeWarrior();
-            FillData(unit);
+            ComboBoxItem cbi = (ComboBoxItem)cmBoxUnits.SelectedItem;
+            string selectedText = cbi.Content.ToString();
+            switch (selectedText)
+            {
+                case "Warrior":
+                    unit = core.MakeWarrior();
+                    break;
+                case "Mage":
+                    unit = core.MakeMage();
+                    break;
+                case "Archer":
+                    unit = core.MakeArcher();
+                    break;
+            }
+            FillTable(unit);
         }
 
-        private void btnMage_Click(object sender, RoutedEventArgs e)
+        private void FillTable(Core.BaseUnit unit)
         {
-            unit = core.MakeMage();
-            FillData(unit);
+            Strength.Content = unit.Strength.ToString();
+            Dexterity.Content = unit.Dexterity.ToString();
+            Intelligence.Content = unit.Dexterity.ToString();
+            Constitution.Content = unit.Constitution.ToString();
+            ePoints.Content = unit.ExtraPoint.ToString();
+
+            Health.Text = unit.Health.ToString();
+            Mana.Text = unit.Mana.ToString();
+
+            Attack.Text = unit.Physic.Attack.ToString();
+            Defence.Text = unit.Physic.Defense.ToString();
+            critChanse.Text = unit.Physic.CriticalChance.ToString();
+            critDamage.Text = unit.Physic.CriticalDamage.ToString();
         }
 
-        private void btnArcher_Click(object sender, RoutedEventArgs e)
-        {
-            unit = core.MakeArcher();
-            FillData(unit);
-        }
-
-        private void FillData(Core.BaseUnit unit)
-        {
-            ePoints.Content = unit.ExtraPoint;
-            Health.Content = unit.Health;
-            Mana.Content = unit.Mana;
-            Strenght.Content = unit.Strength;
-            Dexterity.Content = unit.Dexterity;
-            Intelligence.Content = unit.Intelligence;
-            Constitution.Content = unit.Constitution;
-        }
-
-        private void sPlus_Click(object sender, RoutedEventArgs e)
+        private void btnSPlus_Click(object sender, RoutedEventArgs e)
         {
             core.UpStrength(ref unit);
-            FillData(unit);
+            FillTable(unit);
         }
 
-        private void dPlus_Click(object sender, RoutedEventArgs e)
+        private void btnDPlus_Click(object sender, RoutedEventArgs e)
         {
             core.UpDexterity(ref unit);
-            FillData(unit);
+            FillTable(unit);
         }
 
-        private void iPlus_Click(object sender, RoutedEventArgs e)
+        private void btnIPlus_Click(object sender, RoutedEventArgs e)
         {
             core.UpIntelligence(ref unit);
-            FillData(unit);
+            FillTable(unit);
         }
 
-        private void cPlus_Click(object sender, RoutedEventArgs e)
+        private void btnCPlus_Click(object sender, RoutedEventArgs e)
         {
             core.UpConstitution(ref unit);
-            FillData(unit);
+            FillTable(unit);
+        }
+
+        private void btnDMinus_Click(object sender, RoutedEventArgs e)
+        {
+            core.DownDexterity(ref unit);
+            FillTable(unit);
+        }
+
+        private void btnSMinus_Click(object sender, RoutedEventArgs e)
+        {
+            core.DownStrength(ref unit);
+            FillTable(unit);
+        }
+
+        private void btnIMinus_Click(object sender, RoutedEventArgs e)
+        {
+            core.DownIntelligence(ref unit);
+            FillTable(unit);
+        }
+
+        private void btnCMinus_Click(object sender, RoutedEventArgs e)
+        {
+            core.DownConstitution(ref unit);
+            FillTable(unit);
+        }
+
+        private void btnEPlus_Click(object sender, RoutedEventArgs e)
+        {
+            core.UpExtraPoints(ref unit);
+            FillTable(unit);
         }
     }
 }
