@@ -4,6 +4,23 @@ namespace CharacterLibrary
 {
     public abstract class Character
     {
+        private int _points;
+
+        public int Points
+        {
+            get
+            {
+                return _points;
+            }
+
+            set
+            {
+                if (value >= 0)
+                    _points = value;
+            }
+        }
+
+
         public virtual double minStrength { get; }
         public virtual double maxStrength { get; }
 
@@ -26,8 +43,9 @@ namespace CharacterLibrary
 
             set 
             { 
-                if (value <= maxStrength & value >= minStrength)
-                    _strength = value; 
+                if (value <= maxStrength & value >= minStrength & 
+                    (value > _strength & _points > 0 || value <= _strength || _strength == 0))
+                    _strength = value;
             }
         }
 
@@ -41,7 +59,8 @@ namespace CharacterLibrary
 
             set 
             { 
-                if (value <= maxDexterity & value >= minDexterity)
+                if (value <= maxDexterity & value >= minDexterity & 
+                    (value > _dexterity & _points > 0 || value <= _dexterity || _dexterity == 0))
                     _dexterity = value; 
             }
         }
@@ -56,7 +75,8 @@ namespace CharacterLibrary
 
             set 
             {
-                if (value <= maxIntelligence & value >= minIntelligence)
+                if (value <= maxIntelligence & value >= minIntelligence & 
+                    (value > _intelligence & _points > 0 || value <= _intelligence || _intelligence == 0))
                     _intelligence = value;
 
             }
@@ -72,7 +92,8 @@ namespace CharacterLibrary
 
             set 
             {
-                if (value <= maxConstitution & value >= minConstitution)
+                if (value <= maxConstitution & value >= minConstitution & 
+                    (value > _constitution & _points > 0 || value <= _constitution || _constitution == 0))
                     _constitution = value; 
             }
         }
@@ -112,6 +133,7 @@ namespace CharacterLibrary
             }
         }
 
-        protected int ExtraPoint = 500;
+        
+        
     }
 }

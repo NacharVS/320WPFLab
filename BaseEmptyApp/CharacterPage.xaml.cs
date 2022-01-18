@@ -24,6 +24,7 @@ namespace BaseEmptyApp
         {
             InitializeComponent();
             Character = character;
+
             TbLabel.Text = Character.ToString();
             TbHealth.Text = Character.Health.ToString();
             TbMana.Text = Character.Mana.ToString();
@@ -40,22 +41,85 @@ namespace BaseEmptyApp
 
             this.DataContext = this;
         }
-
         private void BtnChange_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateStats();
+        }
+        private void UpdateStats()
         {
             try
             {
+
                 Character.Strength = int.Parse(TbStrength.Text);
                 Character.Dexterity = int.Parse(TbDexterity.Text);
                 Character.Intelligence = int.Parse(TbIntelligence.Text);
                 Character.Constitution = int.Parse(TbConstitution.Text);
+                Character.Points = int.Parse(TbPoints.Text);
             }
             catch
             {
                 MessageBox.Show("Wrong values");
             }
             NavigationService.Navigate(new CharacterPage(Character));
+        }
+        private void BtnStrengthMinus_Click(object sender, RoutedEventArgs e)
+        {
+            TbStrength.Text = (int.Parse(TbStrength.Text) - 1).ToString();
+            if (int.Parse(TbStrength.Text) >= Character.minStrength)
+                TbPoints.Text = (int.Parse(TbPoints.Text) + 1).ToString();
+            UpdateStats();
+        }
 
+        private void BtnStrengthPlus_Click(object sender, RoutedEventArgs e)
+        {
+            TbStrength.Text = (int.Parse(TbStrength.Text) + 1).ToString();
+            TbPoints.Text = (int.Parse(TbPoints.Text) - 1).ToString();
+            UpdateStats();
+        }
+
+        private void BtnDexterityMinus_Click(object sender, RoutedEventArgs e)
+        {
+            TbDexterity.Text = (int.Parse(TbDexterity.Text) - 1).ToString();
+            if (int.Parse(TbDexterity.Text) >= Character.minDexterity)
+                TbPoints.Text = (int.Parse(TbPoints.Text) + 1).ToString();
+            UpdateStats();
+        }
+
+        private void BtnDexterityPlus_Click(object sender, RoutedEventArgs e)
+        {
+            TbDexterity.Text = (int.Parse(TbDexterity.Text) + 1).ToString();
+            TbPoints.Text = (int.Parse(TbPoints.Text) - 1).ToString();
+            UpdateStats();
+        }
+
+        private void BtnIntelligenceMinus_Click(object sender, RoutedEventArgs e)
+        {
+            TbIntelligence.Text = (int.Parse(TbIntelligence.Text) - 1).ToString();
+            if (int.Parse(TbIntelligence.Text) >= Character.minIntelligence)
+                TbPoints.Text = (int.Parse(TbPoints.Text) + 1).ToString();
+            UpdateStats();
+        }
+
+        private void BtnIntelligencePlus_Click(object sender, RoutedEventArgs e)
+        {
+            TbIntelligence.Text = (int.Parse(TbIntelligence.Text) + 1).ToString();
+            TbPoints.Text = (int.Parse(TbPoints.Text) - 1).ToString();
+            UpdateStats();
+        }
+
+        private void BtnConstitutionMinus_Click(object sender, RoutedEventArgs e)
+        {
+            TbConstitution.Text = (int.Parse(TbConstitution.Text) - 1).ToString();
+            if (int.Parse(TbConstitution.Text) >= Character.minConstitution)
+                TbPoints.Text = (int.Parse(TbPoints.Text) + 1).ToString();
+            UpdateStats();
+        }
+
+        private void BtnConstitutionPlus_Click(object sender, RoutedEventArgs e)
+        {
+            TbConstitution.Text = (int.Parse(TbConstitution.Text) + 1).ToString();
+            TbPoints.Text = (int.Parse(TbPoints.Text) - 1).ToString();
+            UpdateStats();
         }
     }
 }
