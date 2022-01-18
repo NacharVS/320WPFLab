@@ -1,0 +1,84 @@
+﻿<Page x:Class="BaseEmptyApp.WarriorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BaseEmptyApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="WarriorPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">Strength</Label>
+        <Label Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">Dexterity</Label>
+        <Label Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">Intilligence</Label>
+        <Label Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">Constitution</Label>
+        <Label Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">ExtraPoints</Label>
+
+        <TextBlock x:Name="CharacterStrengthPoints" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Grid.Column="1"/>
+        <TextBlock x:Name="CharacterDextPoints" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Grid.Column="1"/>
+        <TextBlock x:Name="CharacterIntPoints" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Grid.Column="1"/>
+        <TextBlock x:Name="CharacterConstPoints" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Grid.Column="1"/>
+        <TextBlock x:Name="ExtraPoints" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Grid.Column="1"/>
+
+
+        <Button x:Name="StrengthAddButton" Grid.Column="2" Grid.Row="2" FontSize="20" Click="StrengthAddButton_Click">+</Button>
+        <Button x:Name="DextAddButton" Grid.Column="2" Grid.Row="3" FontSize="20" Click="DextAddButton_Click">+</Button>
+        <Button x:Name="IntAddButton" Grid.Column="2" Grid.Row="4" FontSize="20" Click="IntAddButton_Click">+</Button>
+        <Button x:Name="ConstAddButton" Grid.Column="2" Grid.Row="5" FontSize="20" Click="ConstAddButton_Click">+</Button>
+        <Button x:Name="ExtraPointsAddButton" Grid.Column="2" Grid.Row="7" FontSize="20" Click="ExtraPointsAddButton_Click">+</Button>
+
+        <Button x:Name="StrengthRemoveButton" Grid.Column="3" Grid.Row="2" FontSize="20" Click="StrengthRemoveButton_Click">-</Button>
+        <Button x:Name="DextRemoveButton" Grid.Column="3" Grid.Row="3" FontSize="20" Click="DextRemoveButton_Click">-</Button>
+        <Button x:Name="IntRemoveButton" Grid.Column="3" Grid.Row="4" FontSize="20" Click="IntRemoveButton_Click">-</Button>
+        <Button x:Name="ConstRemoveButton" Grid.Column="3" Grid.Row="5" FontSize="20" Click="ConstRemoveButton_Click">-</Button>
+
+        <Label Grid.Row="2" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20">Health</Label>
+        <Label Grid.Row="3" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20">Mana</Label>
+        <Label Grid.Row="4" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20">Phys Attack</Label>
+        <Label Grid.Row="5" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20">Phys Resist</Label>
+        <Label Grid.Row="6" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20">Magic Attack</Label>
+        <Label Grid.Row="7" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20">Magic Resist</Label>
+        <Label Grid.Row="8" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20">Phys Crit.Chanse</Label>
+        <Label Grid.Row="9" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20">Magic Crit.Chanse</Label>
+        <Label Grid.Row="10" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20">Phys Crit.Damage</Label>
+        <Label Grid.Row="11" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20">Magic CritDamage</Label>
+
+        <TextBlock x:Name="HealthPoints" Grid.Row="2" Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+        <TextBlock x:Name="ManaPoints" Grid.Row="3" Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+        <TextBlock x:Name="PhysAtkPoints" Grid.Row="4" Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+        <TextBlock x:Name="PhysResPoints" Grid.Row="5" Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+        <TextBlock x:Name="MagicAtkPoints" Grid.Row="6" Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+        <TextBlock x:Name="MagicResPoints" Grid.Row="7" Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+        <TextBlock x:Name="PhysCrChsncePoints" Grid.Row="8" Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+        <TextBlock x:Name="MagicCrChancePoints" Grid.Row="9" Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+        <TextBlock x:Name="PhysCrDamPoints" Grid.Row="10" Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+        <TextBlock x:Name="MagicCrDamPoints" Grid.Row="11" Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"/>
+
+    </Grid>
+</Page>

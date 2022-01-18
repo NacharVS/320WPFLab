@@ -1,0 +1,27 @@
+﻿<Page x:Class="BaseEmptyApp.ChoosePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BaseEmptyApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="800"
+      Title="ChoosePage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="CreateWarrior" Grid.Row="1" Width="200" Height="100" FontSize="20" Click="CreateWarrior_Click">Warrior</Button>
+        <Button x:Name="CreateMage" Grid.Row="1" Grid.Column="1" Width="200" Height="100" FontSize="20" Click="CreateMage_Click">Mage</Button>
+        <Button x:Name="CreateArcher" Grid.Row="1" Grid.Column="2" Width="200" Height="100" FontSize="20" Click="CreateArcher_Click">Archer</Button>
+    </Grid>
+</Page>

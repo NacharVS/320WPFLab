@@ -7,11 +7,11 @@ namespace DebugConsole
     {
         static void Main(string[] args)
         {
-            Archer d = new Archer("bob", 50, 50, 50, 50);
-            d.SetStrength(60);
+            var d = new Mage("bob", 15, 30, 15, 20);
             Console.WriteLine(d.Strength);
-            d.SetStrength(20);
+            d.RemoveStrength();
             Console.WriteLine(d.Strength);
+
         }
     }
 }

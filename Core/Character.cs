@@ -6,7 +6,6 @@ namespace Core
 {
     public abstract class Character
     { 
-        public string Name { get; private set; }
         public double Strength { get; protected set; }
         public double Dexterity { get; protected set; }
         public double Intelligence { get; protected set; }
@@ -15,9 +14,10 @@ namespace Core
         public double MaxHealth { get; protected set; }
         public double Mana { get; protected set; }
 
-        public Character(string name, int s, int d, int i, int c)
+        
+
+        public Character(int s, int d, int i, int c)
         {
-            Name = name;
             Strength = s;
             Dexterity = d;
             Intelligence = i;
@@ -25,6 +25,10 @@ namespace Core
             MaxHealth = Constitution * 2 + Strength + 0.5;
             Health = MaxHealth;
             Mana = Intelligence * 3;
+        }
+        public void SetHealthPoints(int hp)
+        {
+            this.Health = hp;
         }
         public void DoIfLowHitPoints()
         {
@@ -36,6 +40,11 @@ namespace Core
         public void DoIfLowMana()
         {
             MaxHealth = MaxHealth * 0.8;
+        }
+
+        public double GetMaxHealth()
+        {
+            return Constitution * 2 + Strength + 0.5;
         }
         public double GetPhysAttack()
         {

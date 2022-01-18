@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BaseEmptyApp
+namespace WpfApp1
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,7 +23,6 @@ namespace BaseEmptyApp
         public MainWindow()
         {
             InitializeComponent();
-            ForPage.NavigationService.Navigate(new ChoosePage());
         }
     }
 }
