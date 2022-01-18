@@ -62,7 +62,7 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
               
                 <TextBox x:Name="extraPoint" Text="{Binding ExtraPoint}"  IsEnabled="False" Height="30" FontFamily="Lucida Calligraphy" Width="100" FontSize="18" />
-               
+                <Button x:Name="extrPlus" Width="50" Content="+" Click="extrPlus_Click" Background="#FFA0D0F1"></Button>
             </StackPanel>
             <Button Content="Back" Click="revers_Click"  FontFamily="Lucida Calligraphy" HorizontalAlignment="Center" FontSize="18" Width="150" Height="40" Margin="10" Background="#FFA0D0F1"></Button>
         </StackPanel>

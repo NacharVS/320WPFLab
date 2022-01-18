@@ -148,5 +148,11 @@ namespace BaseEmptyApp
                     GetCharacteristics();
             }
         }
+
+        private void extrPlus_Click(object sender, RoutedEventArgs e)
+        {
+            Character.ExtraPoint++;
+            GetCharacteristics();
+        }
     }
 }
