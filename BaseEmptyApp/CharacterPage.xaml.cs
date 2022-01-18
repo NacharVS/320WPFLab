@@ -41,10 +41,6 @@ namespace BaseEmptyApp
 
             this.DataContext = this;
         }
-        private void BtnChange_Click(object sender, RoutedEventArgs e)
-        {
-            UpdateStats();
-        }
         private void UpdateStats()
         {
             try
@@ -73,7 +69,8 @@ namespace BaseEmptyApp
         private void BtnStrengthPlus_Click(object sender, RoutedEventArgs e)
         {
             TbStrength.Text = (int.Parse(TbStrength.Text) + 1).ToString();
-            TbPoints.Text = (int.Parse(TbPoints.Text) - 1).ToString();
+            if (int.Parse(TbStrength.Text) <= Character.maxStrength)
+                TbPoints.Text = (int.Parse(TbPoints.Text) - 1).ToString();
             UpdateStats();
         }
 
@@ -88,7 +85,8 @@ namespace BaseEmptyApp
         private void BtnDexterityPlus_Click(object sender, RoutedEventArgs e)
         {
             TbDexterity.Text = (int.Parse(TbDexterity.Text) + 1).ToString();
-            TbPoints.Text = (int.Parse(TbPoints.Text) - 1).ToString();
+            if (int.Parse(TbDexterity.Text) <= Character.maxDexterity)
+                TbPoints.Text = (int.Parse(TbPoints.Text) - 1).ToString();
             UpdateStats();
         }
 
@@ -103,7 +101,8 @@ namespace BaseEmptyApp
         private void BtnIntelligencePlus_Click(object sender, RoutedEventArgs e)
         {
             TbIntelligence.Text = (int.Parse(TbIntelligence.Text) + 1).ToString();
-            TbPoints.Text = (int.Parse(TbPoints.Text) - 1).ToString();
+            if (int.Parse(TbIntelligence.Text) <= Character.maxIntelligence)
+                TbPoints.Text = (int.Parse(TbPoints.Text) - 1).ToString();
             UpdateStats();
         }
 
@@ -118,7 +117,8 @@ namespace BaseEmptyApp
         private void BtnConstitutionPlus_Click(object sender, RoutedEventArgs e)
         {
             TbConstitution.Text = (int.Parse(TbConstitution.Text) + 1).ToString();
-            TbPoints.Text = (int.Parse(TbPoints.Text) - 1).ToString();
+            if (int.Parse(TbConstitution.Text) <= Character.maxConstitution)
+                TbPoints.Text = (int.Parse(TbPoints.Text) - 1).ToString();
             UpdateStats();
         }
     }
