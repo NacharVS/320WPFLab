@@ -1,0 +1,122 @@
+﻿<Page x:Class="BaseEmptyApp.CharacterPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BaseEmptyApp"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CharacterPage">
+
+    <Page.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="#FF00FF74">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" Grid.ColumnSpan="2">
+            <TextBlock Text="Extra Points: " FontSize="24"/>
+            <TextBox x:Name="pointBox" FontSize="22" VerticalAlignment="Center" Padding="8" Width="140" Text="0" TextChanged="pointBox_TextChanged"/>
+        </StackPanel>
+
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
+            <StackPanel  DataContext="{Binding Character}" Orientation="Vertical">
+                <TextBlock x:Name="TbLabel" TextAlignment="Center" FontSize="28" HorizontalAlignment="Center" Margin="10"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 0, 0, 10">
+                    <Button x:Name="minusStr_btn" Content="-" Background="White" FontSize="22" Click="minusStr_btn_Click"/>
+                    <TextBlock Text="Strength: "/>
+                    <TextBlock x:Name="TbStrength"/>
+                    <Button x:Name="plusStr_btn" Content="+" Background="White" FontSize="22" Click="plusStr_btn_Click"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0, 0, 0, 10">
+                    <Button x:Name="minusDex_btn" Content="-" Background="White" FontSize="22" Click="minusDex_btn_Click"/>
+                    <TextBlock Text="Dexterity: "/>
+                    <TextBlock x:Name="TbDexterity"/>
+                    <Button x:Name="plusDex_btn" Content="+" Background="White" FontSize="22" Click="plusDex_btn_Click"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 0, 0, 10">
+                    <Button x:Name="minusInt_btn" Content="-" Background="White" FontSize="22" Click="minusInt_btn_Click"/>
+                    <TextBlock Text="Intelligence: "/>
+                    <TextBlock x:Name="TbIntelligence"/>
+                    <Button x:Name="plusInt_btn" Content="+" Background="White" FontSize="22" Click="plusInt_btn_Click"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0, 0, 0, 10">
+                    <Button x:Name="minusCon_btn" Content="-" Background="White" FontSize="22" Click="minusCon_btn_Click"/>
+                    <TextBlock Text="Constitution: "/>
+                    <TextBlock x:Name="TbConstitution"/>
+                    <Button x:Name="plusCon_btn" Content="+" Background="White" FontSize="22" Click="plusCon_btn_Click"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 0, 0, 10">
+                    <TextBlock Text="Health: "/>
+                    <TextBlock x:Name="TbHealth"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0, 0, 0, 10">
+                    <TextBlock Text="Mana: "/>
+                    <TextBlock x:Name="TbMana"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Physics" TextAlignment="Center" FontSize="28" Margin="10"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0, 0, 0, 10">
+                    <TextBlock Text="Attack: "/>
+                    <TextBlock x:Name="TbPhAttack"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0, 0, 0, 10">
+                    <TextBlock Text="Defense: "/>
+                    <TextBlock x:Name="TbPhDefense"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0, 0, 0, 10">
+                    <TextBlock Text="CriticalChance: "/>
+                    <TextBlock x:Name="TbPhCritChance"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0, 0, 0, 10">
+                    <TextBlock Text="CriticalDamage: "/>
+                    <TextBlock x:Name="TbPhCritDamage"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Magic" TextAlignment="Center" FontSize="28" Margin="10"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0, 0, 0, 10">
+                    <TextBlock Text="Attack: "/>
+                    <TextBlock x:Name="TbMagAttack"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0, 0, 0, 10">
+                    <TextBlock Text="Defense: "/>
+                    <TextBlock x:Name="TbMagDefense"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0, 0, 0, 10">
+                    <TextBlock Text="CriticalChance: "/>
+                    <TextBlock x:Name="TbMagCritChance"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  Margin="0, 0, 0, 10">
+                    <TextBlock Text="CriticalDamage: "/>
+                    <TextBlock x:Name="TbMagCritDamage"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

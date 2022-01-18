@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:BaseEmptyApp"
         mc:Ignorable="d"
         Title="CharacterEditor" Height="700" Width="1000">
-    <Grid>
+    <Grid Background="#FF00FF74">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="5*"/>
