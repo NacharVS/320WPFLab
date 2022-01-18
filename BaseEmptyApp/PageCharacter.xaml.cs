@@ -31,53 +31,62 @@ namespace BaseEmptyApp
         {
             character.Strength -= 1;
             character.Points += 1;
+            NavigationService.Navigate(new PageCharacter(character));
         }
 
         private void btnMinusDexterityClick(object sender, RoutedEventArgs e)
         {
             character.Dexterity -= 1;
             character.Points += 1;
+            NavigationService.Navigate(new PageCharacter(character));
         }
 
         private void btnMinusIntelligenceClick(object sender, RoutedEventArgs e)
         {
             character.Intelligence -= 1;
             character.Points += 1;
+            NavigationService.Navigate(new PageCharacter(character));
         }
 
         private void btnMinusConstitutionClick(object sender, RoutedEventArgs e)
         {
             character.Constitution -= 1;
             character.Points += 1;
+            NavigationService.Navigate(new PageCharacter(character));
         }
 
         private void btnPlusStrengthClick(object sender, RoutedEventArgs e)
         {
             character.Strength += 1;
             character.Points -= 1;
+            NavigationService.Navigate(new PageCharacter(character));
         }
 
         private void btnPlusDexterityClick(object sender, RoutedEventArgs e)
         {
             character.Dexterity += 1;
-            character.Points -= 1; 
+            character.Points -= 1;
+            NavigationService.Navigate(new PageCharacter(character));
         }
 
         private void btnPlusIntelligenceClick(object sender, RoutedEventArgs e)
         {
             character.Intelligence += 1;
-            character.Points -= 1; 
+            character.Points -= 1;
+            NavigationService.Navigate(new PageCharacter(character));
         }
 
         private void btnPlusConstitutionClick(object sender, RoutedEventArgs e)
         {
             character.Constitution += 1;
             character.Points -= 1;
+            NavigationService.Navigate(new PageCharacter(character));
         }
 
         private void btnPlusPointClick(object sender, RoutedEventArgs e)
         {
             character.Points += 1;
+            NavigationService.Navigate(new PageCharacter(character));
         }
     }
 }
