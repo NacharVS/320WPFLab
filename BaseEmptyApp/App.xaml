@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:BaseEmptyApp"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="Grid">
+            <Setter Property="ItemsControl.Background" Value="Orchid"/>
+        </Style>
     </Application.Resources>
 </Application>

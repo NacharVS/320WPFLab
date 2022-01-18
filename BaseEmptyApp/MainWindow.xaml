@@ -6,7 +6,22 @@
         xmlns:local="clr-namespace:BaseEmptyApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#FF622B72">
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="14*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Выберите персонажа" TextAlignment="Center" Grid.Column="1" Grid.Row="0" FontFamily="Sitka Text" FontWeight="Bold" TextWrapping="NoWrap" VerticalAlignment="Center" Foreground="#FFC26FDA" FontSize="22"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" >
+            <Button Content="Warrior" Margin="20,0" Click="BtnWarriorClick" Width="100" Background="#FF256ACF"/>
+            <Button Content="Mage" Margin="20,0" Click="BtnMageClick" Width="100" Background="#FF256ACF"/>
+            <Button Content="Archer" Margin="20,0" Click="BtnArcherClick" Width="100" Background="#FF256ACF"/>
+        </StackPanel>
+
+        <Frame x:Name="frameCharacter" Grid.Column="1" Grid.Row="2" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
