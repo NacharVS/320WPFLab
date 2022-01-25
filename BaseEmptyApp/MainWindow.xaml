@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
+        <!--<Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -28,7 +28,8 @@
         <TextBlock Text="Добро пожаловать в Редактор Персонажа" Grid.ColumnSpan="5" FontSize="25" TextAlignment="Center"/>
         <Button x:Name="Archer" Grid.Row="5" Content="Create Archer" Click="Archer_Click"/>
         <Button x:Name="Warrior" Grid.Row="5" Grid.Column="2" Content="Create Warrior" Click="Warrior_Click"/>
-        <Button x:Name="Mage" Grid.Row="5" Grid.Column="4" Content="Create Mage" Click="Mage_Click"/>
-        
+        <Button x:Name="Mage" Grid.Row="5" Grid.Column="4" Content="Create Mage" Click="Mage_Click"/>-->
+        <Frame x:Name="Timer" Source="TimerPage.xaml"/>
+
     </Grid>
 </Window>

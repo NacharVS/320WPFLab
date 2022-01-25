@@ -22,6 +22,7 @@ namespace BaseEmptyApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public static string character = "";
         public MainWindow()
         {
