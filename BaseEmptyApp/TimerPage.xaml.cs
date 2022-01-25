@@ -59,7 +59,6 @@ namespace BaseEmptyApp
             }
         }
 
-
         private void StartTimer_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -100,6 +99,10 @@ namespace BaseEmptyApp
             else if (Time.Text.Length == 2)
             {
                 TimeBlock.Text = $"00:00:{Time.Text}";
+            }
+            else if(Time.Text.Length == 0)
+            {
+                TimeBlock.Text = $"00:00:00";
             }
         }
     }
