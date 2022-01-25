@@ -97,7 +97,7 @@ namespace BaseEmptyApp
             {
                 TimeBlock.Text = $"00:00:0{Time.Text}";
             }
-            else if (Time.ToString().Length == 2)
+            else if (Time.Text.Length == 2)
             {
                 TimeBlock.Text = $"00:00:{Time.Text}";
             }
