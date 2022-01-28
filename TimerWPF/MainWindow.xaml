@@ -6,7 +6,33 @@
         xmlns:local="clr-namespace:TimerWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="10" Background="#FFA0D0F1" Padding="10">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label x:Name="lbTime" Grid.Row="0" Grid.Column="1" Content="00:00:00" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Lucida Calligraphy" FontWeight="Bold" FontSize="50"/>
+        <Button x:Name="consistStart" Grid.Row="1" Grid.Column="2" Content="Start" Height="60" Width="200" FontFamily="Lucida Calligraphy" FontSize="24" Click="ConsistStart_Click"/>
+        <Button x:Name="asyncStart" Grid.Row="1" Grid.Column="1" Height="60" Width="200" FontFamily="Lucida Calligraphy" FontSize="24" Content="Start async" Click="AsyncStart_Click"/>
+        <TextBox x:Name="timeSec" Grid.Row="1" Grid.Column="0" Height="70" Width="100" FontFamily="Lucida Calligraphy" FontSize="30"  />
     </Grid>
 </Window>
