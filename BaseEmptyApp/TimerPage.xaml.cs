@@ -64,18 +64,7 @@ namespace BaseEmptyApp
             try
             {
                 int time = Convert.ToInt32(Time.Text);
-                for (int i = time; i >= 0; i--)
-                {
-                    Thread.Sleep(1000);
-                    if (i.ToString().Length == 1)
-                    {
-                        TimeBlock.Text = $"00:00:0{i.ToString()}";
-                    }
-                    else if (i.ToString().Length == 2)
-                    {
-                        TimeBlock.Text = $"00:00:{i.ToString()}";
-                    }
-                }
+                TimeWait(time);
                 MessageBox.Show("Время вышло!");
                 
             }
