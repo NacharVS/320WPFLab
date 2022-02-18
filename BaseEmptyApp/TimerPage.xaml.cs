@@ -27,17 +27,18 @@ namespace BaseEmptyApp
 
         private async void AsyncStartTimer_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
+             try
+             {
                 int time = Convert.ToInt32(Time.Text);
                 await Task.Run(() => TimeWait(time));
                 MessageBox.Show("Время вышло!");
-            }
+             }
             catch (FormatException)
-            {
+             {
                 MessageBox.Show("Введите корректное значение!");
-            }
+             }
             SettingTime();
+            
 
         }
         public void TimeWait(int time)
@@ -48,11 +49,11 @@ namespace BaseEmptyApp
                 {
                     if (i.ToString().Length == 1)
                     {
-                        TimeBlock.Text = $"00:00:0{i.ToString()}";
+                        TimeBlock.Text = $"00:00:0{i}";
                     }
                     else if (i.ToString().Length == 2)
                     {
-                        TimeBlock.Text = $"00:00:{i.ToString()}";
+                        TimeBlock.Text = $"00:00:{i}";
                     }
                 }));
                 Thread.Sleep(1000);
@@ -66,7 +67,6 @@ namespace BaseEmptyApp
                 int time = Convert.ToInt32(Time.Text);
                 TimeWait(time);
                 MessageBox.Show("Время вышло!");
-                
             }
             catch (FormatException)
             {
@@ -94,5 +94,7 @@ namespace BaseEmptyApp
                 TimeBlock.Text = $"00:00:00";
             }
         }
+        
+
     }
 }
