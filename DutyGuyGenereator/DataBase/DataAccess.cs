@@ -18,6 +18,28 @@ namespace DutyGuyGenereator.DataBase
             var collection = database.GetCollection<Student>("Guy");
             collection.InsertOne(student);
         }
-       
+       public static Student[] GetDutyGuys()
+        {
+            Student[] result = new Student[2];
+            Random random = new Random();
+            var student = new MongoClient("mongodb://localhost");
+            var database = student.GetDatabase("DutyGuy");
+            var collection = database.GetCollection<Student>("Guy");
+            var neededStudent = collection.Find(x => true).ToList();
+            var first = neededStudent[random.Next(0, neededStudent.Count())];
+            result[0] = first;
+            var second = neededStudent[random.Next(0, neededStudent.Count())];
+
+            while (true)
+            {
+                if (first != second)
+                {
+                    result[1] = second;
+                    break;
+                }
+                second = neededStudent[random.Next(0, neededStudent.Count())];
+            }
+            return result;
+        }
     }
 }

@@ -31,8 +31,10 @@ namespace DutyGuyGenereator
 
         private void Generate_Click(object sender, RoutedEventArgs e)
         {
+            
+            FirstSurname.Text = DataAccess.GetDutyGuys()[0].Surname;
+            SecondSurname.Text = DataAccess.GetDutyGuys()[1].Surname;
 
-            PickStudents();
         }
 
         private void AddGuy_Click(object sender, RoutedEventArgs e)
@@ -41,30 +43,7 @@ namespace DutyGuyGenereator
             window.Show();
             Close();
         }
-        public  void PickStudents()
-        {
-            Student[] result = new Student[2];
-            Random random = new Random();
-            var student = new MongoClient("mongodb://localhost");
-            var database = student.GetDatabase("DutyGuy");
-            var collection = database.GetCollection<Student>("Guy");
-            var neededStudent = collection.Find(x => true).ToList();
-            var first = neededStudent[random.Next(0, neededStudent.Count())];
-            result[0] = first;
-            var second = neededStudent[random.Next(0, neededStudent.Count())];
-
-            while (true)
-            {
-                if (first != second)
-                {
-                    result[1] = second;
-                    break;
-                }
-                second = neededStudent[random.Next(0, neededStudent.Count())];
-            }
-            FirstSurname.Text = result[0].Name + " " + result[0].Surname;
-            SecondSurname.Text = result[0].Name + " " + result[0].Surname;
-        }
+       
 
     }
 }
