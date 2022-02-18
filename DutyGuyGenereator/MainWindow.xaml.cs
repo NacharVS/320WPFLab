@@ -31,10 +31,8 @@ namespace DutyGuyGenereator
 
         private void Generate_Click(object sender, RoutedEventArgs e)
         {
-            
             FirstSurname.Text = DataAccess.GetDutyGuys()[0].Surname;
             SecondSurname.Text = DataAccess.GetDutyGuys()[1].Surname;
-
         }
 
         private void AddGuy_Click(object sender, RoutedEventArgs e)
@@ -43,7 +41,12 @@ namespace DutyGuyGenereator
             window.Show();
             Close();
         }
-       
 
+        private void WatchStudents_Click(object sender, RoutedEventArgs e)
+        {
+            Students students = new Students();
+            students.Show();
+            Close();
+        }
     }
 }

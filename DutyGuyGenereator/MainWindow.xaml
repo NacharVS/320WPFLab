@@ -58,5 +58,13 @@
                 Grid.Row="4"
                 Grid.Column="5"
                 Content="Добавить человека"/>
+
+        <Button x:Name="WatchStudents"
+                Click="WatchStudents_Click" 
+                Grid.Row="4"
+                Grid.Column="2"
+                Content="Список студентов"
+                Grid.ColumnSpan="2"
+                HorizontalAlignment="Center"/>
     </Grid>
 </Window>

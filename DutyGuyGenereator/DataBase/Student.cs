@@ -12,8 +12,8 @@ namespace DutyGuyGenereator.DataBase
     {
         public Student(string surname, string name)
         {
-            Name = name;
             Surname = surname;
+            Name = name;
         }
         [BsonId]
         [BsonIgnoreIfDefault]

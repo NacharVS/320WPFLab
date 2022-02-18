@@ -18,8 +18,22 @@ namespace DutyGuyGenereator.DataBase
             var collection = database.GetCollection<Student>("Guy");
             collection.InsertOne(student);
         }
-       public static Student[] GetDutyGuys()
+
+        public static void EditStudent(Student student, string Name, string Surname, string NewSurname, string NewName)
         {
+            var std = new MongoClient("mongodb://localhost");
+            var database = std.GetDatabase("DutyGuy");
+            var collection = database.GetCollection<Student>("Guy");
+            var filterName = Builders<Student>.Filter.Eq("Name", Name);
+            var updateName = Builders<Student>.Update.Set(x => x.Name, NewName);
+            var filterSurname = Builders<Student>.Filter.Eq("Surname", Surname);
+            var updateSurname = Builders<Student>.Update.Set(x => x.Surname, NewSurname);
+            collection.UpdateOneAsync(filterSurname, updateSurname);
+            collection.UpdateOneAsync(filterName, updateName);
+        }
+
+       public static Student[] GetDutyGuys()
+       {
             Student[] result = new Student[2];
             Random random = new Random();
             var student = new MongoClient("mongodb://localhost");
@@ -40,6 +54,14 @@ namespace DutyGuyGenereator.DataBase
                 second = neededStudent[random.Next(0, neededStudent.Count())];
             }
             return result;
+       }
+        public static void ReplaceStudent(Student student)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("DutyGuy");
+            var collection = database.GetCollection<Student>("Guy");
+            collection.DeleteOneAsync(x => x.Name == student.Name);
+            
         }
     }
 }

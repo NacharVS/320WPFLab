@@ -19,13 +19,11 @@ namespace DutyGuyGenereator
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            Student student = new Student(Name.Text, Surname.Text);
+            Student student = new Student(Surname.Text, Name.Text);
             DataAccess.AddStudentToDatabase(student);
-            MessageBox.Show($"Студент '{student.Name}' был добавлен");
+            MessageBox.Show($"Студент '{student.Name} {student.Surname}' был добавлен");
             Name.Clear();
             Surname.Clear();
-
-
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
