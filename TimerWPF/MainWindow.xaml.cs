@@ -28,9 +28,9 @@ namespace TimerWPF
             try
             {
                 for (int i = 0; i <= Convert.ToInt32(timeSec.Text); i++)
-                {
-                    Thread.Sleep(1000);
+                {                  
                     CheckLength(i);
+                    Thread.Sleep(1000);
                 }
                 MessageBox.Show("Время вышло!");
             }

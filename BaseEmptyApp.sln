@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerWPF", "TimerWPF\TimerWPF.csproj", "{508E7A2E-845D-4A6E-B5A8-D9E7DFFBEBE3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskList", "TaskList\TaskList.csproj", "{C9E6CC05-B950-4F9A-96A1-7F4918E5FCC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DutySelectProject", "DutySelectProject\DutySelectProject.csproj", "{E4A60246-2034-4EB8-BA75-B3ABD02853E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{508E7A2E-845D-4A6E-B5A8-D9E7DFFBEBE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{508E7A2E-845D-4A6E-B5A8-D9E7DFFBEBE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{508E7A2E-845D-4A6E-B5A8-D9E7DFFBEBE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9E6CC05-B950-4F9A-96A1-7F4918E5FCC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9E6CC05-B950-4F9A-96A1-7F4918E5FCC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9E6CC05-B950-4F9A-96A1-7F4918E5FCC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9E6CC05-B950-4F9A-96A1-7F4918E5FCC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4A60246-2034-4EB8-BA75-B3ABD02853E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4A60246-2034-4EB8-BA75-B3ABD02853E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4A60246-2034-4EB8-BA75-B3ABD02853E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4A60246-2034-4EB8-BA75-B3ABD02853E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
