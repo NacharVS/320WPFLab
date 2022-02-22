@@ -61,11 +61,17 @@
         <Button x:Name="Add"
                 Click="Add_Click" 
                 Grid.Row="4"
-                Content="Добавить"/>
+                Content="Добавить"
+                Height="40"
+                Width="120"
+                VerticalAlignment="Center"/>
         <Button x:Name="Back"
                 Click="Back_Click" 
                 Grid.Row="4"
                 Grid.Column="5"
-                Content="Назад"/>
+                Content="Назад"
+                Height="40"
+                Width="120"
+                VerticalAlignment="Center"/>
     </Grid>
 </Window>

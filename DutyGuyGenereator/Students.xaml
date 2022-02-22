@@ -46,13 +46,19 @@
                 Click="Edit_Click" 
                 Grid.Row="4"
                 Grid.Column="5"
-                Content="Изменить"/>
+                Content="Изменить"
+                Height="40"
+                Width="120"
+                VerticalAlignment="Center"/>
         
         <Button x:Name="Delete"
                 Click="Delete_Click" 
                 Grid.Row="2"
                 Grid.Column="5"
-                Content="Удалить"/>
+                Content="Удалить"
+                Height="40"
+                Width="120"
+                VerticalAlignment="Center"/>
         
         <Label Content="Фамилия"
                FontSize="15"
@@ -89,6 +95,9 @@
                 Click="Back_Click" 
                 Grid.Row="0"
                 Grid.Column="5"
-                Content="Назад" Height="84" Margin="0.4,0,-0.4,0" VerticalAlignment="Top"/>
+                Content="Назад" 
+                Height="40"
+                Width="120"
+                VerticalAlignment="Center"/>
     </Grid>
 </Window>

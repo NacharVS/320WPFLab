@@ -19,7 +19,7 @@ namespace DutyGuyGenereator.DataBase
             collection.InsertOne(student);
         }
 
-        public static void EditStudent(Student student, string Name, string Surname, string NewSurname, string NewName)
+        public static void EditStudent(string Name, string Surname, string NewSurname, string NewName)
         {
             var std = new MongoClient("mongodb://localhost");
             var database = std.GetDatabase("DutyGuy");
@@ -28,8 +28,8 @@ namespace DutyGuyGenereator.DataBase
             var updateName = Builders<Student>.Update.Set(x => x.Name, NewName);
             var filterSurname = Builders<Student>.Filter.Eq("Surname", Surname);
             var updateSurname = Builders<Student>.Update.Set(x => x.Surname, NewSurname);
-            collection.UpdateOneAsync(filterSurname, updateSurname);
-            collection.UpdateOneAsync(filterName, updateName);
+            collection.UpdateOne(filterSurname, updateSurname);
+            collection.UpdateOne(filterName, updateName);
         }
 
        public static Student[] GetDutyGuys()
@@ -63,5 +63,21 @@ namespace DutyGuyGenereator.DataBase
             collection.DeleteOneAsync(x => x.Name == student.Name);
             
         }
+        public static List<Student> ShowStudents()
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("DutyGuy");
+            var collection = database.GetCollection<Student>("Guy");
+            return collection.Find(x=> true).ToList();
+        }
+        public static Student GetStudent(string name)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("Dutyguy");
+            var collection = database.GetCollection<Student>("Guy");
+            var client1 = collection.Find(x => x.Name == name).FirstOrDefault();
+            return client1;
+        }
+
     }
 }

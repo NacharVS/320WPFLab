@@ -23,10 +23,13 @@ namespace DutyGuyGenereator
     /// </summary>
     public partial class Students : Window
     {
+        public static string name; 
+        public static string surname;
         public Students()
         {
             InitializeComponent();
             LoadData();
+            //LVStudents.ItemsSource = DataAccess.ShowProductsInCategory();
         }
 
         private void LVStudents_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -39,9 +42,8 @@ namespace DutyGuyGenereator
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
             var selectedStudent = LVStudents.SelectedItem as Student;
-            Student student = new Student(selectedStudent.Surname, selectedStudent.Name);
-            DataAccess.EditStudent(student, student.Surname, student.Name, Name.Text, Surname.Text);
-            MessageBox.Show("Студент изменён");
+            DataAccess.EditStudent(selectedStudent.Surname, selectedStudent.Name, Name.Text, Surname.Text);
+            MessageBox.Show("Студент редактирован");
         }
         private async void LoadData()
         {
@@ -65,6 +67,7 @@ namespace DutyGuyGenereator
                 }
             }
             LVStudents.ItemsSource = students;
+            
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
@@ -81,5 +84,7 @@ namespace DutyGuyGenereator
             window.Show();
             Close();
         }
+
+        
     }
 }

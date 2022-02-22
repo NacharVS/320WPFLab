@@ -24,10 +24,10 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         
-        <TextBlock Text="Выбор дежурного группы 320"
+        <TextBlock Text="Выбор дежурных группы 320"
                    FontSize="20"
-                   Grid.Column="2"
-                   Grid.ColumnSpan="2"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="4"
                    TextAlignment="Center"/>
 
         <TextBox x:Name="FirstSurname" 
@@ -45,19 +45,25 @@
                  Grid.ColumnSpan="2"
                  TextAlignment="Center"
                  Height="40"
-                 
+                 IsEnabled="False"
                  Margin="10,10,10,10"/>
 
         <Button x:Name="Generate"
                 Click="Generate_Click" 
                 Grid.Row="4"
-                Content="Сгенерировать"/>
+                Content="Выбрать дежурных"
+                Height="40"
+                Width="120"
+                VerticalAlignment="Center"/>
         
         <Button x:Name="AddGuy"
                 Click="AddGuy_Click" 
                 Grid.Row="4"
                 Grid.Column="5"
-                Content="Добавить человека"/>
+                Content="Добавить человека"
+                Height="40"
+                Width="120"
+                VerticalAlignment="Center"/>
 
         <Button x:Name="WatchStudents"
                 Click="WatchStudents_Click" 
@@ -65,6 +71,9 @@
                 Grid.Column="2"
                 Content="Список студентов"
                 Grid.ColumnSpan="2"
-                HorizontalAlignment="Center"/>
+                HorizontalAlignment="Center"
+                Height="40"
+                Width="120"
+                VerticalAlignment="Center"/>
     </Grid>
 </Window>
