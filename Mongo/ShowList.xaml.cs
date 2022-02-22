@@ -87,7 +87,7 @@ namespace Mongo
             var definition1 = Builders<Student>.Update.Set(x => x.Name, name);
             var definition2 = Builders<Student>.Update.Set(x => x.Surname, surname);
             await collection.UpdateOneAsync(x => x.Name == selectedStudent.Name, definition1);
-            await collection.UpdateOneAsync(x => x.Name == selectedStudent.Surname, definition2);
+            await collection.UpdateOneAsync(x => x.Surname == selectedStudent.Surname, definition2);
         }
     }
 
