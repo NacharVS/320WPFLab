@@ -1,4 +1,5 @@
 ﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -41,6 +42,10 @@ namespace DutySelectProject
 
         private void btnList_Click(object sender, RoutedEventArgs e)
         {
+            NavigationService.Navigate(new ListStudentsPage());
+        }
+        private void btnDuty_Click(object sender, RoutedEventArgs e)
+        {
             NavigationService.Navigate(new MainPage());
         }
     }
@@ -59,8 +64,12 @@ namespace DutySelectProject
             var collection = database.GetCollection<Entity>("TestEntities");
             var list = await collection.Find(x => true).ToListAsync();
         }
+        [BsonId]
+        [BsonIgnoreIfDefault]
         public ObjectId _id { get; set; }
+        [BsonIgnoreIfDefault]
         public string Name { get; set; }
+        [BsonIgnoreIfDefault]
         public string Surname { get; set; }
     }
 }

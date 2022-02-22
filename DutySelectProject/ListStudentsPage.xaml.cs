@@ -17,33 +17,29 @@ using System.Windows.Shapes;
 namespace DutySelectProject
 {
     /// <summary>
-    /// Логика взаимодействия для MainPage.xaml
+    /// Логика взаимодействия для ListStudentsPage.xaml
     /// </summary>
-    public partial class MainPage : Page
+    public partial class ListStudentsPage : Page
     {
-        public MainPage()
+        public ListStudentsPage()
         {
             InitializeComponent();
-        }
-
-        private void btnOk_Click(object sender, RoutedEventArgs e)
-        {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("320Students");
             var collection = database.GetCollection<Entity>("TestEntities");
-            var list =  collection.Find(x => true).ToList();
-            var rnd = new Random();
-            int studentOne = rnd.Next(0, list.Count);
-            student1.Text = $"{list[studentOne].Name} {list[studentOne].Surname}";           
-            list.RemoveAt(studentOne);
-            var rnd2 = new Random();
-            int studentTwo = rnd2.Next(0, list.Count);
-            student2.Text = $"{list[studentTwo].Name} {list[studentTwo].Surname}";
+            var list = collection.Find(x => true).ToList();
+            listStudents.ItemsSource = list;
         }
 
         private void backBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.GoBack();
+        }
+
+        private void listStudents_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var a = (sender as ListView).SelectedItem as Entity;
+            NavigationService.Navigate(new UpdateListStudents(a));
         }
     }
 }
