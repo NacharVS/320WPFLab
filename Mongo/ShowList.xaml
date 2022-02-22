@@ -7,17 +7,22 @@
         mc:Ignorable="d"
         Title="ShowList" Height="450" Width="800">
     <Grid>
-        <ListView x:Name="listviewUsers" HorizontalAlignment="Stretch"  
-                  Margin="10,60,10,10" VerticalAlignment="Stretch">
+        <ListView x:Name="listviewUsers" HorizontalAlignment="Left"  
+                  Margin="10,60,10,10" VerticalAlignment="Stretch" Width="400" SelectionChanged="listviewUsers_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" 
-                      Header="Name" Width="100"/>
+                      Header="Name" Width="150"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Surname}" 
-                      Header="Surname" Width="100"/>
+                      Header="Surname" Width="150"/>
                 </GridView>
             </ListView.View>
         </ListView>
+        <TextBox x:Name="txt_name" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="577,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="30" FontSize="18"/>
+        <TextBox x:Name="txt_surname" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="577,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Height="30" FontSize="18"/>
+        <Label Content="Имя" HorizontalAlignment="Left" Margin="492,120,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Фамилия" HorizontalAlignment="Left" Margin="492,181,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Button Content="Редактировать" HorizontalAlignment="Left" Margin="607,251,0,0" VerticalAlignment="Top" Width="120" Height="30" FontSize="16" Click="Button_Click"/>
 
     </Grid>
 </Window>

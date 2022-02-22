@@ -22,6 +22,9 @@ namespace Mongo
     /// </summary>
     public partial class ShowList : Window
     {
+        public static Student selectedStudent;
+        public static string connectionString = "mongodb://localhost";
+
         public ShowList()
         {
             InitializeComponent();
@@ -30,7 +33,7 @@ namespace Mongo
 
         private async void LoadData()
         {
-            string connectionString = "mongodb://localhost";
+            
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase("test");
             var collection = database.GetCollection<Student>("users");
@@ -60,6 +63,31 @@ namespace Mongo
             //}
             //listviewUsers.ItemsSource = document;
             
+        }
+
+        private void listviewUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            selectedStudent = listviewUsers.SelectedItem as Student;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (txt_name.Text != "" && txt_surname.Text != "")
+            {
+                UpdateMongo(txt_name.Text, txt_surname.Text);
+                MessageBox.Show("Данные изменены");
+            }      
+        }
+        
+        private static async Task UpdateMongo(string name, string surname)
+        {
+            var client = new MongoClient(connectionString);
+            var database = client.GetDatabase("test");
+            var collection = database.GetCollection<Student>("users");
+            var definition1 = Builders<Student>.Update.Set(x => x.Name, name);
+            var definition2 = Builders<Student>.Update.Set(x => x.Surname, surname);
+            await collection.UpdateOneAsync(x => x.Name == selectedStudent.Name, definition1);
+            await collection.UpdateOneAsync(x => x.Name == selectedStudent.Surname, definition2);
         }
     }
 
