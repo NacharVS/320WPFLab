@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "ClassLibrary\Core.c
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Timer", "Timer\Timer.csproj", "{195731A1-AA41-4D05-B8FB-C2BEC454863B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentDuty", "StudentDuty\StudentDuty.csproj", "{C7C1CE0B-F193-4C15-AEB2-047AA34989CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{195731A1-AA41-4D05-B8FB-C2BEC454863B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{195731A1-AA41-4D05-B8FB-C2BEC454863B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{195731A1-AA41-4D05-B8FB-C2BEC454863B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7C1CE0B-F193-4C15-AEB2-047AA34989CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7C1CE0B-F193-4C15-AEB2-047AA34989CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7C1CE0B-F193-4C15-AEB2-047AA34989CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7C1CE0B-F193-4C15-AEB2-047AA34989CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
