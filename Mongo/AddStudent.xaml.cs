@@ -13,6 +13,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using System.ComponentModel.DataAnnotations;
 
 namespace Mongo
 {
@@ -24,6 +25,8 @@ namespace Mongo
         public AddStudent()
         {
             InitializeComponent();
+            if (name_txt.Text == "" || surname_txt.Text == "")
+                addStudentBtn.IsEnabled = false;
         }
 
         private void addStudentBtn_Click(object sender, RoutedEventArgs e)
@@ -43,6 +46,48 @@ namespace Mongo
                 {"Surname", surname},
             };
             await collection.InsertOneAsync(person1);
+        }
+
+        private void name_txt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string name = name_txt.Text;
+            Student student = new Student(name, "Прикол");
+            var results = new List<System.ComponentModel.DataAnnotations.ValidationResult>();
+            var context = new ValidationContext(student);
+            if (!Validator.TryValidateObject(student, context, results, true))
+            {
+                foreach (var error in results)
+                {
+                    name_annotation.Text = error.ErrorMessage;
+                    addStudentBtn.IsEnabled = false;
+                }
+            }
+            else
+            {
+                name_annotation.Text = "";
+                addStudentBtn.IsEnabled = true;
+            }
+        }
+
+        private void surname_txt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string surname = surname_txt.Text;
+            Student student = new Student("Прикол", surname);
+            var results = new List<System.ComponentModel.DataAnnotations.ValidationResult>();
+            var context = new ValidationContext(student);
+            if (!Validator.TryValidateObject(student, context, results, true))
+            {
+                foreach (var error in results)
+                {
+                    surname_annotation.Text = error.ErrorMessage;
+                    addStudentBtn.IsEnabled = false;
+                }
+            }
+            else
+            {
+                surname_annotation.Text = "";
+                addStudentBtn.IsEnabled = true;
+            }
         }
     }
 }

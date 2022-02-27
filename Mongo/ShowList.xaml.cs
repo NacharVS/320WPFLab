@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
+using System.ComponentModel.DataAnnotations;
 
 namespace Mongo
 {
@@ -96,7 +97,11 @@ namespace Mongo
         [BsonId]
         [BsonIgnoreIfDefault]
         public ObjectId _id { get; set; }
-        public string Name { get; set; }    
+        [Required]
+        [StringLength(25, MinimumLength = 2)]
+        public string Name { get; set; }
+        [Required]
+        [StringLength(25, MinimumLength = 2)]
         public string Surname { get; set; }
 
         public Student(string name, string surname)
